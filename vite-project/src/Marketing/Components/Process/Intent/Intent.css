@@ -1,0 +1,26 @@
+.Intent{
+    display: flex;
+    align-items: center;
+    justify-self: center;
+    margin-top: 5rem;
+    padding: 30px;
+    position: sticky;
+    top: 10%;
+    z-index: -4;
+}
+
+
+.Intent-Info{
+    width: 50%;
+}
+
+
+.Intent-Img{
+    width: 50%;
+    border-radius: 20px;
+}
+
+.Intent-Img img{
+    width: 100%;
+    border-radius: 20px;
+}

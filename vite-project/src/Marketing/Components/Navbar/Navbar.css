@@ -1,0 +1,19 @@
+.Navbar {
+  display: flex;
+  justify-self: center;
+  width: 100%;
+  padding: 10px;
+  justify-content: space-between;
+}
+
+.Navbar-Logo {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+.Navbar-Items {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}

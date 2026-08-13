@@ -1,0 +1,22 @@
+.Footer {
+  display: flex;
+  padding: 30px;
+  justify-content: center;
+  gap: 50px;
+  /* background-color: red !important; */
+}
+
+
+.Footer-Left{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+
+
+.Footer-Right{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}

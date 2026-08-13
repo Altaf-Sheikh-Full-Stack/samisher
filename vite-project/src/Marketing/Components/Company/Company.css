@@ -1,0 +1,43 @@
+.Company {
+  display: flex;
+  flex-direction: column;
+  justify-self: center;
+  margin-top: 5rem;
+  background-color: blue !important;
+}
+
+.Company-Img {
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+  /* background-color: red !important; */
+  justify-content: space-evenly;
+  gap: 20px;
+}
+
+.Company-Info {
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+  padding: 50px;
+  border-radius: 20px;
+}
+
+.Company-Info:hover {
+  outline: 5px rgb(124, 58, 237) solid;
+}
+
+.Company-Info-Data {
+  position: fixed;
+  left: 0;
+  top: 0;
+  background-color: white;
+  pointer-events: none;
+  padding: 20px;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+  max-width: 400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: end;
+  height: auto;
+  gap: 50px;
+  border-radius: 20px;
+}

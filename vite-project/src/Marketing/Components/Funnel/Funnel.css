@@ -1,0 +1,12 @@
+.Funnel {
+  display: flex;
+  align-items: center;
+  justify-self: center;
+  padding: 10rem;
+}
+
+
+.Funnel img{
+    width: 100%;
+    border-radius: 50px;
+}

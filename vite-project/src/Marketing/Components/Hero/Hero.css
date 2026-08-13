@@ -1,0 +1,50 @@
+/*  */
+/*  */
+/*  */
+/*  */
+
+.Home {
+  display: flex;
+  justify-self: center;
+  flex-direction: column;
+  gap: 20px;
+  text-align: center;
+  margin-top: 5rem;
+}
+
+.Hero-Text {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.Hero-Point {
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+  gap: 20px;
+  max-width: 1000px;
+  margin: auto;
+}
+
+
+
+.Hero-Img {
+  display: grid;
+  place-items: center;
+  z-index: 0;
+}
+
+.Hero-Img img {
+  filter: blur(3px);
+  max-width: 100%;
+  grid-column: 1/2;
+  grid-row: 1/2;
+  z-index: -1;
+}
+
+.Hero-Img div {
+  grid-column: 1/2;
+  grid-row: 1/2;
+  width: 100%;
+  background-color: transparent !important;
+}

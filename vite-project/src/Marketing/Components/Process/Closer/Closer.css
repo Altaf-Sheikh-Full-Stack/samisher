@@ -1,0 +1,26 @@
+.Closer{
+    display: flex;
+    align-items: center;
+    justify-self: center;
+    margin-top: 5rem;
+    padding: 30px;
+    position: sticky;
+    top: 10%;
+    z-index: -2;
+}
+
+
+.Closer-Info{
+    width: 50%;
+}
+
+
+.Closer-Img{
+    width: 50%;
+    border-radius: 20px;
+}
+
+.Closer-Img img{
+    width: 100%;
+    border-radius: 20px;
+}

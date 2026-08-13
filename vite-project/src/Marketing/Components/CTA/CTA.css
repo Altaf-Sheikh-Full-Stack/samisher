@@ -1,0 +1,38 @@
+.CTA {
+  display: flex;
+  align-items: center;
+  justify-self: center;
+  padding: 30px;
+}
+
+
+.CTA-Left{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.CTA-Right{
+    padding: 50px;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+    border-radius: 20px;
+}
+
+
+.CTA-Right-Info{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+
+
+.CTA-Right-Reviews-Imgs img{
+    width: 50px;
+    height: 50px;
+}
