@@ -4,17 +4,23 @@ import Button from "../../../System/Button/Button"
 import Section from "../../../System/Layouts/Section/Section"
 import Box from '../../../System/Layouts/Box/Box'
 import Text from '../../../System/Texts/Text'
-
+import { NavLink } from "react-router";
 
 const Navbar = () => {
     return (
         <Section className="Navbar" variant='Secondary' size="Fluid">
             <Box className='Navbar-Logo' variant='Secondary'>
-                <Text textType='SubHeading' color='Lite'>Samsher</Text>
+                <NavLink to="/" end>
+                    <Text color='Lite' textType='SubHeading'>Samsher</Text>
+                </NavLink>
                 <Box className='Navbar-Items' variant='Secondary'>
-                    <a href=""> <Text color='Lite'>Home</Text></a>
-                    <a href=""> <Text color='Lite'>About us</Text></a>
-                    <a href=""> <Text color='Lite'>Pricing</Text></a>
+
+                    <NavLink to="/about">
+                        <Text color='Lite'>About us</Text>
+                    </NavLink>
+                    <NavLink to="/pricing">
+                        <Text color='Lite'>Pricing</Text>
+                    </NavLink>
                 </Box>
             </Box>
 

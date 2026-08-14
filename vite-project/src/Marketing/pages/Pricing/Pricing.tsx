@@ -1,7 +1,10 @@
 
 import Section from "../../../System/Layouts/Section/Section"
+import Text from "../../../System/Texts/Text"
+import Banner from "../../Components/Banner/Banner"
 import Navbar from "../../Components/Navbar/Navbar"
-import Connect from "../../Components/Pricing/Connect/Connect/Connect"
+import Main from "../../Components/Pricing/Main/Main"
+
 
 
 
@@ -10,8 +13,9 @@ import Connect from "../../Components/Pricing/Connect/Connect/Connect"
 const Pricing = () => {
     return(
         <Section size="Fluid">
+            <Banner/>
             <Navbar/>
-            <Connect/>
+            <Main/>
         </Section>
     )
 }
