@@ -1,5 +1,7 @@
-import Box from "../../../System/Layouts/Box/Box"
+
 import Section from "../../../System/Layouts/Section/Section"
+import Navbar from "../../Components/Navbar/Navbar"
+import Connect from "../../Components/Pricing/Connect/Connect/Connect"
 
 
 
@@ -7,10 +9,9 @@ import Section from "../../../System/Layouts/Section/Section"
 
 const Pricing = () => {
     return(
-        <Section>
-            <Box>1</Box>
-            <Box>2</Box>
-            <Box>3</Box>
+        <Section size="Fluid">
+            <Navbar/>
+            <Connect/>
         </Section>
     )
 }

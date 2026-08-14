@@ -1,4 +1,14 @@
+import type Estimate from "../../../Types/Estimate";
+import ChartGrid from "../ChartGrid/ChartGrid";
+import ChartHeader from "../ChartHeader/ChartHeader";
+import ChartMarker from "../ChartMarker/ChartMarker";
+import ChartStats from "../ChartStats/ChartStats";
+import EconomicsWarning from "../EconomicsWarning/EconomicsWarning";
 
+type Props = { estimate: Estimate };
+const WIDTH = 680;
+const HEIGHT = 250;
+const PAD = { left: 42, right: 18, top: 22, bottom: 36 };
 
 
 
@@ -28,7 +38,7 @@ const Chart = ({ estimate }: Props) => {
                 <ChartGrid pad={PAD} height={HEIGHT} width={WIDTH} innerHeight={innerHeight} />
                 <polyline points={points(cost)} className="cost-line" />
                 <polyline points={points(revenue)} className="revenue-line" />
-                {showBreakEven && <BreakEvenMarker x={breakX} y={breakY} />}
+                {showBreakEven && <ChartMarker x={breakX} y={breakY} />}
                 <text x={PAD.left} y={HEIGHT - 8} className="axis-label">0</text>
                 <text x={WIDTH - PAD.right} y={HEIGHT - 8} textAnchor="end" className="axis-label">{maxResults} results</text>
             </svg>
@@ -38,3 +48,6 @@ const Chart = ({ estimate }: Props) => {
         </section>
     );
 }
+
+
+export default Chart

@@ -7,7 +7,9 @@ import QuestionStep from "../../Component/QuestionStep/QuestionStep";
 import IsAnswerValid from "../IsAnswerValid/IsAnswerValid";
 import Intro from "../Intro/Intro";
 import Progress from "../../Component/Progress/Progress";
-
+import './Connect.css'
+import Section from "../../../../../System/Layouts/Section/Section";
+import Box from "../../../../../System/Layouts/Box/Box";
 
 const INITIAL_ANSWERS: Answers = { services: [] };
 
@@ -46,8 +48,8 @@ const Connect = () => {
         setShowResult(false);
     }
 
-    return <div className="app">
-        <div className="assessment-card">
+    return <Section  size="Fluid" className="app">
+        <Box className="assessment-card">
             <Intro />
             <Progress current={step} total={Questions.length} />
             <main className="question-area">
@@ -64,8 +66,8 @@ const Connect = () => {
                 </button>
             </footer>
             <div className="privacy">Estimates are scenario-based and do not guarantee a specific result.</div>
-        </div>
-    </div>;
+        </Box>
+    </Section>;
     
 }
 
