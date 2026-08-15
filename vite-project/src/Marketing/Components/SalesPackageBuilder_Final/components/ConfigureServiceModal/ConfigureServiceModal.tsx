@@ -10,6 +10,10 @@ import {
   collectionAgeOptions,
 } from "../../data/services";
 import "./ConfigureServiceModal.css";
+import Button from "../../../../../System/Button/Button";
+import Text from "../../../../../System/Texts/Text";
+import Box from "../../../../../System/Layouts/Box/Box";
+import Input from "../../../../../System/Inputs/Input";
 
 interface Props {
   service: ServiceDefinition;
@@ -63,238 +67,216 @@ export function ConfigureServiceModal({
     config.customerValue > 0;
 
   return (
-    <div className="spbModalBackdrop">
-      <div className="spbModal spbModal--configure">
-        <header className="spbModal__header">
+    <div className="ServiceModal-backdrop">
+      <div className="ServiceModal ServiceModal--configure">
+        <header className="ServiceModal-header">
           <div>
-            <span className="spbModal__eyebrow">CONFIGURE SERVICE</span>
-            <h2>{service.name}</h2>
-            <p>{service.description}</p>
+            <Text textType="SubHeading">{service.name}</Text>
+            <Text textType="Text">{service.description}</Text>
           </div>
-          <button className="spbModal__close" onClick={onClose}>×</button>
+          <button className="ServiceModal-close" onClick={onClose}>×</button>
         </header>
 
-        <div className="spbForm">
-          <Field label="Specific result" full>
-            <select
-              value={config.solutionId}
-              onChange={(e) => set("solutionId", e.target.value)}
-            >
-              {service.solutions.map((solution) => (
-                <option key={solution.id} value={solution.id}>
-                  {solution.label}
-                </option>
-              ))}
-            </select>
-          </Field>
+        <div className="ServiceModal-form">
 
-          <Field label="Target industry">
-            <select
-              value={config.industry}
-              onChange={(e) => set("industry", e.target.value)}
-            >
-              <option value="">Choose industry</option>
-              {industryOptions.map((option) => (
-                <option key={option}>{option}</option>
-              ))}
-            </select>
-          </Field>
+          <Input
+            className="ServiceModal-field ServiceModal-field--full"
+            labelClassName="ServiceModal-field-label"
+            label="Specific result"
+            name="solutionId"
+            options={service.solutions.map((s) => ({ value: s.id, label: s.label }))}
+            value={config.solutionId}
+            onChange={(e) => set("solutionId", e.target.value)}
+          />
 
-          <Field label="Country / market">
-            <select
-              value={config.country}
-              onChange={(e) => set("country", e.target.value)}
-            >
-              <option value="">Choose country</option>
-              {countryOptions.map((option) => (
-                <option key={option}>{option}</option>
-              ))}
-            </select>
-          </Field>
+          <Input
+            className="ServiceModal-field"
+            labelClassName="ServiceModal-field-label"
+            label="Target industry"
+            name="industry"
+            options={[{ value: "", label: "Choose industry" }, ...industryOptions.map((o) => ({ value: o, label: o }))]}
+            value={config.industry}
+            onChange={(e) => set("industry", e.target.value)}
+          />
 
-          <Field label="Company size">
-            <select
-              value={config.companySize}
-              onChange={(e) => set("companySize", e.target.value)}
-            >
-              {companySizeOptions.map((option) => (
-                <option key={option}>{option}</option>
-              ))}
-            </select>
-          </Field>
+          <Input
+            className="ServiceModal-field"
+            labelClassName="ServiceModal-field-label"
+            label="Country / market"
+            name="country"
+            options={[{ value: "", label: "Choose country" }, ...countryOptions.map((o) => ({ value: o, label: o }))]}
+            value={config.country}
+            onChange={(e) => set("country", e.target.value)}
+          />
 
-          <Field label="Target market">
-            <select
-              value={config.market}
-              onChange={(e) => set("market", e.target.value)}
-            >
-              {marketOptions.map((option) => (
-                <option key={option}>{option}</option>
-              ))}
-            </select>
-          </Field>
+          <Input
+            className="ServiceModal-field"
+            labelClassName="ServiceModal-field-label"
+            label="Company size"
+            name="companySize"
+            options={companySizeOptions}
+            value={config.companySize}
+            onChange={(e) => set("companySize", e.target.value)}
+          />
 
-          <Field label="Target results per month">
-            <input
-              type="number"
-              min={1}
-              max={1000}
-              value={config.targetVolume}
-              onChange={(e) =>
-                set(
-                  "targetVolume",
-                  Math.min(1000, Math.max(1, Number(e.target.value) || 1)),
-                )
-              }
-            />
-          </Field>
+          <Input
+            className="ServiceModal-field"
+            labelClassName="ServiceModal-field-label"
+            label="Target market"
+            name="market"
+            options={marketOptions}
+            value={config.market}
+            onChange={(e) => set("market", e.target.value)}
+          />
+
+          <Input
+            className="ServiceModal-field"
+            labelClassName="ServiceModal-field-label"
+            label="Target results per month"
+            name="targetVolume"
+            type="number"
+            min={1}
+            max={1000}
+            value={config.targetVolume}
+            onChange={(e) =>
+              set(
+                "targetVolume",
+                Math.min(1000, Math.max(1, Number(e.target.value) || 1)),
+              )
+            }
+          />
 
           {isMeeting && (
-            <Field label="Who needs to be in the meeting?" full>
-              <select
-                value={config.decisionMaker ?? ""}
-                onChange={(e) => set("decisionMaker", e.target.value)}
-              >
-                <option value="">Choose decision-maker profile</option>
-                {decisionMakerOptions.map((option) => (
-                  <option key={option}>{option}</option>
-                ))}
-              </select>
-            </Field>
+            <Input
+              className="ServiceModal-field ServiceModal-field--full"
+              labelClassName="ServiceModal-field-label"
+              label="Who needs to be in the meeting?"
+              name="decisionMaker"
+              options={[...decisionMakerOptions.map((o) => ({ value: o, label: o }))]}
+              value={config.decisionMaker ?? ""}
+              onChange={(e) => set("decisionMaker", e.target.value)}
+            />
           )}
 
           {isCloser && (
-            <Field label="Where do the opportunities come from?" full>
-              <select
-                value={config.closingSource ?? ""}
-                onChange={(e) => set("closingSource", e.target.value)}
-              >
-                <option value="">Choose opportunity source</option>
-                {closingSourceOptions.map((option) => (
-                  <option key={option}>{option}</option>
-                ))}
-              </select>
-            </Field>
+            <Input
+              className="ServiceModal-field ServiceModal-field--full"
+              labelClassName="ServiceModal-field-label"
+              label="Where do the opportunities come from?"
+              name="closingSource"
+              options={[{ value: "", label: "Choose opportunity source" }, ...closingSourceOptions.map((o) => ({ value: o, label: o }))]}
+              value={config.closingSource ?? ""}
+              onChange={(e) => set("closingSource", e.target.value)}
+            />
           )}
 
           {isCollection ? (
             <>
-              <Field label="How old are the outstanding payments?">
-                <select
-                  value={config.collectionAge ?? ""}
-                  onChange={(e) => set("collectionAge", e.target.value)}
-                >
-                  <option value="">Choose age</option>
-                  {collectionAgeOptions.map((option) => (
-                    <option key={option}>{option}</option>
-                  ))}
-                </select>
-              </Field>
+              <Input
+                className="ServiceModal-field"
+                labelClassName="ServiceModal-field-label"
+                label="How old are the outstanding payments?"
+                name="collectionAge"
+                options={[{ value: "", label: "Choose age" }, ...collectionAgeOptions.map((o) => ({ value: o, label: o }))]}
+                value={config.collectionAge ?? ""}
+                onChange={(e) => set("collectionAge", e.target.value)}
+              />
 
-              <Field label="Typical amount to collect">
-                <input
-                  type="number"
-                  min={1}
-                  value={config.collectionAmount ?? ""}
-                  onChange={(e) =>
-                    set(
-                      "collectionAmount",
-                      Math.max(1, Number(e.target.value) || 1),
-                    )
-                  }
-                  placeholder="e.g. 5000"
-                />
-              </Field>
+              <Input
+                className="ServiceModal-field"
+                labelClassName="ServiceModal-field-label"
+                label="Typical amount to collect"
+                name="collectionAmount"
+                type="number"
+                min={1}
+                value={config.collectionAmount ?? ""}
+                onChange={(e) =>
+                  set(
+                    "collectionAmount",
+                    Math.max(1, Number(e.target.value) || 1),
+                  )
+                }
+                placeholder="e.g. 5000"
+              />
             </>
           ) : (
             <>
-              <Field label="Average customer value">
-                <input
+              <Input
+                className="ServiceModal-field"
+                labelClassName="ServiceModal-field-label"
+                label="Average customer value"
+                name="customerValue"
+                type="number"
+                min={1}
+                value={config.customerValue}
+                onChange={(e) =>
+                  set(
+                    "customerValue",
+                    Math.max(1, Number(e.target.value) || 1),
+                  )
+                }
+              />
+
+              <Input
+                className="ServiceModal-field"
+                labelClassName="ServiceModal-field-label"
+                label="How does the customer pay?"
+                name="billingModel"
+                options={[
+                  { value: "one-time", label: "One-time" },
+                  { value: "monthly", label: "Monthly" },
+                  { value: "quarterly", label: "Quarterly" },
+                  { value: "annual", label: "Annual" },
+                ]}
+                value={config.billingModel}
+                onChange={(e) => set("billingModel", e.target.value as BillingModel)}
+              />
+
+              {config.billingModel !== "one-time" && (
+                <Input
+                  className="ServiceModal-field ServiceModal-field--full"
+                  labelClassName="ServiceModal-field-label"
+                  label="Typical customer lifetime (months)"
+                  name="customerLifetimeMonths"
                   type="number"
                   min={1}
-                  value={config.customerValue}
+                  max={120}
+                  value={config.customerLifetimeMonths}
                   onChange={(e) =>
                     set(
-                      "customerValue",
-                      Math.max(1, Number(e.target.value) || 1),
+                      "customerLifetimeMonths",
+                      Math.min(
+                        120,
+                        Math.max(1, Number(e.target.value) || 1),
+                      ),
                     )
                   }
                 />
-              </Field>
-
-              <Field label="How does the customer pay?">
-                <select
-                  value={config.billingModel}
-                  onChange={(e) =>
-                    set("billingModel", e.target.value as BillingModel)
-                  }
-                >
-                  <option value="one-time">One-time</option>
-                  <option value="monthly">Monthly</option>
-                  <option value="quarterly">Quarterly</option>
-                  <option value="annual">Annual</option>
-                </select>
-              </Field>
-
-              {config.billingModel !== "one-time" && (
-                <Field label="Typical customer lifetime (months)" full>
-                  <input
-                    type="number"
-                    min={1}
-                    max={120}
-                    value={config.customerLifetimeMonths}
-                    onChange={(e) =>
-                      set(
-                        "customerLifetimeMonths",
-                        Math.min(
-                          120,
-                          Math.max(1, Number(e.target.value) || 1),
-                        ),
-                      )
-                    }
-                  />
-                </Field>
               )}
             </>
           )}
         </div>
 
-        <div className="spbForm__note">
-          <strong>Why we ask this</strong>
-          <span>
+        <Box className="ServiceModal-form-note">
+          <Text textType="SubHeading">Why we ask this</Text>
+          <Text textType="Text" >
             Your target market, result type, and monthly volume affect the
             estimated cost per result.
-          </span>
-        </div>
+          </Text>
+        </Box>
 
-        <footer className="spbModal__footer">
-          <button className="spbSecondary" onClick={onBack}>← Back</button>
-          <button
-            className="spbPrimary"
+        <footer className="ServiceModal-footer">
+          <Button className="ServiceModal-secondary" variant="Transparent" onClick={onBack}>Back</Button>
+          <Button
+            className="ServiceModal-primary"
             disabled={!valid}
             onClick={() => onSave(config)}
           >
             Save service
-          </button>
+          </Button>
         </footer>
       </div>
     </div>
   );
 }
 
-function Field({
-  label,
-  children,
-  full = false,
-}: {
-  label: string;
-  children: React.ReactNode;
-  full?: boolean;
-}) {
-  return (
-    <label className={`spbField ${full ? "spbField--full" : ""}`}>
-      <span>{label}</span>
-      {children}
-    </label>
-  );
-}

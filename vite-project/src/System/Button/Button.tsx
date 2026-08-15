@@ -8,6 +8,8 @@ interface ButtonProps {
     children: React.ReactNode;
     rounded?: Rounded;
     onClick?: React.MouseEventHandler<HTMLButtonElement>;
+    className?: string;
+    disabled?: boolean;
 }
 
 const variantConf: Record<Variant, { backgroundColour: string; color: string }> = {
@@ -26,7 +28,9 @@ const Button = ({
     variant = "Primary",
     children,
     rounded = "Flat",
-    onClick
+    onClick,
+    className,
+    disabled = false,
 }: ButtonProps) => {
 
     const backgroundColourStyle = variantConf[variant].backgroundColour;
@@ -41,9 +45,10 @@ const Button = ({
 
     return (
         <button
-            className="Button"
+            className={`Button ${className || ""}`}
             style={styles}
             onClick={onClick}
+            disabled={disabled}
         >
             {children}
         </button>

@@ -24,11 +24,18 @@ export function SolutionModal({ service, onSelect, onBack, onClose }: Props) {
           <button className="spbModal__close" onClick={onClose}>×</button>
         </header>
 
-        <div className="spbSolutionList">
-          {service.solutions.map((solution) => (
-            <button key={solution.id} onClick={() => onSelect(solution)}>
-              <span>{solution.label}</span>
-              <span>→</span>
+        <div className="spbSolutionGrid">
+          {service.solutions.map((solution, index) => (
+            <button
+              key={solution.id}
+              className="spbSolutionTile"
+              onClick={() => onSelect(solution)}
+            >
+              <div
+                className={`spbServiceTile__art spbSolutionTile__art spbServiceTile__art--${(index % 4) + 1}`}
+              >
+                <Text textType="SubHeading">{solution.label}</Text>
+              </div>
             </button>
           ))}
         </div>
