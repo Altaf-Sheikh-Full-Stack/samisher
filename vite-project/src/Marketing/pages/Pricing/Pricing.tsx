@@ -3,7 +3,8 @@ import Section from "../../../System/Layouts/Section/Section"
 import Text from "../../../System/Texts/Text"
 import Banner from "../../Components/Banner/Banner"
 import Navbar from "../../Components/Navbar/Navbar"
-import Main from "../../Components/Pricing/Main/Main"
+
+import { ServiceBuilder } from "../../Components/SalesPackageBuilder_Final"
 
 
 
@@ -15,7 +16,7 @@ const Pricing = () => {
         <Section size="Fluid">
             <Banner/>
             <Navbar/>
-            <Main/>
+            <ServiceBuilder/>
         </Section>
     )
 }

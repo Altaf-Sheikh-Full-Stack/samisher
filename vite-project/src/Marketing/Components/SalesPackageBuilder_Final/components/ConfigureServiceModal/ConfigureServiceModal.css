@@ -1,0 +1,88 @@
+.spbModal--configure {
+  width: min(760px, 100%);
+}
+.spbForm {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+.spbField {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+.spbField--full {
+  grid-column: 1/-1;
+}
+.spbField > span {
+  font-size: 12px;
+  font-weight: 700;
+  color: #4d4d54;
+}
+.spbField input,
+.spbField select {
+  height: 44px;
+  border: 1px solid #dedee3;
+  border-radius: 10px;
+  padding: 0 11px;
+  background: #fff;
+  font: inherit;
+  color: #17171b;
+  outline: none;
+}
+.spbField input:focus,
+.spbField select:focus {
+  border-color: #6c5ce7;
+  box-shadow: 0 0 0 3px rgba(108, 92, 231, 0.08);
+}
+.spbForm__note {
+  margin-top: 16px;
+  padding: 13px 14px;
+  border: 1px solid #ececef;
+  border-radius: 10px;
+  background: #fafafd;
+  display: flex;
+  gap: 5px;
+  flex-direction: column;
+}
+.spbForm__note strong {
+  font-size: 11px;
+}
+.spbForm__note span {
+  font-size: 11px;
+  color: #777;
+}
+.spbModal__footer {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 21px;
+}
+.spbPrimary,
+.spbSecondary {
+  height: 43px;
+  border: 0;
+  border-radius: 9px;
+  padding: 0 16px;
+  font-weight: 700;
+  cursor: pointer;
+}
+.spbPrimary {
+  background: #111;
+  color: #fff;
+}
+.spbPrimary:disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+}
+.spbSecondary {
+  background: #f3f3f5;
+  color: #555;
+}
+@media (max-width: 620px) {
+  .spbForm {
+    grid-template-columns: 1fr;
+  }
+  .spbField--full {
+    grid-column: auto;
+  }
+}

@@ -1,0 +1,139 @@
+.Estimator{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.Estimator-Content {
+  width: min(1180px, 100%);
+  margin: 0 auto;
+  padding: 34px 22px 55px;
+  color: #17171a;
+}
+
+
+.Estimator-Header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 30px;
+  margin-bottom: 22px;
+}
+
+.spb__eyebrow {
+  color: #6c5ce7;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  margin-bottom: 7px;
+}
+.spb__headerCopy h1 {
+  margin: 0 !important;
+  font-size: 42px !important;
+  line-height: 1.05 !important;
+  letter-spacing: -0.045em !important;
+}
+.spb__headerCopy p {
+  margin: 10px 0 0;
+  color: #73737a;
+  font-size: 14px;
+  line-height: 1.55;
+}
+.spb__header > button {
+  white-space: nowrap;
+}
+.spb__layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 330px;
+  gap: 18px;
+  align-items: start;
+}
+.spb__services {
+  display: flex;
+  flex-direction: column;
+  gap: 13px;
+}
+.spb__disabledNotice {
+  padding: 12px 14px;
+  background: #fafafd;
+  border: 1px solid #e4e4e7;
+  border-radius: 10px;
+  color: #777;
+  font-size: 11px;
+}
+.spb__addInline {
+  height: 52px;
+  border: 1px dashed #cfcfd5;
+  border-radius: 13px;
+  background: #fff;
+  color: #555;
+  font-weight: 700;
+  cursor: pointer;
+}
+.spb__addInline span {
+  margin-right: 5px;
+  color: #6c5ce7;
+  font-size: 18px;
+}
+.spb__empty {
+  min-height: 430px;
+  border: 1px solid #e5e5e8;
+  border-radius: 18px;
+  background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  padding: 30px;
+}
+.spb__emptyIcon {
+  width: 58px;
+  height: 58px;
+  display: grid;
+  place-items: center;
+  background: #efedff;
+  color: #6c5ce7;
+  border-radius: 16px;
+  font-size: 30px;
+  margin-bottom: 15px;
+}
+.spb__empty h2 {
+  margin: 0;
+  font-size: 22px;
+  letter-spacing: -0.02em;
+}
+.spb__empty p {
+  max-width: 420px;
+  margin: 7px 0 18px;
+  color: #777;
+  font-size: 13px;
+  line-height: 1.5;
+}
+@media (max-width: 950px) {
+  .spb__layout {
+    grid-template-columns: 1fr;
+  }
+  .Estimator-Header {
+    align-items: flex-start;
+  }
+  .Estimator-Header > button {
+    margin-top: 5px;
+  }
+}
+@media (max-width: 640px) {
+  .spb {
+    padding: 22px 12px 40px;
+  }
+  .spb__header {
+    flex-direction: column;
+  }
+  .spb__header > button {
+    width: 100%;
+  }
+  .spb__headerCopy h1 {
+    font-size: 31px !important;
+  }
+}
