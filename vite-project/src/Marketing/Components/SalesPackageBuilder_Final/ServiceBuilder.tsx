@@ -6,7 +6,7 @@ import { PackageSummary } from "./components/PackageSummary/PackageSummary";
 import { ServiceCard } from "./components/ServiceCard/ServiceCard";
 import { SolutionModal } from "./components/SolutionModal/SolutionModal";
 import { serviceDefinitions } from "./data/services";
-import { calculatePackage, calculateService } from "./logic/estimate";
+import { calculatePackage } from "./logic/estimate";
 import { createId } from "./utils/createId";
 import type {
   ServiceConfig,

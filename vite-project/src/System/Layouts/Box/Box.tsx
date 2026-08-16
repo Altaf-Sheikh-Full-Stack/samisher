@@ -1,6 +1,6 @@
 
 type Variant = "Primary" | "Secondary" | "Transparent"
-type Rounded = "Flat" | "Bubble" | "Round"
+
 interface BoxProps {
     variant?: Variant;
     children: React.ReactNode;

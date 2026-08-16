@@ -1,6 +1,5 @@
 
 import Section from "../../../System/Layouts/Section/Section"
-import Text from "../../../System/Texts/Text"
 import Banner from "../../Components/Banner/Banner"
 import Navbar from "../../Components/Navbar/Navbar"
 
