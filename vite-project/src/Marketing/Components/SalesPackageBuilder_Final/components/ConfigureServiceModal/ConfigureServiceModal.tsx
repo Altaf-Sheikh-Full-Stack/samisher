@@ -14,6 +14,7 @@ import Button from "../../../../../System/Button/Button";
 import Text from "../../../../../System/Texts/Text";
 import Box from "../../../../../System/Layouts/Box/Box";
 import Input from "../../../../../System/Inputs/Input";
+import Section from "../../../../../System/Layouts/Section/Section";
 
 interface Props {
   service: ServiceDefinition;
@@ -67,7 +68,7 @@ export function ConfigureServiceModal({
     config.customerValue > 0;
 
   return (
-    <div className="ServiceModal-backdrop">
+    <Section size="Fluid" className="ServiceModal-backdrop">
       <div className="ServiceModal ServiceModal--configure">
         <header className="ServiceModal-header">
           <div>
@@ -257,13 +258,8 @@ export function ConfigureServiceModal({
           )}
         </div>
 
-        <Box className="ServiceModal-form-note">
-          <Text textType="SubHeading">Why we ask this</Text>
-          <Text textType="Text" >
-            Your target market, result type, and monthly volume affect the
-            estimated cost per result.
-          </Text>
-        </Box>
+ 
+
 
         <footer className="ServiceModal-footer">
           <Button className="ServiceModal-secondary" variant="Transparent" onClick={onBack}>Back</Button>
@@ -276,7 +272,7 @@ export function ConfigureServiceModal({
           </Button>
         </footer>
       </div>
-    </div>
+    </Section>
   );
 }
 

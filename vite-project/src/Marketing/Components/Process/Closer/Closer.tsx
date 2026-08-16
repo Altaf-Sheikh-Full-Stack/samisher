@@ -9,13 +9,12 @@ const Closer = () => {
     return(
         <Section className="Closer" variant="Secondary" rounded="Bubble">
                     <Box className="Closer-Info" variant="Secondary">
-                        <Text textType="Heading" color="Lite">From Zero to Qualified Closers — Powered by AI + Humans.</Text>
-                        <Text color="Lite" textType="SubHeading">why</Text>
-                        <Box variant="Secondary">
-                            <Text>Poin - 1</Text>
-                            <Text>Poin - 2</Text>
-                            <Text>Poin - 3</Text>
-                            <Text>Poin - 4</Text>
+                        <Text textType="Heading" color="Lite">Turn qualified interest into closed revenue</Text>
+                        <Box variant="Secondary" className="Lead-Info-Point">
+                            <Text textType="SubHeading" color="Lite">• AI-powered qualification</Text>
+                            <Text textType="SubHeading" color="Lite">• Human-driven closing</Text>
+                            <Text textType="SubHeading" color="Lite">• Seamless integration</Text>
+                            <Text textType="SubHeading" color="Lite">• Improved conversion rates</Text>
                         </Box>
                         <Button variant="Primary" rounded="Bubble" >Book demo</Button>
                     </Box>

@@ -3,7 +3,12 @@ import { calculateService } from "../../logic/estimate";
 import { formatMoney, formatRange } from "../../utils/formatMoney";
 import type { ServiceItem } from "../../types";
 import { ServiceEconomicsChart } from "../ServiceEconomicsChart/ServiceEconomicsChart";
+import { Metric } from "../../../../../System/Metric/Metric";
 import "./ServiceCard.css";
+import Text from "../../../../../System/Texts/Text";
+import Section from "../../../../../System/Layouts/Section/Section";
+import Box from "../../../../../System/Layouts/Box/Box";
+import Button from "../../../../../System/Button/Button";
 
 interface Props {
   item: ServiceItem;
@@ -26,15 +31,15 @@ export function ServiceCard({
   const estimate = calculateService(item.config);
 
   return (
-    <article className={`spbCard ${item.enabled ? "" : "spbCard--disabled"}`}>
+    <Section rounded="Bubble" className={`spbCard ${item.enabled ? "" : "spbCard--disabled"}`}>
       <header className="spbCard__header">
-        <div>
-          <div className="spbCard__eyebrow">{service.name}</div>
-          <h2>{solution}</h2>
-          <p>
+        <Box>
+          <Text className="spbCard__eyebrow">{service.name}</Text>
+          <Text textType="SubHeading">{solution}</Text>
+          {/* <Text>
             {item.config.targetVolume} {service.resultUnit} / month
-          </p>
-        </div>
+          </Text> */}
+        </Box>
 
         <button
           className={`spbToggle ${item.enabled ? "is-on" : ""}`}
@@ -49,8 +54,8 @@ export function ServiceCard({
         <div className="spbCard__chart">
           <div className="spbCard__chartHeader">
             <div>
-              <span>Customer economics</span>
-              <strong>
+              <Text>P&L Chart</Text>
+              {/* <Text textType="SubHeading">
                 {estimate.paybackMonths === null
                   ? "No payback estimate"
                   : estimate.paybackMonths <= 1
@@ -59,11 +64,11 @@ export function ServiceCard({
                         Math.ceil(estimate.paybackMonths * 30),
                       )} days`
                     : `Pays back in ~${estimate.paybackMonths.toFixed(1)} months`}
-              </strong>
+              </Text> */}
             </div>
             <div className="spbCard__legend">
-              <span><i className="revenue" /> Revenue</span>
-              <span><i className="cost" /> Acquisition cost</span>
+              <Text><i className="revenue" /> Revenue</Text>
+              <Text><i className="cost" /> Acquisition cost</Text>
             </div>
           </div>
 
@@ -109,19 +114,12 @@ export function ServiceCard({
         </div>
 
         <div className="spbCard__actions">
-          <button onClick={onEdit}>Edit</button>
-          <button className="danger" onClick={onRemove}>Remove</button>
+          <Button variant="Transparent" onClick={onEdit}>Edit</Button>
+          <Button className="danger" variant="Danger" onClick={onRemove}>
+            Remove
+          </Button>
         </div>
       </footer>
-    </article>
-  );
-}
-
-function Metric({ label, value }: { label: string; value: string }) {
-  return (
-    <div className="spbMetric">
-      <span>{label}</span>
-      <strong>{value}</strong>
-    </div>
+    </Section>
   );
 }

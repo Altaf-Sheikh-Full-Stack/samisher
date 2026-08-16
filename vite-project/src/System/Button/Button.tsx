@@ -1,6 +1,6 @@
 import './Button.css'
 
-type Variant = "Primary" | "Secondary" | "Transparent"
+type Variant = "Primary" | "Secondary" | "Transparent" | "Danger"
 type Rounded = "Flat" | "Bubble" | "Round"
 
 interface ButtonProps {
@@ -15,7 +15,9 @@ interface ButtonProps {
 const variantConf: Record<Variant, { backgroundColour: string; color: string }> = {
     Primary: { backgroundColour: "#7C3AED", color: "white" },
     Secondary: { backgroundColour: "#111827", color: "white" },
-    Transparent: { backgroundColour: "white", color: "black" }
+    Transparent: { backgroundColour: "white", color: "black" },
+    Danger: { backgroundColour: "#EF4444", color: "white" }
+
 };
 
 const roundedConf: Record<Rounded, { borderRadius: number }> = {

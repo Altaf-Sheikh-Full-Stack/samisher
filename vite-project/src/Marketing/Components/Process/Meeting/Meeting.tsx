@@ -10,13 +10,12 @@ const Meeting = () => {
     return (
         <Section className="Meeting" variant="Primary" rounded="Bubble">
             <Box className="Meeting-Info" variant="Primary">
-                <Text textType="Heading" color="Lite">From Zero to Qualified Meetings — Powered by AI + Humans.</Text>
-                <Text color="Lite" textType="SubHeading">why</Text>
-                <Box variant="Primary">
-                    <Text>Poin - 1</Text>
-                    <Text>Poin - 2</Text>
-                    <Text>Poin - 3</Text>
-                    <Text>Poin - 4</Text>
+                <Text textType="Heading" color="Lite">Turn conversations into booked meetings</Text>
+                <Box variant="Primary" className="Lead-Info-Point">
+                    <Text textType="SubHeading" color="Lite">• AI scheduling</Text>
+                    <Text textType="SubHeading" color="Lite">• Human follow-up</Text>
+                    <Text textType="SubHeading" color="Lite">• Smoother coordination</Text>
+                    <Text textType="SubHeading" color="Lite">• Higher conversion rates</Text>
                 </Box>
                 <Button variant="Secondary" rounded="Bubble" >Book demo</Button>
             </Box>

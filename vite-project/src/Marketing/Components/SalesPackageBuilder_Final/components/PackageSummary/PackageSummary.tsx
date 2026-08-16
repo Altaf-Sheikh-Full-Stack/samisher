@@ -1,6 +1,10 @@
 import { formatMoney, formatRange } from "../../utils/formatMoney";
 import type { PackageEstimate } from "../../types";
 import "./PackageSummary.css";
+import Text from "../../../../../System/Texts/Text";
+import Box from "../../../../../System/Layouts/Box/Box";
+import Button from "../../../../../System/Button/Button";
+import Section from "../../../../../System/Layouts/Section/Section";
 
 interface Props {
   estimate: PackageEstimate;
@@ -16,72 +20,54 @@ export function PackageSummary({
   const finalFullyCovered = estimate.firstEngagementMax === 0;
 
   return (
-    <aside className="spbSummary">
-      <div className="spbSummary__eyebrow">PACKAGE SUMMARY</div>
-      <h2>Your estimated package</h2>
-      <p>
+    <Section rounded="Bubble" className="spbSummary" >
+      <Text textType="SubHeading">Your estimated cost</Text>
+      <Text textType="Text">
         {activeServiceCount} active service
         {activeServiceCount === 1 ? "" : "s"} included.
-      </p>
+      </Text>
 
-      <div className="spbSummary__value">
-        <span>Estimated monthly service spend</span>
-        <strong>
-          {formatRange(
-            estimate.monthlySpendMin,
-            estimate.monthlySpendMax,
-          )}
-        </strong>
-        <small>Before your first-customer bonus</small>
-      </div>
-
+   
       <div className="spbSummary__rows">
-        <div>
-          <span>Total service cost</span>
-          <strong>
+        <Box>
+          <Text textType="SubHeading" >Cost</Text>
+          <Text textType="SubHeading">
             {formatRange(
               estimate.monthlySpendMin,
               estimate.monthlySpendMax,
             )}
-          </strong>
-        </div>
+          </Text>
+        </Box>
 
-        <div className="bonus">
-          <span>New customer bonus</span>
-          <strong>−{formatMoney(estimate.bonus)}</strong>
-        </div>
+        <Box className="bonus">
+          <Text textType="SubHeading">Discount</Text>
+          <Text textType="SubHeading">−{formatMoney(estimate.bonus)}</Text>
+        </Box>
 
-        <div className="final">
-          <span>Final cost for first engagement</span>
-          <strong>
+        <Box className="final">
+          <Text textType="SubHeading">Final</Text>
+          <Text textType="SubHeading">
             {finalFullyCovered
               ? "Fully covered"
               : formatRange(
                   estimate.firstEngagementMin,
                   estimate.firstEngagementMax,
                 )}
-          </strong>
-        </div>
+          </Text>
+        </Box>
       </div>
 
-      <div className="spbSummary__why">
-        <strong>Why this works</strong>
-        <p>
-          You only pay for the results in your package. Increase the target
-          volume when you want more results, without turning the estimate into
-          a fixed retainer.
-        </p>
-      </div>
+ 
 
-      <button className="spbSummary__cta" onClick={onBookMeeting}>
+      <Button variant="Primary" rounded="Bubble" className="spbSummary__cta" onClick={onBookMeeting}>
         Book a meeting →
-      </button>
+      </Button>
+<Box>
+  <Text textType="Text" className="spbSummary__disclaimer">
+    *This is an estimate based on the information you provided. The final cost may vary based on your specific needs and requirements.
+  </Text>
+</Box>
 
-      <div className="spbSummary__trust">
-        <span>✓ Pay per result</span>
-        <span>✓ $200 first-customer credit</span>
-        <span>✓ Exact quote reviewed with you</span>
-      </div>
-    </aside>
+    </Section>
   );
 }
