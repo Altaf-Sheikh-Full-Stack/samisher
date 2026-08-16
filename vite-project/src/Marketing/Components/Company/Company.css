@@ -3,21 +3,30 @@
   flex-direction: column;
   justify-self: center;
   margin-top: 5rem;
-  background-color: blue !important;
+ 
 }
 
 .Company-Img {
   display: grid;
-  grid-template-columns: auto auto auto auto;
-  /* background-color: red !important; */
+  grid-template-columns: repeat(4, minmax(150px, 1fr));
   justify-content: space-evenly;
   gap: 20px;
+  width: 100%;
 }
 
 .Company-Info {
   box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
-  padding: 50px;
+  padding: 32px;
   border-radius: 20px;
+  display: grid;
+  place-items: center;
+  min-height: 120px;
+}
+
+.Company-Info img {
+  display: block;
+  max-width: 100%;
+  height: auto;
 }
 
 .Company-Info:hover {
@@ -33,11 +42,50 @@
   padding: 20px;
   box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
   max-width: 400px;
+  width: min(90vw, 400px);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: end;
   height: auto;
-  gap: 50px;
+  gap: 20px;
   border-radius: 20px;
+  z-index: 10;
+}
+
+@media (max-width: 900px) {
+  .Company-Img {
+    grid-template-columns: repeat(2, minmax(150px, 1fr));
+  }
+}
+
+@media (max-width: 520px) {
+  .Company {
+    margin-top: 3rem;
+    padding: 0 12px;
+  }
+
+  .Company-Img {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+  }
+
+  .Company-Info {
+    min-height: 90px;
+    padding: 10px;
+    border-radius: 12px;
+  }
+
+  .Company-Info img {
+    max-width: 100%;
+    height: auto;
+    object-fit: contain;
+  }
+
+  .Company-Info-Data {
+    left: 50% !important;
+    top: 50% !important;
+    transform: translate(-50%, -50%) !important;
+    width: min(88vw, 320px);
+  }
 }

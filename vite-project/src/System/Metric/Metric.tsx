@@ -1,4 +1,3 @@
-import Box from "../Layouts/Box/Box";
 import Section from "../Layouts/Section/Section";
 import Text from "../Texts/Text";
 import "./Metric.css";

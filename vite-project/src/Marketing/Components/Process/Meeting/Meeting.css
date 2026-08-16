@@ -7,6 +7,7 @@
     position: sticky;
     top: 10%;
     z-index: -3;
+    gap: 30px;
 }
 
 
@@ -23,4 +24,32 @@
 .Meeting-Img img{
     width: 100%;
     border-radius: 20px;
+}
+
+@media (max-width: 900px) {
+  .Meeting {
+    flex-direction: column;
+    padding: 24px 20px;
+  }
+
+  .Meeting-Info {
+    width: 100%;
+  }
+
+  .Meeting-Img {
+    width: 100%;
+  }
+}
+
+@media (max-width: 520px) {
+  .Meeting {
+    margin-top: 3rem;
+    padding: 16px 12px;
+    gap: 16px;
+  }
+
+  .Meeting .Lead-Info-Point {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
 }

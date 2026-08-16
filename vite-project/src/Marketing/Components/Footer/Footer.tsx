@@ -3,22 +3,30 @@ import Section from "../../../System/Layouts/Section/Section"
 import Text from "../../../System/Texts/Text"
 import './Footer.css'
 
-
-
 const Footer = () => {
     return (
-        <Section className="Footer" size="Fluid">
-            <Box className="Footer-Left">
-                <Text textType="SubHeading"  color="Brand">External links</Text>
-                <Text>Linkdein</Text>
-                <Text>X.com</Text>
-                <Text>Instagram</Text>
+        <Section className="Footer" size="Fluid" variant="Secondary">
+            <Box className="Footer-Brand" variant="Secondary">
+                <Text textType="SubHeading" color="Lite">Samisher</Text>
+                <Text color="Lite">
+                    Helping B2B teams book qualified meetings with a predictable, performance-based model.
+                </Text>
             </Box>
-            <Box className="Footer-Right">
-                <Text textType="SubHeading"  color="Brand">Internal links</Text>
-                <Text>About us</Text>
-                <Text>Pricing</Text>
-                <Text>Career</Text>
+
+            <Box variant="Secondary" className="Footer-Links">
+                <Box variant="Secondary" className="Footer-Left">
+                    <Text textType="SubHeading" color="Brand">External links</Text>
+                    <Text color="Lite">LinkedIn</Text>
+                    <Text color="Lite">X.com</Text>
+                    <Text color="Lite">Instagram</Text>
+                </Box>
+
+                <Box variant="Secondary" className="Footer-Right">
+                    <Text textType="SubHeading" color="Brand">Internal links</Text>
+                    <Text color="Lite">About us</Text>
+                    <Text color="Lite">Pricing</Text>
+                    <Text color="Lite">Career</Text>
+                </Box>
             </Box>
         </Section>
     )

@@ -1,4 +1,4 @@
-
+import './Texts.css'
 
 
 type TextType = "Heading" | "SubHeading" | "Text"
@@ -44,7 +44,7 @@ const Text = ({ textType = 'Text', children, color = "Dark" }: TextProbs) => {
 
 
     return (
-        <Element style={styles}  >{children}</Element>
+        <Element style={styles} className='H1'  >{children}</Element>
     )
 }
 

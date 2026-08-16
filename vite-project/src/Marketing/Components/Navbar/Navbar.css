@@ -2,18 +2,103 @@
   display: flex;
   justify-self: center;
   width: 100%;
-  padding: 10px;
+  padding: 10px 20px;
   justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  box-sizing: border-box;
+  position: relative;
 }
 
 .Navbar-Logo {
   display: flex;
   align-items: center;
   gap: 30px;
+  flex-wrap: wrap;
 }
 
 .Navbar-Items {
   display: flex;
   gap: 20px;
   align-items: center;
+  flex-wrap: wrap;
 }
+
+.Navbar-Buttons {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.Navbar-MobileToggle {
+  display: none;
+  width: 42px;
+  height: 42px;
+  border: 1px solid rgba(255,255,255,0.15);
+  background: rgba(255,255,255,0.04);
+  /* border-radius: 10px; */
+  padding: 9px 8px;
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.Navbar-MobileToggle span {
+  display: block;
+  width: 18px;
+  height: 2px;
+  background: #fff;
+  border-radius: 99px;
+  transition: 0.2s ease;
+}
+
+.Navbar-MobileToggle.is-open span:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+
+.Navbar-MobileToggle.is-open span:nth-child(2) {
+  opacity: 0;
+}
+
+.Navbar-MobileToggle.is-open span:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+.Navbar-MobileMenu {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .Navbar {
+    padding: 14px 16px;
+  }
+
+  .Navbar-Items,
+  .Navbar-Buttons {
+    display: none;
+  }
+
+  .Navbar-MobileToggle {
+    display: flex;
+    margin-left: auto;
+  }
+
+  .Navbar-MobileMenu {
+    display: flex;
+    position: absolute;
+    top: calc(100% + 8px);
+    right: 16px;
+    left: 16px;
+    flex-direction: column;
+    gap: 12px;
+    padding: 16px;
+    z-index: 50;
+  }
+
+  .Navbar-MobileMenu a {
+    text-decoration: none;
+  }
+}
+

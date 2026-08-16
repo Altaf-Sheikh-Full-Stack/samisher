@@ -1,0 +1,106 @@
+.Statistics {
+  display: flex;
+  flex-direction: column;
+  justify-self: center;
+  margin-top: 5rem;
+  padding: 50px 40px;
+  gap: 50px;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+}
+
+.Statistics-Header {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  align-items: flex-start;
+  position: relative;
+}
+
+.Statistics-Badge {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+}
+
+.Statistics-Subtitle {
+  color: #666 !important;
+  font-weight: 400 !important;
+  margin-top: 8px;
+}
+
+.Statistics-Grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+  width: 100%;
+}
+
+.Statistics-Card {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  padding: 20px;
+  /* background: white !important; */
+  /* border: 1px solid #e5e5e7; */
+  border-radius: 14px;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+}
+
+.Statistics-Card h1 {
+  margin: 0 0 8px 0 !important;
+  line-height: 1.2 !important;
+}
+
+.Statistics-Card h2 {
+  margin: 0 0 6px 0 !important;
+  font-size: 16px !important;
+  font-weight: 600 !important;
+}
+
+.Statistics-Description {
+  font-size: 13px !important;
+  color: #999 !important;
+  line-height: 1.4;
+}
+
+@media (max-width: 1200px) {
+  .Statistics-Grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .Statistics {
+    padding: 32px 20px;
+    gap: 30px;
+    margin-top: 3rem;
+  }
+
+  .Statistics-Grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .Statistics-Card {
+    padding: 16px;
+    border-radius: 12px;
+  }
+
+  .Statistics-Badge {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 520px) {
+  .Statistics {
+    padding: 20px 14px;
+    gap: 20px;
+  }
+
+  .Statistics-Header {
+    gap: 8px;
+  }
+
+  .Statistics-Card {
+    padding: 14px;
+  }
+}

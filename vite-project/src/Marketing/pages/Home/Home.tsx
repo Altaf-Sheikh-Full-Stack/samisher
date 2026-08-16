@@ -7,9 +7,10 @@ import Banner from "../../Components/Banner/Banner"
 import Intent from "../../Components/Process/Intent/Intent"
 import Meeting from "../../Components/Process/Meeting/Meeting"
 import Closer from "../../Components/Process/Closer/Closer"
-import Funnel from "../../Components/Funnel/Funnel"
+import Funnel from "../../Components/Statistics/Statistics"
 import CTA from "../../Components/CTA/CTA"
 import Footer from "../../Components/Footer/Footer"
+import Space from "../../Components/Space/Space"
 
 const Home = () => {
     return (
@@ -24,6 +25,7 @@ const Home = () => {
             <Closer/>
             <Funnel/>
             <CTA/>
+            <Space/>
             <Footer/>
         </>
 
