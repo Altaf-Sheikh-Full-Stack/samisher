@@ -5,7 +5,7 @@ import Navbar from "../../Components/Navbar/Navbar"
 
 import { ServiceBuilder } from "../../Components/SalesPackageBuilder_Final"
 export function meta() {
-  const title = 'Pricing — Pay Per Qualified Meeting | Samisher'
+  const title = 'Pricing — Calculate your estimated benefits.'
   const description = 'Build a Samisher sales package around the services you need and pay per qualified meeting, starting at $7 per appointment.'
 
   return [

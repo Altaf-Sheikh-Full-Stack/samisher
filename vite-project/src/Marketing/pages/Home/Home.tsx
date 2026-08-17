@@ -12,7 +12,7 @@ import CTA from "../../Components/CTA/CTA"
 import Footer from "../../Components/Footer/Footer"
 import Space from "../../Components/Space/Space"
 export function meta() {
-  const title = 'Samisher —  Calculate per meeting Cost'
+  const title = 'Samisher —  B2B Sales Outsourcing. Pay Only for Qualified Meetings.'
   const description = 'Samisher helps you pay only for meetings that convert. Schedule, qualify, and close with confidence — pay per successful meeting.'
 
   return [
