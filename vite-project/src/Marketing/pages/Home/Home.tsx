@@ -11,6 +11,26 @@ import Funnel from "../../Components/Statistics/Statistics"
 import CTA from "../../Components/CTA/CTA"
 import Footer from "../../Components/Footer/Footer"
 import Space from "../../Components/Space/Space"
+export function meta() {
+  const title = 'Samisher — Pay for Meetings Only'
+  const description = 'Samisher helps you pay only for meetings that convert. Schedule, qualify, and close with confidence — pay per successful meeting.'
+
+  return [
+    { title },
+    { name: 'description', content: description },
+    { tagName: 'link', rel: 'canonical', href: 'https://samisher.com/' },
+    { property: 'og:title', content: title },
+    { property: 'og:description', content: description },
+    { property: 'og:type', content: 'website' },
+    { property: 'og:url', content: 'https://samisher.com/' },
+    { property: 'og:site_name', content: 'Samisher' },
+    { property: 'og:image', content: 'https://samisher.com/S.svg' },
+    { name: 'twitter:card', content: 'summary_large_image' },
+    { name: 'twitter:title', content: title },
+    { name: 'twitter:description', content: description },
+    { name: 'twitter:image', content: 'https://samisher.com/S.svg' },
+  ]
+}
 
 const Home = () => {
     return (

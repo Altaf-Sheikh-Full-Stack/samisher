@@ -19,7 +19,7 @@ const Intent = () => {
                         <Button variant="Primary" rounded="Bubble" >Book demo</Button>
                     </Box>
                     <Box className="Intent-Img">
-                        <img src={img1} alt="" />
+                        <img src={img1} alt="" loading="lazy" decoding="async" />
                     </Box>
                 </Section>
     )

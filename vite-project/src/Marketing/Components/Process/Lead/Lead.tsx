@@ -20,7 +20,7 @@ const Lead = () => {
                 <Button variant="Secondary" rounded="Bubble" >Book demo</Button>
             </Box>
             <Box className="Lead-Img">
-                <img src={img1} alt="" />
+                <img src={img1} alt="" loading="lazy" decoding="async" />
             </Box>
         </Section>
     )

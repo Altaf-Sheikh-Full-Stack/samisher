@@ -42,10 +42,10 @@ const CTA = () => {
                 </Box>
                 <Box className="CTA-Right-Reviews">
                     <Box className="CTA-Right-Reviews-Imgs">
-                        <img src={img1} alt="" />
-                        <img src={img2} alt="" />
-                        <img src={img3} alt="" />
-                        <img src={img4} alt="" />
+                        <img src={img1} alt="" loading="lazy" decoding="async" />
+                        <img src={img2} alt="" loading="lazy" decoding="async" />
+                        <img src={img3} alt="" loading="lazy" decoding="async" />
+                        <img src={img4} alt="" loading="lazy" decoding="async" />
                     </Box>
                     <Box>
                         <Text>✦✦✦✦✦</Text>

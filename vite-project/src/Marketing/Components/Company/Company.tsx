@@ -85,7 +85,7 @@ const Company = () => {
                         onMouseEnter={() => showData(value)}
                         onMouseLeave={hideData}
                     >
-                        <img src={value.Img} alt="" />
+                        <img src={value.Img} alt="" loading="lazy" decoding="async" />
                     </div>
                 ))}
             </Box>

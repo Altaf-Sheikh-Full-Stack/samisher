@@ -19,7 +19,7 @@ const Closer = () => {
                         <Button variant="Primary" rounded="Bubble" >Book demo</Button>
                     </Box>
                     <Box className="Closer-Img">
-                        <img src={img1} alt="" />
+                        <img src={img1} alt="" loading="lazy" decoding="async" />
                     </Box>
                 </Section>
     )

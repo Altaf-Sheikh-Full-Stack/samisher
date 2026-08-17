@@ -1,6 +1,7 @@
 import Box from "../../../System/Layouts/Box/Box"
 import Section from "../../../System/Layouts/Section/Section"
 import Text from "../../../System/Texts/Text"
+import { Link } from 'react-router'
 import './Footer.css'
 
 const Footer = () => {
@@ -24,7 +25,7 @@ const Footer = () => {
                 <Box variant="Secondary" className="Footer-Right">
                     <Text textType="SubHeading" color="Brand">Internal links</Text>
                     <Text color="Lite">About us</Text>
-                    <Text color="Lite">Pricing</Text>
+                    <Link to="/pricing"><Text color="Lite">Pricing</Text></Link>
                     <Text color="Lite">Career</Text>
                 </Box>
             </Box>
