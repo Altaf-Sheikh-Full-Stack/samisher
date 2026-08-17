@@ -9,15 +9,14 @@ const Statistics = () => {
 
   return (
     <Section className='Statistics' variant='Transparent'>
-      <Box className='Statistics-Header'>
-        <div className='Statistics-Badge'>🏆</div>
-        <Text textType='Heading'  color='Brand'>
+      {/* <Box className='Statistics-Header'>
+        <Text textType='Heading'  >
           Proven Results for Sales Teams
         </Text>
         <Text textType='SubHeading' color='Dark' className='Statistics-Subtitle'>
           Thousands of companies generate revenue through qualified meetings.
         </Text>
-      </Box>
+      </Box> */}
 
       <Box  className='Statistics-Grid'>
         {StatisticsData.map((stat, index) => (

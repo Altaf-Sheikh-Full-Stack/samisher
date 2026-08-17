@@ -9,6 +9,7 @@ import Meeting from "../../Components/Process/Meeting/Meeting"
 import Closer from "../../Components/Process/Closer/Closer"
 import Funnel from "../../Components/Statistics/Statistics"
 import CTA from "../../Components/CTA/CTA"
+import FAQ from "../../Components/FAQ/FAQ"
 import Footer from "../../Components/Footer/Footer"
 import Space from "../../Components/Space/Space"
 export function meta() {
@@ -44,6 +45,7 @@ const Home = () => {
             <Meeting/>
             <Closer/>
             <Funnel/>
+            <FAQ/>
             <CTA/>
             <Space/>
             <Footer/>
