@@ -16,6 +16,7 @@ interface TextProbs {
 const textTypeConf: Record<TextType, { fontFamliy: string, fontType: keyof React.JSX.IntrinsicElements, fontWeight: string, fontSize: string }> = {
     Heading: { fontFamliy: 'Manrope', fontType: 'h1', fontWeight: '800', fontSize:"45px" },
     SubHeading: { fontFamliy: 'Inter', fontType: 'h2', fontWeight: '500', fontSize:"20px" },
+    
     Text: { fontFamliy: 'Inter', fontType: 'p', fontWeight: '400', fontSize:"16" }
 }
 

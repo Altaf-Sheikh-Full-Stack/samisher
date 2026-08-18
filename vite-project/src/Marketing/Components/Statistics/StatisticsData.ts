@@ -1,6 +1,6 @@
 const StatisticsData = [
     {
-        number: '50,000+',
+        number: '500+',
         label: 'Qualified Meetings Booked',
         description: 'Real meetings. Real clients. Real revenue.'
     },
