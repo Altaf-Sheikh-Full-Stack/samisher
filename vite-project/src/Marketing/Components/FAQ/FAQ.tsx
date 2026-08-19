@@ -2,6 +2,7 @@ import { useState } from 'react'
 import Section from '../../../System/Layouts/Section/Section'
 import Text from '../../../System/Texts/Text'
 import './FAQ.css'
+import Box from '../../../System/Layouts/Box/Box'
 
 const faqs = [
   {
@@ -42,12 +43,12 @@ const FAQ = () => {
   const [openIndex, setOpenIndex] = useState<number | null>(0)
 
   return (
-    <Section size='Fluid'>
-    <Section  className="FAQ">
+   <Section className='FAQ-Section' >
+    <div  className="FAQ" >
       <div className="FAQ-Intro">
         <span className="FAQ-Eyebrow">FAQ</span>
-        <Text textType="Heading" color="Brand">Built for confident pipeline growth.</Text>
-        <Text textType="SubHeading">
+        <Text textType="H2" color="Brand">Built for confident pipeline growth.</Text>
+        <Text >
           Clear answers about our sales-as-a-service model, from launch to qualified meetings.
         </Text>
       </div>
@@ -75,7 +76,7 @@ const FAQ = () => {
           )
         })}
       </div>
-    </Section>
+    </div>
     </Section>
   )
 }

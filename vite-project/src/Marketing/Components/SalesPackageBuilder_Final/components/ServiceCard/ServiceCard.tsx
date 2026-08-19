@@ -35,7 +35,7 @@ export function ServiceCard({
       <header className="spbCard__header">
         <Box>
           <Text className="spbCard__eyebrow">{service.name}</Text>
-          <Text textType="SubHeading">{solution}</Text>
+          <Text textType="H2">{solution}</Text>
           {/* <Text>
             {item.config.targetVolume} {service.resultUnit} / month
           </Text> */}

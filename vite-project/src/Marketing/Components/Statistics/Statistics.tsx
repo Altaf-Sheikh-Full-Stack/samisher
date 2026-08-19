@@ -9,20 +9,17 @@ const Statistics = () => {
 
   return (
     <Section className='Statistics' variant='Transparent'>
-      {/* <Box className='Statistics-Header'>
-        <Text textType='Heading'  >
-          Proven Results for Sales Teams
-        </Text>
-        <Text textType='SubHeading' color='Dark' className='Statistics-Subtitle'>
-          Thousands of companies generate revenue through qualified meetings.
-        </Text>
-      </Box> */}
+      <Box className='Statistics-Header'>
+        {/* <span>THE NUMBERS THAT MATTER</span> */}
+        <Text textType='H2'>A model designed around measurable outcomes.</Text>
+        <Text textType='H3' color='Dark' className='Statistics-Subtitle'>Every campaign is built to generate qualified conversations, not vanity metrics.</Text>
+      </Box>
 
       <Box  className='Statistics-Grid'>
         {StatisticsData.map((stat, index) => (
           <Box key={index} className='Statistics-Card' variant='Transparent'>
-            <Text textType='Heading' color='Brand'>{stat.number}</Text>
-            <Text textType='SubHeading' color='Dark'>{stat.label}</Text>
+            <Text textType='H2' color='Brand'>{stat.number}</Text>
+            <Text textType='H3' color='Dark'>{stat.label}</Text>
             <Text color='Dark' className='Statistics-Description'>{stat.description}</Text>
           </Box>
         ))}

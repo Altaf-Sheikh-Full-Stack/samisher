@@ -1,9 +1,10 @@
 .Banner{
     text-align: center;
-    padding: 5px;
+    padding: 9px;
+    width: 100%;
 }
 
 .Banner span{
-    color: blue;
+    color: #ddd6fe;
     cursor: pointer;
 }

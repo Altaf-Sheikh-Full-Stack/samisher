@@ -16,7 +16,7 @@ export function SolutionModal({ service, onSelect, onBack, onClose }: Props) {
         <header className="spbModal__header">
           <div>
          
-            <Text textType="SubHeading">What exact result do you need?</Text>
+            <Text textType="H2">What exact result do you need?</Text>
             <Text textType="Text">
               A clearer result definition gives you a more meaningful estimate.
             </Text>
@@ -34,7 +34,7 @@ export function SolutionModal({ service, onSelect, onBack, onClose }: Props) {
               <div
                 className={`spbServiceTile__art spbSolutionTile__art spbServiceTile__art--${(index % 4) + 1}`}
               >
-                <Text textType="SubHeading">{solution.label}</Text>
+                <Text textType="H3">{solution.label}</Text>
               </div>
             </button>
           ))}

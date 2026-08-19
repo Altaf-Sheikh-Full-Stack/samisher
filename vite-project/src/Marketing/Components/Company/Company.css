@@ -2,25 +2,53 @@
   display: flex;
   flex-direction: column;
   justify-self: center;
-  margin-top: 5rem;
- 
+  margin: 110px auto;
+  gap: 38px;
+  padding: 20px !important;
+}
+.Company-Intro {
+  max-width: 690px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  
+}
+.Company-Intro > span {
+  color: #6d28d9;
+  font:
+    800 11px/1 Inter,
+    sans-serif;
+  letter-spacing: 0.12em;
+}
+.Company-Intro h2 {
+  color: #172033 !important;
+  font-size: clamp(32px, 4vw, 48px) !important;
+  letter-spacing: -0.045em;
+}
+.Company-Intro p {
+  color: #667085 !important;
+  font-size: 17px !important;
+  font-weight: 400 !important;
+  line-height: -0.045em;
 }
 
 .Company-Img {
   display: grid;
   grid-template-columns: repeat(4, minmax(150px, 1fr));
   justify-content: space-evenly;
-  gap: 20px;
+  gap: 16px;
   width: 100%;
 }
 
 .Company-Info {
-  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
-  padding: 32px;
-  border-radius: 20px;
-  display: grid;
-  place-items: center;
-  min-height: 120px;
+  padding: 24px;
+  border: 1px solid #e5e7eb;
+  border-radius: 14px;
+  min-height: 148px;
+  background: #fff;
+  transition:
+    transform 160ms ease,
+    box-shadow 160ms ease;
 }
 
 .Company-Info img {
@@ -30,27 +58,40 @@
 }
 
 .Company-Info:hover {
-  outline: 5px rgb(124, 58, 237) solid;
+  transform: translateY(-4px);
+  box-shadow: 0 16px 28px rgba(30, 41, 59, 0.1);
 }
-
-.Company-Info-Data {
-  position: fixed;
-  left: 0;
-  top: 0;
-  background-color: white;
-  pointer-events: none;
-  padding: 20px;
-  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
-  max-width: 400px;
-  width: min(90vw, 400px);
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: end;
-  height: auto;
-  gap: 20px;
-  border-radius: 20px;
-  z-index: 10;
+.Company-Quote {
+  display: none;
+}
+.Company-Info:hover .Company-Quote {
+  display: block;
+  position: absolute;
+  inset: 0;
+  padding: 22px;
+  border-radius: 14px;
+  background: #172033;
+  color: #fff;
+}
+.Company-Info {
+  position: relative;
+}
+.Company-Quote p {
+  margin: 0 0 14px;
+  font:
+    500 13px/1.55 Inter,
+    sans-serif;
+}
+.Company-Quote strong,
+.Company-Quote small {
+  display: block;
+  font:
+    700 12px/1.4 Inter,
+    sans-serif;
+}
+.Company-Quote small {
+  color: #cbd5e1;
+  font-weight: 400;
 }
 
 @media (max-width: 900px) {
@@ -61,8 +102,7 @@
 
 @media (max-width: 520px) {
   .Company {
-    margin-top: 3rem;
-    padding: 0 12px;
+    margin: 72px auto;
   }
 
   .Company-Img {
@@ -72,7 +112,7 @@
 
   .Company-Info {
     min-height: 90px;
-    padding: 10px;
+    padding: 12px;
     border-radius: 12px;
   }
 
@@ -80,12 +120,5 @@
     max-width: 100%;
     height: auto;
     object-fit: contain;
-  }
-
-  .Company-Info-Data {
-    left: 50% !important;
-    top: 50% !important;
-    transform: translate(-50%, -50%) !important;
-    width: min(88vw, 320px);
   }
 }

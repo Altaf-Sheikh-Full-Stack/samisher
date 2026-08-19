@@ -13,21 +13,18 @@ const CTA = () => {
     return (
         <Section className="CTA" variant="Secondary" rounded="Bubble">
             <Box variant="Secondary" className="CTA-Left">
-                <Text color="Lite" textType="Heading">
-                    Ready to get clients on autopilot?
+                <Text color="White" textType="H2">
+                    Turn your pipeline into a predictable growth channel.
                 </Text>
                 <Text textType="Text" color="Lite">
-                    Book a free discovery call to discuss your goals, challenges, and how
-                    we can help. We’ll walk you through our process, and if it’s a fit,
-                    guide you through onboarding to get started on delivering qualified
-                    appointments.
+                    Get a clear plan for the right prospects, message, and meeting volume—before you commit to a campaign.
                 </Text>
             </Box>
             <Box variant="Transparent" className="CTA-Right" >
                 <Box>
-                    <Text textType="SubHeading">Starting at </Text>
-                    <Text color="Brand" textType="Heading">$7</Text>
-                    <Text textType="SubHeading">per appointment</Text>
+                    <Text textType="Text">Starting at </Text>
+                    <Text color="Brand" textType="H2">$7</Text>
+                    <Text textType="Text">per appointment</Text>
                     <Text>Every meeting has a price. You only pay when it's booked.</Text>
                 </Box>
                 <Box className="CTA-Right-Info">
@@ -38,7 +35,7 @@ const CTA = () => {
                     <Text>💰 Collection service</Text>
                 </Box>
                 <Box>
-                    <Button rounded="Bubble">BOOK A DEMO CALL ❯❯❯❯</Button>
+                    <Button rounded="Bubble"><a style={{color:'white', textDecoration:'none'}} href="https://calendly.com/samisher-sales/30min" target="_blank" rel="noopener noreferrer">Book your free strategy call →</a></Button>
                 </Box>
                 <Box className="CTA-Right-Reviews">
                     <Box className="CTA-Right-Reviews-Imgs">

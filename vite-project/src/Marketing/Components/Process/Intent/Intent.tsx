@@ -9,12 +9,12 @@ const Intent = () => {
     return(
         <Section className="Intent" variant="Secondary" rounded="Bubble">
                     <Box className="Intent-Info" variant="Secondary">
-                        <Text textType="Heading" color="Lite">Target the buyers already in market</Text>
+                        <Text textType="H2" color="Lite">Target the buyers already in market</Text>
                         <Box variant="Secondary" className="Lead-Info-Point">
-                            <Text color="Lite" textType="SubHeading">Spot active buyers</Text>
-                            <Text color="Lite" textType="SubHeading">Prioritize hot leads</Text>
-                            <Text color="Lite" textType="SubHeading">Trigger faster outreach</Text>
-                            <Text color="Lite" textType="SubHeading">Improve close rates</Text>
+                            <Text color="Lite" textType="H4">Spot active buyers</Text>
+                            <Text color="Lite" textType="H4">Prioritize hot leads</Text>
+                            <Text color="Lite" textType="H4">Trigger faster outreach</Text>
+                            <Text color="Lite" textType="H4">Improve close rates</Text>
                         </Box>
                         <Button variant="Primary" rounded="Bubble" >Book demo</Button>
                     </Box>

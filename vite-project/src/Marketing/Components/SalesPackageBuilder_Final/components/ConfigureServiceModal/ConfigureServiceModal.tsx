@@ -72,7 +72,7 @@ export function ConfigureServiceModal({
       <div className="ServiceModal ServiceModal--configure">
         <header className="ServiceModal-header">
           <div>
-            <Text textType="SubHeading">{service.name}</Text>
+            <Text textType="H2">{service.name}</Text>
             <Text textType="Text">{service.description}</Text>
           </div>
           <button className="ServiceModal-close" onClick={onClose}>×</button>

@@ -21,7 +21,7 @@ export function PackageSummary({
 
   return (
     <Section rounded="Bubble" className="spbSummary" >
-      <Text textType="SubHeading">Your estimated cost</Text>
+      <Text textType="H2">Your estimated cost</Text>
       <Text textType="Text">
         {activeServiceCount} active service
         {activeServiceCount === 1 ? "" : "s"} included.
@@ -30,8 +30,8 @@ export function PackageSummary({
    
       <div className="spbSummary__rows">
         <Box>
-          <Text textType="SubHeading" >Cost</Text>
-          <Text textType="SubHeading">
+          <Text textType="H4" >Cost</Text>
+          <Text textType="H4">
             {formatRange(
               estimate.monthlySpendMin,
               estimate.monthlySpendMax,
@@ -40,13 +40,13 @@ export function PackageSummary({
         </Box>
 
         <Box className="bonus">
-          <Text textType="SubHeading">Discount</Text>
-          <Text textType="SubHeading">−{formatMoney(estimate.bonus)}</Text>
+          <Text textType="H4">Discount</Text>
+          <Text textType="H4">−{formatMoney(estimate.bonus)}</Text>
         </Box>
 
         <Box className="final">
-          <Text textType="SubHeading">Final</Text>
-          <Text textType="SubHeading">
+          <Text textType="H4">Final</Text>
+          <Text textType="H4">
             {finalFullyCovered
               ? "Fully covered"
               : formatRange(

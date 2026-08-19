@@ -1,16 +1,4 @@
-.Button{
-    border: none;
-    padding: 10px;
-    cursor: pointer;
-    transition: 100ms;
-    font-size: 16px;
-}
-
-.Button:hover{
-    transform: scale(1.03);
-    
-}
-
-.Button:active{
-    transform: scale(1);
-}
+.Button { border: 1px solid transparent; padding: 13px 19px; cursor: pointer; transition: transform 160ms ease, box-shadow 160ms ease, background 160ms ease; font: 700 14px/1 Inter, sans-serif; letter-spacing: .01em; }
+.Button:hover { transform: translateY(-2px); box-shadow: 0 10px 22px rgba(91, 57, 229, .22); }
+.Button:active { transform: translateY(0); }
+.Button:focus-visible { outline: 3px solid #c4b5fd; outline-offset: 3px; }

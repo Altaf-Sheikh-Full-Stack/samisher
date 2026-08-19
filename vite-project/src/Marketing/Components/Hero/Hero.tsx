@@ -10,26 +10,27 @@ const Hero = () => {
     return (
         <Section className="Home" size="Fixed">
             <Box className="Hero-Text">
-                <Text textType="Heading" color="Brand">Pay for Meetings. Not Promises.</Text>
-                <Text textType="SubHeading">20–50+ qualified meetings every month. Fill your pipeline. Grow revenue. No sales team required.</Text>
+                {/* <span className="Hero-Eyebrow">Performance-based B2B growth</span> */}
+                <Text textType="H1" weight="700" color="Dark">Pay for qualified meetings.<br />Not promises.</Text>
+                <Text textType="H3" color="Lite">20–50+ qualified meetings every month. Fill your pipeline. Grow revenue. No sales team required.</Text>
             </Box>
 
             <Box className="Hero-Point">
                 <div className="Hero-PointItem">
                     <span>🌎</span>
-                    <Text>Global SDR Team</Text>
+                    <Text textType="Text" color="Black" weight="500">Global SDR Team</Text>
                 </div>
                 <div className="Hero-PointItem">
                     <span>📅</span>
-                    <Text>Qualified Meetings</Text>
+                    <Text textType="Text" color="Black" weight="500">Qualified Meetings</Text>
                 </div>
                 <div className="Hero-PointItem">
                     <span>🎯</span>
-                    <Text>USA, UK, Australia Focused</Text>
+                    <Text textType="Text" color="Black" weight="500">USA, UK, Australia Focused</Text>
                 </div>
                 <div className="Hero-PointItem">
                     <span>💰</span>
-                    <Text>Pay Per Meeting</Text>
+                    <Text textType="Text" color="Black" weight="500">Pay Per Meeting</Text>
                 </div>
             </Box>
 
@@ -42,12 +43,12 @@ const Hero = () => {
                 
             </Box>
 
-            <Text>Starting at $7 per meeting</Text>
+            <Text className="Hero-Note" textType="H5" weight="400" color="Lite">Starting at $7 per meeting · No long-term hiring commitment</Text>
 
             <Box className="Hero-Img">
                 <img src={img} alt="" />
                 <Box>
-                    <Button rounded="Bubble">Book intaective demo ❯❯❯❯</Button>
+                    <Button rounded="Bubble"><a style={{color:'white', textDecoration:'none'}} href="https://calendly.com/samisher-sales/30min" target="_blank" rel="noopener noreferrer">See how it works →</a></Button>
                 </Box>
             </Box>
         </Section>

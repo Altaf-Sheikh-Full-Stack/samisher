@@ -41,7 +41,7 @@ const Home = () => {
             <Funnel/>
             <FAQ/>
             <CTA/>
-            <Space/>
+            {/* <Space/> */}
             <Footer/>
         </>
 

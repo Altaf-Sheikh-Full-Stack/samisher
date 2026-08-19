@@ -9,12 +9,12 @@ const Closer = () => {
     return(
         <Section className="Closer" variant="Secondary" rounded="Bubble">
                     <Box className="Closer-Info" variant="Secondary">
-                        <Text textType="Heading" color="Lite">Turn qualified interest into closed revenue</Text>
+                        <Text textType="H2" color="Lite">Turn qualified interest into closed revenue</Text>
                         <Box variant="Secondary" className="Lead-Info-Point">
-                            <Text textType="SubHeading" color="Lite">• AI-powered qualification</Text>
-                            <Text textType="SubHeading" color="Lite">• Human-driven closing</Text>
-                            <Text textType="SubHeading" color="Lite">• Seamless integration</Text>
-                            <Text textType="SubHeading" color="Lite">• Improved conversion rates</Text>
+                            <Text textType="H4" color="Lite">• AI-powered qualification</Text>
+                            <Text textType="H4" color="Lite">• Human-driven closing</Text>
+                            <Text textType="H4" color="Lite">• Seamless integration</Text>
+                            <Text textType="H4" color="Lite">• Improved conversion rates</Text>
                         </Box>
                         <Button variant="Primary" rounded="Bubble" >Book demo</Button>
                     </Box>

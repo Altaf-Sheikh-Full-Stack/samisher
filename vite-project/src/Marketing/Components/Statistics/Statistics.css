@@ -2,13 +2,35 @@
   display: flex;
   flex-direction: column;
   justify-self: center;
-  margin-top: 5rem;
-  padding: 50px 40px;
-  gap: 50px;
-  box-shadow: 0 18px 50px rgba(76, 29, 149, 0.08);
+  margin: 110px auto;
+  padding: 58px;
+  gap: 42px;
+  background: #f1f5ff !important;
+  border: 1px solid #dbe4ff;
+  border-radius: 20px;
+  /* https://grabient.com/_gAAgVCfYagXLgPNg3ogBogECgBjgCCgG4gOu */
+
+background: linear-gradient(270deg, #ff71ca 0.000%, #dd5fec 20.000%, #b368ff 40.000%, #868aff 60.000%, #57c1fe 80.000%, #26ffe8 100.000%) !important;
 }
-
-
+.Statistics-Header {
+  max-width: 650px;
+  background: transparent !important;
+  display: flex;
+  flex-direction: column;
+  gap: 13px;
+}
+.Statistics-Header span {
+  color: #6d28d9;
+  font:
+    800 11px/1 Inter,
+    sans-serif;
+  letter-spacing: 0.12em;
+}
+.Statistics-Header h1 {
+  color: #172033 !important;
+  font-size: clamp(32px, 4vw, 46px) !important;
+  letter-spacing: -0.045em;
+}
 
 .Statistics-Badge {
   font-size: 2.5rem;
@@ -24,7 +46,7 @@
 .Statistics-Grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 24px;
+  gap: 14px;
   width: 100%;
 }
 
@@ -32,19 +54,19 @@
   display: flex;
   flex-direction: column;
   gap: 5px;
-  padding: 20px;
-  /* background: white !important; */
-  /* border: 1px solid #e5e5e7; */
-  border-radius: 14px;
-  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+  padding: 23px;
+  background: white !important;
+  border: 1px solid #dbe4ff;
+  border-radius: 12px;
+  box-shadow: none;
 }
 
-.Statistics-Card h1 {
+.Statistics-Card h2 {
   margin: 0 0 8px 0 !important;
   line-height: 1.2 !important;
 }
 
-.Statistics-Card h2 {
+.Statistics-Card h3 {
   margin: 0 0 6px 0 !important;
   font-size: 16px !important;
   font-weight: 600 !important;
@@ -52,7 +74,7 @@
 
 .Statistics-Description {
   font-size: 13px !important;
-  color: #999 !important;
+  color: #667085 !important;
   line-height: 1.4;
 }
 
@@ -66,7 +88,7 @@
   .Statistics {
     padding: 32px 20px;
     gap: 30px;
-    margin-top: 3rem;
+    margin: 72px auto;
   }
 
   .Statistics-Grid {

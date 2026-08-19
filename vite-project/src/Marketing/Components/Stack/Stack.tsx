@@ -1,4 +1,5 @@
 import Section from '../../../System/Layouts/Section/Section'
+import Text from '../../../System/Texts/Text'
 import './Stack.css'
 
 const sections = [
@@ -49,14 +50,11 @@ const sections = [
 const Stack = () => {
   return (
     <Section size='Fixed' className="Stack" aria-label="How Samisher works">
-      <nav className="Stack-Nav" aria-label="Sales process">
-        {sections.map((section) => (
-          <a href={`#stack-${section.label.toLowerCase().replaceAll(' ', '-')}`} key={section.label}>{section.label}</a>
-        ))}
-        <a className="Stack-NavCta" href="https://calendly.com/samisher-sales/30min" target="_blank" rel="noopener noreferrer">
-          Book a demo
-        </a>
-      </nav>
+      <div className="Stack-Intro">
+        {/* <span>YOUR SALES ENGINE, YOUR WAY</span> */}
+        <Text textType='H2' color='Dark' >Choose the revenue support you need now.</Text>
+        <Text textType='Text' >Start with the part of the sales process holding you back. Expand as your pipeline grows.</Text>
+      </div>
 
       <div className="Stack-Panels">
         {sections.map((section, index) => (
@@ -64,10 +62,9 @@ const Stack = () => {
             className="Stack-Panel"
             id={`stack-${section.label.toLowerCase().replaceAll(' ', '-')}`}
             key={section.label}
-            style={{ '--stack-index': index } as React.CSSProperties}
           >
             <div className="Stack-PanelHeading">
-              <span>{String(index + 1).padStart(2, '0')}</span>
+              {/* <span>Service {String(index + 1).padStart(2, '0')}</span> */}
               <h2>{section.title}</h2>
             </div>
             <div className="Stack-FeatureGrid">

@@ -1,11 +1,14 @@
-body{
-    margin: 0%;
-    padding: 0%;
-    box-sizing: border-box
+:root {
+  font-family: Inter, Arial, sans-serif;
+  color: #172033;
+  background: #f8fafc;
+  font-synthesis: none;
 }
 
-*{
-    padding: 0%;
-    margin: 0%;
-    box-sizing: border-box
-}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { margin: 0; min-width: 320px; }
+a { color: inherit; }
+section { width: min(100% - 48px, 1180px); }
+
+@media (max-width: 600px) { section { width: calc(100% - 32px); } }

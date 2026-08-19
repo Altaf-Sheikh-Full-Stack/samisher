@@ -10,12 +10,12 @@ const Lead = () => {
     return (
         <Section className="Lead" variant="Primary" rounded="Bubble">
             <Box className="Lead-Info" variant="Primary">
-                <Text textType="Heading" color="Lite">From Zero to Qualified Leads — Powered by AI + Humans.</Text>
+                <Text textType="H2" color="Lite">From Zero to Qualified Leads — Powered by AI + Humans.</Text>
                 <Box variant="Primary" className="Lead-Info-Point">
-                    <Text textType="SubHeading"  color="Lite">• AI prospecting</Text>
-                    <Text textType="SubHeading" color="Lite">• Human qualification</Text>
-                    <Text textType="SubHeading" color="Lite">• Faster bookings</Text>
-                    <Text textType="SubHeading" color="Lite">• Clear reporting</Text>
+                    <Text textType="H4"  color="Lite">• AI prospecting</Text>
+                    <Text textType="H4" color="Lite">• Human qualification</Text>
+                    <Text textType="H4" color="Lite">• Faster bookings</Text>
+                    <Text textType="H4" color="Lite">• Clear reporting</Text>
                 </Box>
                 <Button variant="Secondary" rounded="Bubble" >Book demo</Button>
             </Box>
