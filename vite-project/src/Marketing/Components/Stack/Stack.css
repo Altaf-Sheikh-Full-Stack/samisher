@@ -35,7 +35,7 @@
   padding: clamp(26px, 4vw, 42px);
   background: #fff;
   border: 1px solid #e4e7ec;
-  border-radius: 18px;
+  /* border-radius: 18px; */
 }
 .Stack-PanelHeading {
   display: flex;
@@ -43,13 +43,11 @@
   gap: 14px;
   margin-bottom: 30px;
 }
-.Stack-PanelHeading h2 {
-  margin: 0;
-  color: #172033;
-  font:
-    800 clamp(28px, 3vw, 40px)/1.1 Manrope,
-    sans-serif;
-  letter-spacing: -0.04em;
+.Stack-PanelHeading h3 {
+  margin: 0 !important;
+  color: #172033 !important;
+  letter-spacing: -0.04em !important;
+  font:clamp(22px, 3vw, 38px)/1.1 Manrope,sans-serif !important;
 }
 .Stack-FeatureGrid {
   display: grid;
@@ -61,7 +59,7 @@
   overflow: hidden;
   background: #fff;
   border: 1px solid #e5e7eb;
-  border-radius: 12px;
+  /* border-radius: 12px; */
   transition:
     transform 160ms ease,
     box-shadow 160ms ease;

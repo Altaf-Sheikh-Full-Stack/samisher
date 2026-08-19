@@ -32,11 +32,11 @@ export function meta() {
 
 const Pricing = () => {
     return(
-        <Section size="Fluid">
+        <>
             <Banner/>
             <Navbar/>
             <ServiceBuilder/>
-        </Section>
+        </>
     )
 }
 

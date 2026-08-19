@@ -65,7 +65,7 @@ const Stack = () => {
           >
             <div className="Stack-PanelHeading">
               {/* <span>Service {String(index + 1).padStart(2, '0')}</span> */}
-              <h2>{section.title}</h2>
+              <Text textType='H3' color='Dark' weight='400'>{section.title}</Text>
             </div>
             <div className="Stack-FeatureGrid">
               {section.cards.map(([title, description, icon], cardIndex) => (

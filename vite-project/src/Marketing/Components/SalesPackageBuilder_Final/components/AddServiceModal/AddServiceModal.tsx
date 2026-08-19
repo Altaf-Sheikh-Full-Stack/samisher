@@ -14,8 +14,8 @@ export function AddServiceModal({ services, onSelect, onClose }: Props) {
       <div className="spbModal spbModal--services">
         <header className="spbModal__header">
           <div>
-            <Text textType="H2">Choose a service</Text>
-            <Text textType="Text">Start with the result you want us to deliver.</Text>
+            <Text textType="H3" weight="500">Choose a service</Text>
+            <Text textType="Text" color="Lite">Start with the result you want us to deliver.</Text>
           </div>
           <button className="spbModal__close" onClick={onClose}>×</button>
         </header>
@@ -28,7 +28,7 @@ export function AddServiceModal({ services, onSelect, onClose }: Props) {
               onClick={() => onSelect(service.id)}
             >
               <div className={`spbServiceTile__art spbServiceTile__art--${index + 1}`}>
-                <Text textType="H2">{service.name}</Text>
+                <Text textType="H3">{service.name}</Text>
               </div>
             </button>
           ))}
