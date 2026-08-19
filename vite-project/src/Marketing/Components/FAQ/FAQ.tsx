@@ -2,7 +2,7 @@ import { useState } from 'react'
 import Section from '../../../System/Layouts/Section/Section'
 import Text from '../../../System/Texts/Text'
 import './FAQ.css'
-import Box from '../../../System/Layouts/Box/Box'
+
 
 const faqs = [
   {

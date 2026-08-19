@@ -57,7 +57,7 @@ const Stack = () => {
       </div>
 
       <div className="Stack-Panels">
-        {sections.map((section, index) => (
+        {sections.map((section) => (
           <article
             className="Stack-Panel"
             id={`stack-${section.label.toLowerCase().replaceAll(' ', '-')}`}

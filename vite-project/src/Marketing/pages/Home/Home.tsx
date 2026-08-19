@@ -8,7 +8,7 @@ import Funnel from "../../Components/Statistics/Statistics"
 import CTA from "../../Components/CTA/CTA"
 import FAQ from "../../Components/FAQ/FAQ"
 import Footer from "../../Components/Footer/Footer"
-import Space from "../../Components/Space/Space"
+
 export function meta() {
   const title = 'Samisher —  B2B Sales Outsourcing. Pay Only for Qualified Meetings.'
   const description = 'Samisher helps you pay only for meetings that convert. Schedule, qualify, and close with confidence — pay per successful meeting.'
@@ -41,7 +41,7 @@ const Home = () => {
             <Funnel/>
             <FAQ/>
             <CTA/>
-            {/* <Space/> */}
+            
             <Footer/>
         </>
 

@@ -11,7 +11,7 @@ export function Metric({ label, value }: Props) {
   return (
     <Section rounded="Bubble" className="spbMetric">
       <Text >{label}</Text>
-      <Text textType="SubHeading">{value}</Text>
+      <Text textType="H2">{value}</Text>
     </Section>
   );
 }
