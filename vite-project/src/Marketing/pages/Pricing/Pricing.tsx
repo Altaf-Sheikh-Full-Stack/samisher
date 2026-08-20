@@ -10,11 +10,11 @@ export function meta() {
   return [
     { title },
     { name: 'description', content: description },
-    { tagName: 'link', rel: 'canonical', href: 'https://samisher.com/pricing' },
+    { tagName: 'link', rel: 'canonical', href: 'https://samisher.com/pricing/' },
     { property: 'og:title', content: title },
     { property: 'og:description', content: description },
     { property: 'og:type', content: 'website' },
-    { property: 'og:url', content: 'https://samisher.com/pricing' },
+    { property: 'og:url', content: 'https://samisher.com/pricing/' },
     { property: 'og:site_name', content: 'Samisher' },
     { property: 'og:image', content: 'https://samisher.com/S.svg' },
     { name: 'twitter:card', content: 'summary_large_image' },

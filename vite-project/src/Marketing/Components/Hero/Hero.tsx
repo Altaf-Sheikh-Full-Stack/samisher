@@ -37,7 +37,7 @@ const Hero = () => {
             <Box className="Hero-CTA">
                 
                 <Button rounded='Bubble'><a style={{color:'white', textDecoration:'none'}} href="https://calendly.com/samisher-sales/30min" target="_blank" rel="noopener noreferrer">Schedule free demo</a></Button>
-                   <NavLink to="/pricing">
+                   <NavLink to="/pricing/">
                         <Button rounded="Bubble" variant="Secondary">Get Pricing Estimate</Button>
                     </NavLink>
                 

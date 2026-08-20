@@ -27,7 +27,7 @@ const Navbar = () => {
                     <NavLink to="/blogs">
                         <Text color='White' weight='400'>Blogs</Text>
                     </NavLink>
-                    <NavLink to="/pricing">
+                    <NavLink to="/pricing/">
                         <Text color='White' weight='400'>Pricing</Text>
                     </NavLink>
                 </Box>
@@ -51,7 +51,7 @@ const Navbar = () => {
 
             {mobileOpen && (
                 <Section className='Navbar-MobileMenu' variant='Secondary'>
-                    <NavLink to="/pricing" onClick={() => setMobileOpen(false)}>
+                    <NavLink to="/pricing/" onClick={() => setMobileOpen(false)}>
                         <Text color='Lite'>Pricing</Text>
                     </NavLink>
                     <Button rounded='Bubble' onClick={() => setMobileOpen(false)}><a style={{ color: 'white', textDecoration: 'none' }} href="https://calendly.com/samisher-sales/30min" target="_blank" rel="noopener noreferrer">Book Meeting ❯❯❯❯</a></Button>
