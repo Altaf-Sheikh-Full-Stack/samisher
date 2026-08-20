@@ -6,7 +6,7 @@ const SITE_URL = (
 
 const routes = [
   '/',
-  '/pricing',
+  '/pricing/',
 ]
 
 const urls = routes
