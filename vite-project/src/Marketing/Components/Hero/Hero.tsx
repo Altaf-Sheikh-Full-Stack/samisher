@@ -8,7 +8,7 @@ import { NavLink } from "react-router"
 
 const Hero = () => {
     return (
-        <Section className="Home" size="Fixed">
+        <Section className="Home" >
             <Box className="Hero-Text">
                 {/* <span className="Hero-Eyebrow">Performance-based B2B growth</span> */}
                 <Text textType="H1" weight="700" color="Dark">Pay for qualified meetings.<br />Not promises.</Text>

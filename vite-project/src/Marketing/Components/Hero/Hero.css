@@ -1,11 +1,21 @@
-.Home {
-  display: flex;
-  justify-self: center;
+/* .Home {
+  display: flex !important;
+  justify-self: center !important;
   flex-direction: column;
   gap: 26px;
-  text-align: center;
+  text-align: center !important;
   margin-top: 76px;
   padding: 48px 0 0;
+} */
+
+.Home{
+  display: flex !important;
+flex-direction: column;
+gap: 26px;
+text-align: center !important;
+
+margin: 76px auto 0 !important;
+padding: 48px 0 0;
 }
 
 .Hero-Text {
