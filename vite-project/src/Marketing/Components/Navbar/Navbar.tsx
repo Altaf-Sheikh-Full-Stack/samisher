@@ -18,13 +18,13 @@ const Navbar = () => {
                 </NavLink>
 
                 <Box className='Navbar-Items' variant='Secondary'>
-                     <NavLink to="/career">
+                     <NavLink to="/career/">
                         <Text color='White' weight='400'>About us</Text>
                     </NavLink>
-                    <NavLink to="/career">
+                    <NavLink to="/career/">
                         <Text color='White' weight='400'>Career</Text>
                     </NavLink>
-                    <NavLink to="/blogs">
+                    <NavLink to="/blogs/">
                         <Text color='White' weight='400'>Blogs</Text>
                     </NavLink>
                     <NavLink to="/pricing/">

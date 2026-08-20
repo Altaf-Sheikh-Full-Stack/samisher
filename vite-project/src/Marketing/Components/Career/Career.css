@@ -1,0 +1,253 @@
+.Career {
+  display: flex;
+  flex-direction: column;
+  justify-self: center;
+  margin: 110px auto;
+  gap: 32px;
+  padding: 20px !important;
+}
+
+.Career-Intro {
+  max-width: 620px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.Career-Intro h2 {
+  color: #172033 !important;
+  font-size: clamp(32px, 4vw, 48px) !important;
+  letter-spacing: -0.045em;
+  margin: 0 !important;
+  line-height: 1.1 !important;
+}
+
+.Career-Intro p {
+  color: #667085 !important;
+  font-size: 17px !important;
+  font-weight: 400 !important;
+  line-height: 1.6 !important;
+  margin: 0 !important;
+}
+
+/* Job List */
+.Career-List {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.Career-Job {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 20px 4px;
+  border: 0;
+  border-bottom: 1px solid #e5e7eb;
+  background: transparent;
+  cursor: pointer;
+  text-align: left;
+  transition: padding-left 160ms ease;
+}
+
+.Career-Job:last-child {
+  border-bottom: 0;
+}
+
+.Career-Job:hover {
+  padding-left: 12px;
+}
+
+.Career-Job:focus-visible {
+  outline: 3px solid #c4b5fd;
+  outline-offset: 2px;
+}
+
+.Career-JobInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  min-width: 0;
+}
+
+.Career-JobInfo h3 {
+  margin: 0 !important;
+  font-size: 17px !important;
+  letter-spacing: -0.02em !important;
+  color: #172033 !important;
+}
+
+.Career-Chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.Career-Chip {
+  display: inline-flex;
+  align-items: center;
+  min-height: 22px;
+  padding: 0 8px;
+  background: #f3f4f6;
+  color: #6b7280;
+  font: 500 11px/1 Inter, sans-serif;
+}
+
+.Career-Chip--brand {
+  background: #ede9fe;
+  color: #6d28d9;
+  font-weight: 600;
+}
+
+.Career-JobCompensation {
+  flex: 0 0 auto;
+  color: #7c3aed !important;
+  font-size: 14px !important;
+  font-weight: 600 !important;
+  line-height: 1.4 !important;
+  margin: 0 !important;
+}
+
+.Career-JobArrow {
+  display: grid;
+  width: 32px;
+  height: 32px;
+  flex: 0 0 auto;
+  place-items: center;
+  background: #f3f4f6;
+  color: #374151;
+  font: 500 15px/1 Inter, sans-serif;
+  transition: background-color 160ms ease, color 160ms ease;
+}
+
+.Career-Job:hover .Career-JobArrow {
+  background: #7c3aed;
+  color: #fff;
+}
+
+/* Modal */
+.Career-ModalOverlay {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  background: rgba(17, 24, 39, 0.55);
+  display: grid;
+  place-items: center;
+  padding: 24px;
+}
+
+.Career-Modal {
+  position: relative;
+  width: min(600px, 100%);
+  max-height: calc(100vh - 48px);
+  overflow-y: auto;
+  background: #fff;
+  box-shadow: 0 24px 48px rgba(17, 24, 39, 0.18);
+}
+
+.Career-ModalClose {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  z-index: 2;
+  display: grid;
+  width: 32px;
+  height: 32px;
+  place-items: center;
+  border: 0;
+  background: #f3f4f6;
+  color: #6b7280;
+  cursor: pointer;
+  font: 500 13px/1 Inter, sans-serif;
+  transition: background-color 160ms ease, color 160ms ease;
+}
+
+.Career-ModalClose:hover {
+  background: #e5e7eb;
+  color: #111827;
+}
+
+.Career-ModalHeader {
+  padding: 28px 32px 20px;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.Career-ModalHeader h3 {
+  margin: 0 0 12px !important;
+  font-size: 22px !important;
+  letter-spacing: -0.03em !important;
+  color: #172033 !important;
+}
+
+.Career-ModalBody {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+  padding: 24px 32px;
+}
+
+.Career-ModalSection {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.Career-ModalSection > h4 {
+  margin: 0 !important;
+  font-size: 14px !important;
+  font-weight: 700 !important;
+  letter-spacing: -0.01em !important;
+  color: #172033 !important;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.Career-Bullets {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.Career-Bullets span {
+  color: #4b5563;
+  font: 400 14px/1.5 Inter, sans-serif;
+}
+
+.Career-ModalFooter {
+  display: flex;
+  justify-content: flex-end;
+  padding: 16px 32px 24px;
+  border-top: 1px solid #e5e7eb;
+}
+
+@media (max-width: 520px) {
+  .Career {
+    margin: 72px auto;
+  }
+
+  .Career-Job {
+    flex-wrap: wrap;
+  }
+
+  .Career-JobCompensation {
+    flex-basis: 100%;
+  }
+
+  .Career-ModalOverlay {
+    padding: 12px;
+  }
+
+  .Career-ModalHeader {
+    padding: 22px 20px 16px;
+  }
+
+  .Career-ModalBody {
+    padding: 20px;
+  }
+
+  .Career-ModalFooter {
+    padding: 14px 20px 20px;
+  }
+}
