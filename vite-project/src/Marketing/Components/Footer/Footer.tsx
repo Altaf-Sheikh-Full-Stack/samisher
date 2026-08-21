@@ -27,6 +27,7 @@ const Footer = () => {
                     <Text color="Lite">About us</Text>
                     <Link to="/pricing/"><Text color="Lite">Pricing</Text></Link>
                     <Link to="/career/"><Text color="Lite">Career</Text></Link>
+                    <Link to="/blogs/"><Text color="Lite">Blogs</Text></Link>
                 </Box>
                 <Box variant="Secondary" className="Footer-Right">
                     <Text textType="H3" color="Brand">Trust and safety</Text>

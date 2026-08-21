@@ -5,20 +5,28 @@
   "type": "module",
   "scripts": {
     "dev": "react-router dev",
-    "build": "react-router typegen && tsc -b && npm run generate-sitemap && react-router build",
+    "build": "react-router typegen && tsc -b && npm run generate-sitemap && react-router build && npm run ping",
     "generate-sitemap": "node ./scripts/generate-sitemap.js",
+    "ping": "node ./scripts/ping-search-engines.js",
     "lint": "eslint .",
     "preview": "vite preview --outDir build/client"
   },
   "dependencies": {
+    "@portabletext/react": "^7.0.1",
     "@react-router/node": "7.18.2",
+    "@sanity/client": "^7.26.2",
+    "@sanity/code-input": "^7.3.6",
+    "@sanity/image-url": "^2.1.1",
+    "@sanity/vision": "^5.31.2",
     "isbot": "^5",
     "react": "19.2.8",
     "react-dom": "19.2.8",
     "react-router": "7.18.2",
     "react-router-dom": "7.18.2",
     "recharts": "^3.10.1",
-    "sitemap": "^7.1.1"
+    "sanity": "^5.31.2",
+    "sitemap": "^7.1.1",
+    "styled-components": "^6.5.3"
   },
   "devDependencies": {
     "@eslint/js": "^10.0.1",

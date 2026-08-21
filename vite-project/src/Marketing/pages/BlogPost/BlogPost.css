@@ -1,0 +1,251 @@
+.Post {
+  display: flex !important;
+  flex-direction: column;
+  gap: 40px;
+  margin: 72px auto 120px !important;
+}
+
+/* Header */
+.post-header {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  max-width: 720px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.post-back {
+  color: #667085;
+  font-size: 14px;
+  text-decoration: none;
+  transition: color 160ms ease;
+}
+
+.post-back:hover {
+  color: #7c3aed;
+}
+
+.post-header h1 {
+  margin: 0;
+  font-family: Manrope, Inter, sans-serif;
+  font-size: clamp(30px, 4.5vw, 48px);
+  font-weight: 700;
+  letter-spacing: -0.045em;
+  line-height: 1.12;
+  color: #172033;
+}
+
+.post-meta {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  color: #98a2b3;
+  font-size: 14px;
+}
+
+.post-meta-author {
+  color: #475467;
+  font-weight: 500;
+}
+
+.post-avatar {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-right: 2px;
+}
+
+/* Hero image */
+.post-hero {
+  margin: 0 auto;
+  max-width: 820px;
+  width: 100%;
+}
+
+.post-hero img {
+  width: 100%;
+  height: auto;
+  border-radius: 20px;
+  display: block;
+  aspect-ratio: 2 / 1;
+  object-fit: cover;
+}
+
+/* Article body */
+.post-body {
+  max-width: 680px;
+  width: 100%;
+  margin: 0 auto;
+  font-size: 17px;
+  line-height: 1.75;
+  color: #344054;
+}
+
+.post-body h2,
+.post-body h3,
+.post-body h4 {
+  font-family: Manrope, Inter, sans-serif;
+  letter-spacing: -0.03em;
+  color: #172033;
+  scroll-margin-top: 96px;
+}
+
+.post-body h2 {
+  position: relative;
+  font-size: clamp(24px, 3vw, 32px);
+  font-weight: 800;
+  letter-spacing: -0.04em;
+  margin: 52px 0 16px;
+}
+
+.post-body h3 {
+  font-size: clamp(19px, 2.4vw, 24px);
+  font-weight: 700;
+  margin: 40px 0 12px;
+}
+
+.post-body h4 {
+  font-size: 18px;
+  font-weight: 700;
+  margin: 32px 0 10px;
+}
+
+.post-anchor {
+  position: absolute;
+  left: -0.9em;
+  color: #c4b5fd;
+  opacity: 0;
+  text-decoration: none;
+  transition: opacity 0.15s ease;
+}
+
+.post-body h2:hover .post-anchor {
+  opacity: 1;
+}
+
+.post-body p {
+  margin: 0 0 20px;
+}
+
+.post-body ul,
+.post-body ol {
+  margin: 0 0 20px;
+  padding-left: 24px;
+}
+
+.post-body li {
+  margin-bottom: 8px;
+}
+
+.post-body a {
+  color: #7c3aed;
+  text-decoration: underline;
+  text-decoration-color: #ddd6fe;
+  text-underline-offset: 3px;
+}
+
+.post-body blockquote {
+  margin: 32px 0;
+  padding: 20px 26px;
+  border-left: 3px solid #7c3aed;
+  border-radius: 0 14px 14px 0;
+  background: #f9fafb;
+  color: #475467;
+  font-style: italic;
+}
+
+.post-body blockquote p:last-child {
+  margin-bottom: 0;
+}
+
+.post-inline-code {
+  background: #f3f4f6;
+  border-radius: 6px;
+  padding: 2px 6px;
+  font-size: 0.88em;
+}
+
+.post-code {
+  background: #111827;
+  color: #e2e8f0;
+  border-radius: 16px;
+  padding: 22px 26px;
+  overflow-x: auto;
+  font-size: 14px;
+  line-height: 1.6;
+  margin: 32px 0;
+}
+
+.post-figure {
+  margin: 36px 0;
+}
+
+.post-figure img {
+  width: 100%;
+  height: auto;
+  border-radius: 16px;
+  display: block;
+}
+
+.post-figure figcaption {
+  margin-top: 10px;
+  text-align: center;
+  color: #98a2b3;
+  font-size: 13px;
+}
+
+/* Related posts — light list style */
+.post-related {
+  max-width: 680px;
+  width: 100%;
+  margin: 24px auto 0;
+}
+
+.post-related h2 {
+  font-family: Manrope, Inter, sans-serif;
+  font-size: 22px;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  margin: 0 0 8px;
+  color: #172033;
+}
+
+.post-related-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.post-related-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 18px 4px;
+  border-bottom: 1px solid #e5e7eb;
+  text-decoration: none;
+  transition: padding-left 160ms ease;
+}
+
+.post-related-item:last-child {
+  border-bottom: 0;
+}
+
+.post-related-item:hover {
+  padding-left: 12px;
+}
+
+.post-related-title {
+  font-family: Manrope, Inter, sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  color: #172033;
+}
+
+.post-related-arrow {
+  color: #7c3aed;
+  flex-shrink: 0;
+}

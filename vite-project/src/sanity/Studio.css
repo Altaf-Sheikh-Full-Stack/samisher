@@ -1,0 +1,20 @@
+.studio-shell {
+  height: 100dvh;
+}
+
+.studio-shell > div {
+  height: 100%;
+}
+
+.studio-setup {
+  max-width: 640px;
+  margin: 80px auto;
+  padding: 0 24px;
+}
+
+.studio-setup code {
+  background: #f1f5f9;
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-size: 0.9em;
+}
