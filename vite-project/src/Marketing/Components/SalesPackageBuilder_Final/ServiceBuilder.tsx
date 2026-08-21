@@ -127,7 +127,7 @@ export function ServiceBuilder({ onBookMeeting }: ServiceBuilderProps) {
     <Section variant="Transparent" size="Fluid" className="Estimator">
       <div className="Estimator-Content">
         <Box className="Estimator-Header">
-            <Text textType="H4">Price estimator</Text>
+            <Text textType="H3">Price estimator</Text>
           <Button
             variant="Primary"
             rounded="Bubble"
@@ -221,10 +221,9 @@ export function ServiceBuilder({ onBookMeeting }: ServiceBuilderProps) {
 function EmptyState({ onAdd }: { onAdd: () => void }) {
   return (
     <div className="spb__empty">
-      <Text textType="H3">Add service to get estimate</Text>
-      <Text textType="Text">
-        Add the service you want, define the result, and build your package
-        one service at a time.
+      <Text textType="H4" weight="600" >Get an estimate.</Text>
+      <Text textType="Text" color="Lite">
+Add a service, set the outcome, and build your package.
       </Text>
       <Button variant="Primary" rounded="Bubble" onClick={onAdd}>
         Add your first service

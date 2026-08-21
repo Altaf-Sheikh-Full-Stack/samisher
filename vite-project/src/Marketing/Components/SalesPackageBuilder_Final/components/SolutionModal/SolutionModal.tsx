@@ -16,8 +16,8 @@ export function SolutionModal({ service, onSelect, onBack, onClose }: Props) {
         <header className="spbModal__header">
           <div>
          
-            <Text textType="H2">What exact result do you need?</Text>
-            <Text textType="Text">
+            <Text textType="H3" weight="600">What exact result do you need?</Text>
+            <Text textType="Text" color="Lite">
               A clearer result definition gives you a more meaningful estimate.
             </Text>
           </div>
