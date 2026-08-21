@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "react-router dev",
-    "build": "react-router typegen && tsc -b && npm run generate-sitemap && react-router build && npm run ping",
+    "build": "react-router typegen && tsc -b && npm run generate-sitemap && react-router build && cp build/client/__spa-fallback.html build/client/404.html && npm run ping",
     "generate-sitemap": "node ./scripts/generate-sitemap.js",
     "ping": "node ./scripts/ping-search-engines.js",
     "lint": "eslint .",

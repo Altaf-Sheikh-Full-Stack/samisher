@@ -75,7 +75,7 @@ async function main() {
 
   const postUrls = posts.map(
     ({ slug, lastmod }) => `  <url>
-    <loc>${SITE_URL}/blog/${slug}/</loc>
+    <loc>${SITE_URL}/blogs/${slug}/</loc>
     ${lastmod ? `<lastmod>${isoDate(lastmod)}</lastmod>` : ''}
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>

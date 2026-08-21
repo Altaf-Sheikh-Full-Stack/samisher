@@ -33,8 +33,13 @@ async function getBlogPaths(): Promise<string[]> {
     console.log(`[prerender] Found ${slugs.length} blog post(s) in Sanity`)
     return slugs.map((slug) => `/blogs/${slug}`)
   } catch (error) {
-    console.warn('[prerender] Failed to fetch blog slugs from Sanity:', error)
-    return []
+    // Fail loudly: deploying without the posts would silently wipe the blog
+    // from the site (and look like deleted content to search engines).
+    throw new Error(
+      '[prerender] Could not fetch blog slugs from Sanity. Failing the build so we never deploy a site with missing blog posts. ' +
+        'Check SANITY_PROJECT_ID / SANITY_DATASET and network access, then retry. Original error: ' +
+        String(error)
+    )
   }
 }
 
