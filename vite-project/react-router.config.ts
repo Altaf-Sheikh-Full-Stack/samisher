@@ -49,6 +49,15 @@ export default {
   ssr: false,
   async prerender() {
     const blogPaths = await getBlogPaths()
+    if (projectId && blogPaths.length === 0) {
+      // Sanity is configured but there are no published, indexable posts.
+      // The /blogs/:slug/ route exports a `loader`, which React Router only
+      // allows when the route has at least one prerendered path — without a
+      // path here, the whole build fails with "Invalid route export". The
+      // sentinel page renders the "Post not found" state with a noindex
+      // meta tag and is linked from nowhere, so it stays invisible.
+      blogPaths.push('/blogs/-')
+    }
     return [...staticRoutes, ...blogPaths]
   },
 } satisfies Config

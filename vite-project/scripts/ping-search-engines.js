@@ -76,13 +76,17 @@ async function getUrls() {
 
 // ---------- change detection ----------
 
-async function getChangedUrls(urls) {
-  let cache = {}
+async function readCache() {
   try {
-    cache = JSON.parse(await readFile(CACHE_FILE, 'utf8'))
+    return JSON.parse(await readFile(CACHE_FILE, 'utf8'))
   } catch {
-    // First run — everything is new.
+    // First run — nothing known yet.
+    return {}
   }
+}
+
+async function getChangedUrls(urls) {
+  const cache = await readCache()
 
   const changedPosts =
     process.env.PING_FORCE === '1' ? urls : urls.filter((u) => cache[u.url] !== u.lastmod)
@@ -105,14 +109,19 @@ async function getChangedUrls(urls) {
   return [...staticUrls, ...changedPosts]
 }
 
-async function saveCache(urls) {
-  let cache = {}
-  try {
-    cache = JSON.parse(await readFile(CACHE_FILE, 'utf8'))
-  } catch {
-    // ignore
-  }
+// Post URLs that were announced before but no longer exist in Sanity —
+// search engines are told they are gone so they drop out of results fast.
+async function getDeletedUrls(currentUrls) {
+  const cache = await readCache()
+  const currentSet = new Set(currentUrls.map((u) => u.url))
+  const postPattern = new RegExp(`^${SITE_URL}/blogs/[^/]+/$`)
+  return Object.keys(cache).filter((url) => postPattern.test(url) && !currentSet.has(url))
+}
+
+async function saveCache(urls, deletedUrls = []) {
+  const cache = await readCache()
   for (const { url, lastmod } of urls) cache[url] = lastmod
+  for (const url of deletedUrls) delete cache[url]
   await writeFile(CACHE_FILE, JSON.stringify(cache, null, 2), 'utf8')
 }
 
@@ -202,7 +211,7 @@ async function pingGoogle(urls) {
     return
   }
 
-  for (const { url } of urls) {
+  for (const { url, type } of urls) {
     try {
       const res = await fetch('https://indexing.googleapis.com/v3/urlNotifications:publish', {
         method: 'POST',
@@ -210,11 +219,11 @@ async function pingGoogle(urls) {
           Authorization: `Bearer ${token}`,
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ url, type: 'URL_UPDATED' }),
+        body: JSON.stringify({ url, type }),
       })
       const body = await res.json()
       if (res.ok) {
-        console.log(`[google] Queued: ${url}`)
+        console.log(`[google] ${type === 'URL_DELETED' ? 'Deleted' : 'Queued'}: ${url}`)
       } else {
         console.warn(`[google] ${res.status} for ${url}: ${body.error?.message || ''}`)
       }
@@ -230,17 +239,34 @@ async function main() {
   try {
     const allUrls = await getUrls()
     const changed = await getChangedUrls(allUrls)
+    const deleted = await getDeletedUrls(allUrls)
 
-    if (changed.length === 0) {
-      console.log('[ping] No new or changed URLs — nothing to do.')
+    // The blog index lists the posts, so deletions must refresh it too.
+    if (deleted.length > 0 && !changed.some((u) => u.url === `${SITE_URL}/blogs/`)) {
+      changed.push({ url: `${SITE_URL}/blogs/`, lastmod: new Date().toISOString() })
+    }
+
+    if (changed.length === 0 && deleted.length === 0) {
+      console.log('[ping] No new, changed or deleted URLs — nothing to do.')
       return
     }
 
-    console.log(`[ping] Pinging ${changed.length} URL(s):`)
-    for (const { url } of changed) console.log(`  - ${url}`)
+    if (changed.length > 0) {
+      console.log(`[ping] Pinging ${changed.length} URL(s):`)
+      for (const { url } of changed) console.log(`  - ${url}`)
+    }
+    if (deleted.length > 0) {
+      console.log(`[ping] Announcing ${deleted.length} deleted URL(s):`)
+      for (const url of deleted) console.log(`  - ${url}`)
+    }
 
-    await Promise.allSettled([pingIndexNow(changed), pingGoogle(changed)])
-    await saveCache(changed)
+    const notifications = [
+      ...changed.map((u) => ({ ...u, type: 'URL_UPDATED' })),
+      ...deleted.map((url) => ({ url, type: 'URL_DELETED' })),
+    ]
+
+    await Promise.allSettled([pingIndexNow(notifications), pingGoogle(notifications)])
+    await saveCache(changed, deleted)
   } catch (error) {
     // Never break the build because of a ping failure.
     console.warn(`[ping] Skipped due to error: ${error.message}`)

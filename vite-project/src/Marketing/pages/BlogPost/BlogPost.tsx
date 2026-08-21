@@ -119,9 +119,9 @@ export async function loader({ params }: { params: { slug?: string } }) {
   const post = client
     ? await client.fetch<Post | null>(postBySlugQuery, { slug: params.slug })
     : null
-  if (!post) {
-    throw new Response('Post not found', { status: 404 })
-  }
+  // Return null instead of throwing a 404 Response: React Router's data-file
+  // prerendering requires a 200 status, and meta()/the component below already
+  // render a noindexed "Post not found" state when there is no post.
   return { post }
 }
 
@@ -167,20 +167,26 @@ export function meta({ data }: { data?: { post?: Post } }) {
   ]
 }
 
+function PostNotFound() {
+  return (
+    <section className="Blogs">
+      <div className="blogs-empty">
+        <h1>Post not found</h1>
+        <p>
+          This article doesn&apos;t exist or has been removed.{' '}
+          <Link to="/blogs/">Browse all posts →</Link>
+        </p>
+      </div>
+    </section>
+  )
+}
+
 export function ErrorBoundary() {
   return (
     <>
       <Banner />
       <Navbar />
-      <section className="Blogs">
-        <div className="blogs-empty">
-          <h1>Post not found</h1>
-          <p>
-            This article doesn&apos;t exist or has been removed.{' '}
-            <Link to="/blogs/">Browse all posts →</Link>
-          </p>
-        </div>
-      </section>
+      <PostNotFound />
       <Footer />
     </>
   )
@@ -188,6 +194,17 @@ export function ErrorBoundary() {
 
 export default function BlogPost() {
   const { post } = useLoaderData<typeof loader>()
+
+  if (!post) {
+    return (
+      <>
+        <Banner />
+        <Navbar />
+        <PostNotFound />
+        <Footer />
+      </>
+    )
+  }
 
   const heroImage = post.mainImage?.assetId
     ? urlFor(post.mainImage.assetId, 1600)
