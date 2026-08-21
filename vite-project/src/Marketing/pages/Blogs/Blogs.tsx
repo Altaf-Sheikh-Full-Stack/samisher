@@ -19,7 +19,7 @@ export async function loader() {
 export function meta() {
   const title = 'Blog — B2B Sales Playbooks & Growth Guides | Samisher'
   const description =
-    'Actionable guides on outbound sales, appointment setting, lead qualification and pipeline growth. Learn how to pay only for meetings that convert.'
+    'Practical guides for outbound sales, better meetings, qualified leads, and pipeline growth. Learn how to focus on meetings that convert.'
 
   return [
     { title },
@@ -126,7 +126,7 @@ export default function Blogs() {
       <section className="Blogs">
         <header className="blogs-intro">
           <span className="chip">Blog</span>
-          <h1>Sales playbooks that pay for themselves</h1>
+          <h1>Sales playbooks that deliver results.</h1>
         </header>
 
         {posts.length === 0 ? (
