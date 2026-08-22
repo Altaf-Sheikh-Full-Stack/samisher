@@ -26,6 +26,7 @@ const dataset = process.env.SANITY_DATASET || process.env.VITE_SANITY_DATASET ||
 const staticRoutes = [
   { path: '/', changefreq: 'weekly', priority: '1.0' },
   { path: '/pricing/', changefreq: 'monthly', priority: '0.9' },
+  { path: '/about/', changefreq: 'monthly', priority: '0.6' },
   { path: '/career/', changefreq: 'monthly', priority: '0.5' },
   { path: '/blogs/', changefreq: 'weekly', priority: '0.8' },
 ]

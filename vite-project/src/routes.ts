@@ -14,6 +14,7 @@ const hasSanity = Boolean(
 export default [
   index('./Marketing/pages/Home/Home.tsx'),
   route('pricing/', './Marketing/pages/Pricing/Pricing.tsx'),
+  route('about/', './Marketing/pages/About/About.tsx'),
   route('career/', './Marketing/pages/Career/Career.tsx'),
   route('blogs/', './Marketing/pages/Blogs/Blogs.tsx'),
   ...(hasSanity

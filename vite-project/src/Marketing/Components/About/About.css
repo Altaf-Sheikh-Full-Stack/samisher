@@ -1,0 +1,66 @@
+.About {
+  display: flex;
+  flex-direction: column;
+  justify-self: center;
+  margin: 110px auto;
+  gap: 20px;
+  padding: 20px !important;
+}
+
+.About h1 {
+  color: #172033 !important;
+  letter-spacing: -0.045em;
+  margin: 0 0 8px !important;
+  line-height: 1.08 !important;
+}
+
+.About-Lead,
+.About-Block p {
+  color: #4b5563 !important;
+  font-size: 16px !important;
+  line-height: 1.7 !important;
+  margin: 0 !important;
+}
+
+.About-Lead {
+  font-size: 17px !important;
+  max-width: 640px;
+}
+
+.About-Block {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  max-width: 640px;
+  margin-top: 32px;
+}
+
+.About-Block h3 {
+  color: #172033 !important;
+  font-size: 19px !important;
+  margin: 0 !important;
+}
+
+.About-Beliefs {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin: 0;
+  padding-left: 18px;
+}
+
+.About-Beliefs li {
+  color: #4b5563;
+  font: 400 16px/1.6 Inter, sans-serif;
+}
+
+.About-Button {
+  align-self: flex-start;
+  margin-top: 8px;
+}
+
+@media (max-width: 700px) {
+  .About {
+    margin: 72px auto;
+  }
+}

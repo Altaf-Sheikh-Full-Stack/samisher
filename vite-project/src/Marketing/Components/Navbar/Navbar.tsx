@@ -18,7 +18,7 @@ const Navbar = () => {
                 </NavLink>
 
                 <Box className='Navbar-Items' variant='Secondary'>
-                     <NavLink to="/career/">
+                     <NavLink to="/about/">
                         <Text color='White' weight='400'>About us</Text>
                     </NavLink>
                     <NavLink to="/career/">
@@ -51,6 +51,9 @@ const Navbar = () => {
 
             {mobileOpen && (
                 <Section className='Navbar-MobileMenu' variant='Secondary'>
+                    <NavLink to="/about/" onClick={() => setMobileOpen(false)}>
+                        <Text color='Lite'>About us</Text>
+                    </NavLink>
                     <NavLink to="/pricing/" onClick={() => setMobileOpen(false)}>
                         <Text color='Lite'>Pricing</Text>
                     </NavLink>
