@@ -6,7 +6,7 @@ const dataset = process.env.SANITY_DATASET || process.env.VITE_SANITY_DATASET ||
 
 // NOTE: paths must NOT have trailing slashes — React Router strips them
 // before matching against this list, and unmatched paths render as SPA shells.
-const staticRoutes = ['/', '/pricing', '/career', '/blogs']
+const staticRoutes = ['/', '/pricing', '/about', '/career', '/blogs']
 
 async function getBlogPaths(): Promise<string[]> {
   if (!projectId) {
