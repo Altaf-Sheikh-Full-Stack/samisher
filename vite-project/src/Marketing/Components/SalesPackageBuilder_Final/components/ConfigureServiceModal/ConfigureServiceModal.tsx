@@ -14,7 +14,6 @@ import Button from "../../../../../System/Button/Button";
 import Text from "../../../../../System/Texts/Text";
 
 import Input from "../../../../../System/Inputs/Input";
-import Section from "../../../../../System/Layouts/Section/Section";
 
 interface Props {
   service: ServiceDefinition;
@@ -68,10 +67,11 @@ export function ConfigureServiceModal({
     config.customerValue > 0;
 
   return (
-    <Section size="Fluid" className="ServiceModal-backdrop">
+    <div className="ServiceModal-backdrop">
       <div className="ServiceModal ServiceModal--configure">
         <header className="ServiceModal-header">
           <div>
+            <span className="spbModal__eyebrow">Step 3 of 3</span>
             <Text textType="H2">{service.name}</Text>
             <Text textType="Text">{service.description}</Text>
           </div>
@@ -272,7 +272,7 @@ export function ConfigureServiceModal({
           </Button>
         </footer>
       </div>
-    </Section>
+    </div>
   );
 }
 

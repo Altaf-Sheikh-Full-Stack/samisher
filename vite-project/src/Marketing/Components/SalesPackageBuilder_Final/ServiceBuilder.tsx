@@ -18,7 +18,6 @@ import "./styles.css";
 import Section from "../../../System/Layouts/Section/Section";
 import Text from "../../../System/Texts/Text";
 import Button from "../../../System/Button/Button";
-import Box from "../../../System/Layouts/Box/Box";
 
 type ModalState =
   | { type: "closed" }
@@ -126,8 +125,14 @@ export function ServiceBuilder({ onBookMeeting }: ServiceBuilderProps) {
   return (
     <Section variant="Transparent" size="Fluid" className="Estimator">
       <div className="Estimator-Content">
-        <Box className="Estimator-Header">
-            <Text textType="H3">Price estimator</Text>
+        <div className="Estimator-Header">
+          <div>
+            <Text className="Estimator-Eyebrow">Price estimator</Text>
+            <Text textType="H2" weight="700">Build your package</Text>
+            <Text textType="Text" color="Lite">
+              Add a service, set your target, and see the numbers update live.
+            </Text>
+          </div>
           <Button
             variant="Primary"
             rounded="Bubble"
@@ -135,7 +140,7 @@ export function ServiceBuilder({ onBookMeeting }: ServiceBuilderProps) {
           >
             + Add service
           </Button>
-        </Box>
+        </div>
 
         {items.length === 0 ? (
           <EmptyState onAdd={startAddService} />

@@ -15,7 +15,7 @@ export function SolutionModal({ service, onSelect, onBack, onClose }: Props) {
       <div className="spbModal spbModal--solution">
         <header className="spbModal__header">
           <div>
-         
+            <span className="spbModal__eyebrow">Step 2 of 3</span>
             <Text textType="H3" weight="500">What exact result do you need?</Text>
             <Text textType="Text" color="Lite">
               A clearer result definition gives you a more meaningful estimate.
@@ -25,17 +25,14 @@ export function SolutionModal({ service, onSelect, onBack, onClose }: Props) {
         </header>
 
         <div className="spbSolutionGrid">
-          {service.solutions.map((solution, index) => (
+          {service.solutions.map((solution) => (
             <button
               key={solution.id}
               className="spbSolutionTile"
               onClick={() => onSelect(solution)}
             >
-              <div
-                className={`spbServiceTile__art spbSolutionTile__art spbServiceTile__art--${(index % 4) + 1}`}
-              >
-                <Text textType="H3">{solution.label}</Text>
-              </div>
+              <span className="spbSolutionTile__dot" />
+              <span className="spbSolutionTile__label">{solution.label}</span>
             </button>
           ))}
         </div>

@@ -37,7 +37,7 @@ export function ServiceEconomicsChart({ estimate }: Props) {
 
   return (
     <div className="spbEconomics">
-      <ResponsiveContainer width="100%" height={230}>
+      <ResponsiveContainer width="100%" height={200}>
         <ComposedChart
           data={estimate.chart}
           margin={{ top: 8, right: 10, left: -12, bottom: 4 }}
@@ -72,7 +72,7 @@ export function ServiceEconomicsChart({ estimate }: Props) {
             contentStyle={{
               borderRadius: 10,
               border: "1px solid #e4e4e7",
-              boxShadow: "0 12px 30px rgba(0,0,0,.08)",
+              boxShadow: "0 6px 18px rgba(0,0,0,.06)",
               fontSize: 12,
             }}
             formatter={(value, key) => [
@@ -121,17 +121,6 @@ export function ServiceEconomicsChart({ estimate }: Props) {
           )}
         </ComposedChart>
       </ResponsiveContainer>
-
-      <div className="spbEconomics__caption">
-        <span>Months</span>
-        <span>
-          {breakEvenMonth === null
-            ? "No payback in this scenario"
-            : breakEvenMonth <= 1
-              ? `Estimated payback: ~${Math.max(1, Math.ceil(breakEvenMonth * 30))} days`
-              : `Estimated payback: ~${breakEvenMonth.toFixed(1)} months`}
-        </span>
-      </div>
     </div>
   );
 }

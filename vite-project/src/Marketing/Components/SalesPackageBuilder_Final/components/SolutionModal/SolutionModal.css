@@ -5,81 +5,79 @@
 .spbSolutionGrid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 12px;
+  gap: 10px;
 }
 
 .spbSolutionTile {
-  position: relative;
-  text-align: left;
-  background: #fff;
-  border: none;
-  padding: 12px;
-  cursor: pointer;
-  min-height: 170px;
   display: flex;
-  flex-direction: column;
-  transition: 0.16s ease;
-  gap: 10px;
-  box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
- 
+  align-items: center;
+  gap: 11px;
+  min-height: 56px;
+  padding: 12px 14px;
+  background: #fff;
+  border: 1px solid #e8e8ec;
+  border-radius: 12px;
+  cursor: pointer;
+  text-align: left;
+  transition: border-color 160ms ease, background 160ms ease;
 }
 
 .spbSolutionTile:hover {
-  border-color: #6c5ce7;
-  box-shadow: 0 10px 25px rgba(57, 44, 160, 0.08);
-  transform: translateY(-2px);
+  border-color: #7c3aed;
+  background: #faf9ff;
 }
 
-.spbSolutionTile__art {
-  height: 100%;
-  min-height: 160px;
-  display: grid;
-  place-items: center;
-  padding: 18px;
-
-  text-align: center;
+.spbSolutionTile:focus-visible {
+  outline: none;
+  border-color: #7c3aed;
+  box-shadow: 0 0 0 1px #7c3aed;
 }
 
-.spbServiceTile__art--1 {
-  background: #f0edff;
-  color: #6c5ce7;
+.spbSolutionTile__dot {
+  width: 16px;
+  height: 16px;
+  flex: none;
+  border-radius: 50%;
+  border: 1.5px solid #d4d4dc;
+  transition: border-color 160ms ease, background 160ms ease;
 }
 
-.spbServiceTile__art--2 {
-  background: #eef6ff;
-  color: #2866b1;
+.spbSolutionTile:hover .spbSolutionTile__dot {
+  border-color: #7c3aed;
+  background: #7c3aed;
 }
 
-.spbServiceTile__art--3 {
-  background: #edf9f1;
-  color: #1e8c50;
+.spbSolutionTile__label {
+  font-size: 14px;
+  font-weight: 600;
+  color: #17171a;
+  line-height: 1.35;
 }
 
-.spbServiceTile__art--4 {
-  background: #fff3eb;
-  color: #c26b2e;
+.spbModal__back {
+  margin-top: 18px;
+  border: 1px solid #e6e6eb;
+  border-radius: 10px;
+  background: #fff;
+  padding: 10px 16px;
+  cursor: pointer;
+  color: #52525b;
+  font-weight: 700;
+  transition: background 160ms ease, color 160ms ease;
+}
+
+.spbModal__back:hover {
+  background: #f4f4f6;
+  color: #18181b;
 }
 
 @media (max-width: 540px) {
   .spbSolutionGrid {
     grid-template-columns: 1fr;
+    gap: 8px;
   }
 
   .spbSolutionTile {
-    min-height: 140px;
+    min-height: 50px;
   }
-
-  .spbSolutionTile__art {
-    min-height: 120px;
-  }
-}
-
-.spbModal__back {
-  margin-top: 18px;
-  border: 0;
-  background: #f4f4f6;
-  padding: 9px 14px;
-  cursor: pointer;
-  color: #555;
-  font-weight: 700;
 }

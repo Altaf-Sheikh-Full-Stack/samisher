@@ -7,7 +7,6 @@ import { Metric } from "../../../../../System/Metric/Metric";
 import "./ServiceCard.css";
 import Text from "../../../../../System/Texts/Text";
 import Section from "../../../../../System/Layouts/Section/Section";
-import Box from "../../../../../System/Layouts/Box/Box";
 import Button from "../../../../../System/Button/Button";
 
 interface Props {
@@ -30,16 +29,25 @@ export function ServiceCard({
 
   const estimate = calculateService(item.config);
 
+  const paybackText =
+    estimate.paybackMonths === null
+      ? "No payback in this scenario"
+      : estimate.paybackMonths <= 1
+        ? `Pays back in ~${Math.max(1, Math.ceil(estimate.paybackMonths * 30))} days`
+        : `Pays back in ~${estimate.paybackMonths.toFixed(1)} months`;
+
   return (
     <Section rounded="Bubble" className={`spbCard ${item.enabled ? "" : "spbCard--disabled"}`}>
       <header className="spbCard__header">
-        <Box>
+        <div className="spbCard__heading">
           <Text className="spbCard__eyebrow">{service.name}</Text>
           <Text textType="H2">{solution}</Text>
-          {/* <Text>
-            {item.config.targetVolume} {service.resultUnit} / month
-          </Text> */}
-        </Box>
+          <p className="spbCard__meta">
+            {[item.config.industry, item.config.country, item.config.companySize, item.config.market]
+              .filter(Boolean)
+              .join(" · ")}
+          </p>
+        </div>
 
         <button
           className={`spbToggle ${item.enabled ? "is-on" : ""}`}
@@ -52,24 +60,9 @@ export function ServiceCard({
 
       <div className="spbCard__content">
         <div className="spbCard__chart">
-          <div className="spbCard__chartHeader">
-            <div>
-              <Text>P&L Chart</Text>
-              {/* <Text textType="SubHeading">
-                {estimate.paybackMonths === null
-                  ? "No payback estimate"
-                  : estimate.paybackMonths <= 1
-                    ? `Pays back in ~${Math.max(
-                        1,
-                        Math.ceil(estimate.paybackMonths * 30),
-                      )} days`
-                    : `Pays back in ~${estimate.paybackMonths.toFixed(1)} months`}
-              </Text> */}
-            </div>
-            <div className="spbCard__legend">
-              <Text><i className="revenue" /> Revenue</Text>
-              <Text><i className="cost" /> Acquisition cost</Text>
-            </div>
+          <div className="spbCard__legend">
+            <span><i className="revenue" /> Revenue</span>
+            <span><i className="cost" /> Acquisition cost</span>
           </div>
 
           <ServiceEconomicsChart estimate={estimate} />
@@ -77,41 +70,36 @@ export function ServiceCard({
 
         <div className="spbCard__metrics">
           <Metric
-            label="Cost per result"
+            label="Cost / result"
             value={formatRange(
               estimate.costPerResultMin,
               estimate.costPerResultMax,
             )}
           />
           <Metric
-            label="Cost per month"
+            label="Cost / month"
             value={formatRange(
               estimate.monthlySpendMin,
               estimate.monthlySpendMax,
             )}
           />
           <Metric
-            label="Result target"
-            value={`${item.config.targetVolume} / month`}
+            label="Target"
+            value={`${item.config.targetVolume} / mo`}
           />
           <Metric
             label="Customer revenue"
             value={
               item.config.billingModel === "one-time"
-                ? `${formatMoney(item.config.customerValue)} one-time`
-                : `${formatMoney(estimate.customerRevenuePerMonth)} / month`
+                ? `${formatMoney(item.config.customerValue)} once`
+                : `${formatMoney(estimate.customerRevenuePerMonth)} / mo`
             }
           />
         </div>
       </div>
 
       <footer className="spbCard__footer">
-        <div className="spbCard__meta">
-          <span>{item.config.industry}</span>
-          <span>{item.config.country}</span>
-          <span>{item.config.companySize}</span>
-          <span>{item.config.market}</span>
-        </div>
+        <span className="spbCard__insight">{paybackText}</span>
 
         <div className="spbCard__actions">
           <Button variant="Transparent" onClick={onEdit}>Edit</Button>
