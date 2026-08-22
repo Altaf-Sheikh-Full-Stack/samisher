@@ -25,6 +25,7 @@ export const postBySlugQuery = /* groq */ `
   "slug": slug.current,
   excerpt,
   body,
+  "readingTime": round(length(pt::text(body)) / 5 / 200),
   publishedAt,
   _updatedAt,
   mainImage { alt, caption, "assetId": asset._ref },

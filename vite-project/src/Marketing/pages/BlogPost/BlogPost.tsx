@@ -270,26 +270,20 @@ export default function BlogPost() {
             ← All posts
           </Link>
           <h1>{post.title}</h1>
-          <div className="post-meta">
-            {authorPicture && (
-              <img
-                className="post-avatar"
-                src={authorPicture}
-                alt={post.author?.picture?.alt || post.author?.name || ''}
-                width={28}
-                height={28}
-              />
+          {post.excerpt && <p className="post-standfirst">{post.excerpt}</p>}
+          <div className="post-chips">
+            {post.categories && post.categories.length > 0 && (
+              <span className="post-chip">
+                {post.categories.map((category) => category.title).join(' / ')}
+              </span>
             )}
-            <span className="post-meta-author">{post.author?.name}</span>
-            <span aria-hidden="true">·</span>
-            <time dateTime={new Date(post.publishedAt).toISOString()}>
-              {formatDate(post.publishedAt)}
-            </time>
-            {typeof post.readingTime === 'number' && post.readingTime > 0 && (
-              <>
-                <span aria-hidden="true">·</span>
-                <span>{post.readingTime} min read</span>
-              </>
+            <span className="post-chip">
+              <time dateTime={new Date(post.publishedAt).toISOString()}>
+                {formatDate(post.publishedAt)}
+              </time>
+            </span>
+            {typeof post.readingTime === 'number' && (
+              <span className="post-chip">{Math.max(post.readingTime, 1)} min read</span>
             )}
           </div>
         </header>
@@ -318,7 +312,7 @@ export default function BlogPost() {
 
         {post.related && post.related.length > 0 && (
           <section className="post-related">
-            <h2>Keep reading</h2>
+            <span className="post-related-label">Keep reading</span>
             <div className="post-related-list">
               {post.related.map((rel) => (
                 <Link key={rel._id} to={`/blogs/${rel.slug}/`} className="post-related-item">
@@ -329,6 +323,37 @@ export default function BlogPost() {
                 </Link>
               ))}
             </div>
+          </section>
+        )}
+
+        {post.author?.name && (
+          <section className="post-author" aria-label="About the author">
+            <div className="post-author-head">
+              <div className="post-author-avatar">
+                {authorPicture ? (
+                  <img
+                    src={authorPicture}
+                    alt={post.author.picture?.alt || post.author.name}
+                    width={56}
+                    height={56}
+                    loading="lazy"
+                  />
+                ) : (
+                  <span className="post-author-avatar-fallback" aria-hidden="true">
+                    {post.author.name.charAt(0)}
+                  </span>
+                )}
+              </div>
+              <div className="post-author-id">
+                <h2 className="post-author-name">{post.author.name}</h2>
+                {post.author.role && <p className="post-author-role">{post.author.role}</p>}
+              </div>
+            </div>
+            {post.author.bio && post.author.bio.length > 0 && (
+              <div className="post-author-bio">
+                <PortableText value={post.author.bio} />
+              </div>
+            )}
           </section>
         )}
       </article>
