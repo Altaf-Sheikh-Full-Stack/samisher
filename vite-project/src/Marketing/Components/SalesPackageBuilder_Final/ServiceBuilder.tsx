@@ -221,7 +221,7 @@ export function ServiceBuilder({ onBookMeeting }: ServiceBuilderProps) {
 function EmptyState({ onAdd }: { onAdd: () => void }) {
   return (
     <div className="spb__empty">
-      <Text textType="H4" weight="600" >Get an estimate.</Text>
+      <Text textType="H3" weight="500" >Get an estimate.</Text>
       <Text textType="Text" color="Lite">
 Add a service, set the outcome, and build your package.
       </Text>
