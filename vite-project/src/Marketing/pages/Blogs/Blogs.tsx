@@ -42,11 +42,16 @@ interface PostCard {
   _id: string
   title: string
   slug: string
-  excerpt: string
+  excerpt?: string
   publishedAt: string
   readingTime?: number
   mainImage?: { alt?: string; assetId?: string }
   categories?: { title: string; slug: string }[]
+  author?: {
+    name?: string
+    role?: string
+    picture?: { alt?: string; assetId?: string }
+  }
 }
 
 function PostImage({
@@ -70,17 +75,48 @@ function PostImage({
 }
 
 function PostMeta({ post }: { post: PostCard }) {
+  const category = post.categories?.[0]?.title
+  const readingTime =
+    typeof post.readingTime === 'number' && post.readingTime > 0
+      ? Math.max(post.readingTime, 1)
+      : null
+
   return (
     <div className="post-meta">
+      {category && (
+        <>
+          <span>{category}</span>
+          <span aria-hidden="true">·</span>
+        </>
+      )}
       <time dateTime={new Date(post.publishedAt).toISOString()}>
         {formatDate(post.publishedAt)}
       </time>
-      {typeof post.readingTime === 'number' && post.readingTime > 0 && (
+      {readingTime && (
         <>
           <span aria-hidden="true">·</span>
-          <span>{post.readingTime} min read</span>
+          <span>{readingTime} min read</span>
         </>
       )}
+    </div>
+  )
+}
+
+function AuthorByline({ post }: { post: PostCard }) {
+  const author = post.author
+  if (!author?.name) return null
+  const picture = author.picture?.assetId ? urlFor(author.picture.assetId, 64, 64) : null
+
+  return (
+    <div className="post-byline">
+      {picture ? (
+        <img src={picture} alt="" width={28} height={28} loading="lazy" />
+      ) : (
+        <span className="post-byline-fallback" aria-hidden="true">
+          {author.name.charAt(0)}
+        </span>
+      )}
+      <span className="post-byline-name">{author.name}</span>
     </div>
   )
 }
@@ -92,8 +128,10 @@ function FeaturedPost({ post }: { post: PostCard }) {
         <PostImage post={post} width={960} height={640} />
       </div>
       <div className="featured-body">
-        <h2>{post.title}</h2>
         <PostMeta post={post} />
+        <h2>{post.title}</h2>
+        {post.excerpt && <p className="featured-excerpt">{post.excerpt}</p>}
+        <AuthorByline post={post} />
       </div>
     </Link>
   )
@@ -106,10 +144,8 @@ function PostCardItem({ post }: { post: PostCard }) {
         <div className="blog-card-media">
           <PostImage post={post} width={800} height={500} />
         </div>
-        <div className="blog-card-body">
-          <h3>{post.title}</h3>
-          <PostMeta post={post} />
-        </div>
+        <h3>{post.title}</h3>
+        <PostMeta post={post} />
       </Link>
     </article>
   )
@@ -127,6 +163,7 @@ export default function Blogs() {
         <header className="blogs-intro">
           <span className="chip">Blog</span>
           <h1>Sales playbooks that deliver results.</h1>
+          <p>Practical guides on outbound sales and pipeline growth.</p>
         </header>
 
         {posts.length === 0 ? (

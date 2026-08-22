@@ -213,6 +213,10 @@ export default function BlogPost() {
     ? urlFor(post.author.picture.assetId, 96, 96)
     : null
 
+  // Only surface the "Updated" date when it differs meaningfully from publish date.
+  const DAY_MS = 24 * 60 * 60 * 1000
+  const wasUpdated = new Date(post._updatedAt).getTime() - new Date(post.publishedAt).getTime() > DAY_MS
+
   const blogPostingSchema = {
     '@context': 'https://schema.org',
     '@type': 'BlogPosting',
@@ -285,6 +289,7 @@ export default function BlogPost() {
             {typeof post.readingTime === 'number' && (
               <span className="post-chip">{Math.max(post.readingTime, 1)} min read</span>
             )}
+            {wasUpdated && <span className="post-chip">Updated {formatDate(post._updatedAt)}</span>}
           </div>
         </header>
 
@@ -304,6 +309,9 @@ export default function BlogPost() {
             height={900}
             fetchPriority="high"
           />
+          {post.mainImage?.caption && (
+            <figcaption className="post-hero-caption">{post.mainImage.caption}</figcaption>
+          )}
         </figure>
 
         <div className="post-body">

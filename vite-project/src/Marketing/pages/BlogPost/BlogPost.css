@@ -19,11 +19,10 @@
   color: #667085;
   font-size: 14px;
   text-decoration: none;
-  transition: color 160ms ease;
 }
 
 .post-back:hover {
-  color: #7c3aed;
+  color: #172033;
 }
 
 /* Editorial kicker — small tracked-out label with a rule mark */
@@ -57,10 +56,12 @@
 .post-chip {
   display: inline-flex;
   align-items: center;
-  padding: 6px 0;
-  background: #f4f4f5;
-  color: #667085;
-  font-size: 13px;
+  padding: 5px 10px;
+  background: #f3f4f6;
+  color: #6b7280;
+  font:
+    500 12px/1 Inter,
+    sans-serif;
 }
 
 /* Hero image */
@@ -73,12 +74,17 @@
 .post-hero img {
   width: 100%;
   height: auto;
-  border-radius: 20px;
-  border: 1px solid #e2e8f0;
-  box-shadow: 0 25px 65px rgba(27, 35, 56, 0.13);
+  border-radius: 16px;
   display: block;
   aspect-ratio: 16 / 9;
   object-fit: cover;
+}
+
+.post-hero-caption {
+  margin-top: 10px;
+  text-align: center;
+  color: #98a2b3;
+  font-size: 13px;
 }
 
 /* Article body */
@@ -123,7 +129,7 @@
 .post-anchor {
   position: absolute;
   left: -0.9em;
-  color: #c4b5fd;
+  color: #d1d5db;
   opacity: 0;
   text-decoration: none;
   transition: opacity 0.15s ease;
@@ -157,7 +163,7 @@
 .post-body blockquote {
   margin: 32px 0;
   padding: 20px 26px;
-  border-left: 3px solid #7c3aed;
+  border-left: 3px solid #172033;
   border-radius: 0 14px 14px 0;
   background: #f9fafb;
   color: #475467;
@@ -220,7 +226,7 @@
   font-weight: 700;
   letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: #7c3aed;
+  color: #98a2b3;
 }
 
 .post-related-label::before {
@@ -228,7 +234,7 @@
   width: 22px;
   height: 2px;
   flex-shrink: 0;
-  background: #7c3aed;
+  background: #d1d5db;
   border-radius: 99px;
 }
 
@@ -245,15 +251,10 @@
   padding: 18px 4px;
   border-bottom: 1px solid #e5e7eb;
   text-decoration: none;
-  transition: padding-left 160ms ease;
 }
 
 .post-related-item:last-child {
   border-bottom: 0;
-}
-
-.post-related-item:hover {
-  padding-left: 12px;
 }
 
 .post-related-title {
@@ -264,8 +265,14 @@
   color: #172033;
 }
 
+.post-related-item:hover .post-related-title {
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  text-decoration-thickness: 1px;
+}
+
 .post-related-arrow {
-  color: #7c3aed;
+  color: #98a2b3;
   flex-shrink: 0;
 }
 
