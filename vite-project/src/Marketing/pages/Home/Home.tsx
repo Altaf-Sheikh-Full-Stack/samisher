@@ -41,7 +41,6 @@ const Home = () => {
             <Funnel/>
             <FAQ/>
             <CTA/>
-            
             <Footer/>
         </>
 

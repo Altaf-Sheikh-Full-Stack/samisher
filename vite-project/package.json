@@ -12,6 +12,7 @@
     "preview": "vite preview --outDir build/client"
   },
   "dependencies": {
+    "@microsoft/clarity": "^1.0.2",
     "@portabletext/react": "^7.0.1",
     "@react-router/node": "7.18.2",
     "@sanity/client": "^7.26.2",
