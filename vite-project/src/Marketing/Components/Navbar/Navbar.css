@@ -1,27 +1,98 @@
 .Navbar {
   display: flex;
-  justify-self: center;
-  width: 100%;
-  padding: 10px 20px;
   justify-content: space-between;
   align-items: center;
   gap: 20px;
-  box-sizing: border-box;
-  position: relative;
+  position: sticky;
+  top: 0px;
+  z-index: 1000;
+  margin: 10px auto 0;
+  padding: 11px 20px;
+  /* border-radius: 12px !important; */
+  /* background: #111827 !important; */
+  /* border: 1px solid rgba(255, 255, 255, 0.08); */
+  box-shadow:
+    0 1px 2px rgba(15, 23, 42, 0.12),
+    0 8px 24px -12px rgba(15, 23, 42, 0.25);
 }
 
+/* --- logo --- */
 .Navbar-Logo {
   display: flex;
   align-items: center;
-  gap: 30px;
+  gap: 26px;
   flex-wrap: wrap;
 }
 
+.Navbar-Logo > a {
+  text-decoration: none;
+  display: inline-flex;
+  align-items: baseline;
+}
+
+.Navbar-Logo a .H1 {
+  /* color: #ffffff !important; */
+  letter-spacing: -0.01em;
+}
+
+/* quiet brand accent — a single dot, nothing more */
+.Navbar-Logo > a::after {
+  content: "";
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: #7c3aed;
+  margin-left: 3px;
+  align-self: flex-end;
+  margin-bottom: 5px;
+}
+
+/* --- links: plain text, thin underline on state --- */
 .Navbar-Items {
   display: flex;
-  gap: 20px;
+  gap: 28px;
   align-items: center;
-  flex-wrap: wrap;
+}
+
+.Navbar-Items a {
+  position: relative;
+  text-decoration: none;
+  padding: 6px 0;
+}
+
+.Navbar-Items a .H1 {
+  /* color: rgba(255, 255, 255, 0.62) !important; */
+  /* font-size: 14px; */
+  /* font-weight: 500; */
+  transition: color 160ms ease;
+}
+
+.Navbar-Items a:hover .H1,
+.Navbar-Items a.is-active .H1 {
+  color: #0306af !important;
+}
+
+.Navbar-Items a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 2px;
+  border-radius: 99px;
+  background: rgba(255, 255, 255, 0.22);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 180ms ease, background 180ms ease;
+}
+
+.Navbar-Items a:hover::after {
+  transform: scaleX(1);
+}
+
+.Navbar-Items a.is-active::after {
+  transform: scaleX(1);
+  background: #7c3aed;
 }
 
 .Navbar-Buttons {
@@ -30,26 +101,30 @@
   justify-content: flex-end;
 }
 
+/* --- mobile toggle --- */
 .Navbar-MobileToggle {
   display: none;
   width: 42px;
   height: 42px;
-  border: 1px solid rgba(255,255,255,0.15);
-  background: rgba(255,255,255,0.04);
-  /* border-radius: 10px; */
+  border-radius: 10px;
+  /* border: 1px solid rgba(255, 255, 255, 0.12); */
+  background: transparent;
   padding: 9px 8px;
   cursor: pointer;
   align-items: center;
   justify-content: center;
   flex-direction: column;
   gap: 5px;
+  transition: background 180ms ease;
 }
+
+.Navbar-MobileToggle:hover { background: rgba(255, 255, 255, 0.09); }
 
 .Navbar-MobileToggle span {
   display: block;
   width: 18px;
   height: 2px;
-  background: #fff;
+  background: #000000;
   border-radius: 99px;
   transition: 0.2s ease;
 }
@@ -66,13 +141,17 @@
   transform: translateY(-7px) rotate(-45deg);
 }
 
+/* --- mobile menu --- */
 .Navbar-MobileMenu {
   display: none;
 }
 
 @media (max-width: 768px) {
   .Navbar {
-    padding: 14px 16px;
+    padding: 8px 10px;
+    top: 8px;
+    width: min(100% - 28px, 1080px);
+    margin-top: 10px;
   }
 
   .Navbar-Items,
@@ -89,16 +168,31 @@
     display: flex;
     position: absolute;
     top: calc(100% + 8px);
-    right: 16px;
-    left: 16px;
+    right: 0;
+    left: 0;
     flex-direction: column;
-    gap: 12px;
-    padding: 16px;
+    gap: 2px;
+    padding: 10px;
     z-index: 50;
+    border-radius: 12px !important;
+    background: #111827 !important;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    box-shadow: 0 16px 40px -16px rgba(15, 23, 42, 0.45);
   }
 
   .Navbar-MobileMenu a {
     text-decoration: none;
+    padding: 12px 14px;
+    border-radius: 8px;
+    transition: background 150ms ease;
+  }
+
+  .Navbar-MobileMenu a:hover {
+    background: rgba(255, 255, 255, 0.06);
+  }
+
+  .Navbar-MobileMenu .Button {
+    margin-top: 6px;
   }
 }
 

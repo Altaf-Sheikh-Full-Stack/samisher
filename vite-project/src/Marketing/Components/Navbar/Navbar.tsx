@@ -11,30 +11,30 @@ const Navbar = () => {
     const [mobileOpen, setMobileOpen] = useState(false)
 
     return (
-        <Section className="Navbar" variant='Secondary' size="Fluid">
-            <Box className='Navbar-Logo' variant='Secondary'>
+        <Section className="Navbar" variant='Transparent' >
+            <Box className='Navbar-Logo' >
                 <NavLink to="/" end>
-                    <Text color='White' weight='800'  textType='H3' >Samisher</Text>
+                    <Text color='Brand' weight='800'  textType='H3' >Samisher</Text>
                 </NavLink>
 
-                <Box className='Navbar-Items' variant='Secondary'>
-                     <NavLink to="/about/">
-                        <Text color='White' weight='400'>About us</Text>
+                <Box className='Navbar-Items' >
+                     <NavLink to="/about/" className={({ isActive }) => isActive ? 'is-active' : ''}>
+                        <Text color='Lite' weight='400' >About us</Text>
                     </NavLink>
-                    <NavLink to="/career/">
-                        <Text color='White' weight='400'>Career</Text>
+                    <NavLink to="/career/" className={({ isActive }) => isActive ? 'is-active' : ''}>
+                        <Text color='Lite' weight='400'>Career</Text>
                     </NavLink>
-                    <NavLink to="/blogs/">
-                        <Text color='White' weight='400'>Blogs</Text>
+                    <NavLink to="/blogs/" className={({ isActive }) => isActive ? 'is-active' : ''}>
+                        <Text color='Lite' weight='400'>Blogs</Text>
                     </NavLink>
-                    <NavLink to="/pricing/">
-                        <Text color='White' weight='400'>Pricing</Text>
+                    <NavLink to="/pricing/" className={({ isActive }) => isActive ? 'is-active' : ''}>
+                        <Text color='Lite' weight='400'>Pricing</Text>
                     </NavLink>
                 </Box>
             </Box>
 
-            <Box className='Navbar-Buttons' variant='Secondary'>
-                <Button rounded='Bubble'><a style={{ color: 'white', textDecoration: 'none' }} href="https://calendly.com/samisher-sales/30min" target="_blank" rel="noopener noreferrer"> Book Meeting ❯❯❯❯</a></Button>
+            <Box className='Navbar-Buttons' >
+                <Button rounded='Bubble'><a style={{ color: 'white', textDecoration: 'none' }} href="https://calendly.com/samisher-sales/30min" target="_blank" rel="noopener noreferrer"> Book Meeting →</a></Button>
             </Box>
 
             <button
@@ -57,7 +57,7 @@ const Navbar = () => {
                     <NavLink to="/pricing/" onClick={() => setMobileOpen(false)}>
                         <Text color='Lite'>Pricing</Text>
                     </NavLink>
-                    <Button rounded='Bubble' onClick={() => setMobileOpen(false)}><a style={{ color: 'white', textDecoration: 'none' }} href="https://calendly.com/samisher-sales/30min" target="_blank" rel="noopener noreferrer">Book Meeting ❯❯❯❯</a></Button>
+                    <Button rounded='Bubble' onClick={() => setMobileOpen(false)}><a style={{ color: 'white', textDecoration: 'none' }} href="https://calendly.com/samisher-sales/30min" target="_blank" rel="noopener noreferrer">Book Meeting →</a></Button>
                 </Section>
             )}
         </Section>

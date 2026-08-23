@@ -325,7 +325,7 @@ function StepCard({
 /* ── Estimate results ─────────────────────── */
 function Estimate({
   estimate,
-  onBack,
+  // onBack,
 }: {
   estimate: NonNullable<ReturnType<typeof buildEstimate>>;
   onBack: () => void;
