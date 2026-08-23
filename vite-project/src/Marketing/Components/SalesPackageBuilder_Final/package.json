@@ -1,7 +1,0 @@
-{
-  "name": "sales-package-builder",
-  "private": true,
-  "dependencies": {
-    "recharts": "^3.1.2"
-  }
-}
