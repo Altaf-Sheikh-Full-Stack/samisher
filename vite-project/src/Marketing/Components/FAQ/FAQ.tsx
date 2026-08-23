@@ -39,12 +39,27 @@ const faqs = [
   },
 ]
 
+// FAQPage structured data — makes the questions eligible for Google rich
+// results / AI Overviews. Rendered inline so it lands in the prerendered HTML.
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: faqs.map((faq) => ({
+    '@type': 'Question',
+    name: faq.question,
+    acceptedAnswer: {
+      '@type': 'Answer',
+      text: faq.answer,
+    },
+  })),
+}
+
 const FAQ = () => {
   const [openIndex, setOpenIndex] = useState<number | null>(0)
 
   return (
    <Section className='FAQ-Section' >
-    <div  className="FAQ" >
+    <div  className="FAQ" id="faq">
       <div className="FAQ-Intro">
         <span className="FAQ-Eyebrow">FAQ</span>
         <Text textType="H2" color="Brand">Built for confident pipeline growth.</Text>
@@ -59,16 +74,18 @@ const FAQ = () => {
 
           return (
             <div className={`FAQ-Item ${isOpen ? 'FAQ-Item--open' : ''}`} key={faq.question}>
-              <button
-                className="FAQ-Question"
-                type="button"
-                aria-expanded={isOpen}
-                aria-controls={answerId}
-                onClick={() => setOpenIndex(isOpen ? null : index)}
-              >
-                <span>{faq.question}</span>
-                <span className="FAQ-Icon" aria-hidden="true">{isOpen ? '−' : '+'}</span>
-              </button>
+              <h3 className="FAQ-Heading">
+                <button
+                  className="FAQ-Question"
+                  type="button"
+                  aria-expanded={isOpen}
+                  aria-controls={answerId}
+                  onClick={() => setOpenIndex(isOpen ? null : index)}
+                >
+                  <span>{faq.question}</span>
+                  <span className="FAQ-Icon" aria-hidden="true">{isOpen ? '−' : '+'}</span>
+                </button>
+              </h3>
               <div id={answerId} className="FAQ-Answer" hidden={!isOpen}>
                 <p>{faq.answer}</p>
               </div>
@@ -77,6 +94,11 @@ const FAQ = () => {
         })}
       </div>
     </div>
+    {/* eslint-disable-next-line react/no-danger */}
+    <script
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+    />
     </Section>
   )
 }

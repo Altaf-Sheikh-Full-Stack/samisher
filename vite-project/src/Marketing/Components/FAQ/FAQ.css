@@ -68,6 +68,14 @@
   background: #fcfbff;
 }
 
+/* The <h3> wrapping each question exists for SEO/semantics only —
+   neutralize default heading styles so visuals are unchanged. */
+.FAQ-Heading {
+  margin: 0;
+  font-size: inherit;
+  font-weight: inherit;
+}
+
 .FAQ-Question {
   width: 100%;
   padding: 22px 24px;
