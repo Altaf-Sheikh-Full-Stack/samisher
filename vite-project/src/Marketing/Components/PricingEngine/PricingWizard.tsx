@@ -13,11 +13,11 @@ import type {
   ServiceId,
   ValueMode,
 } from "./types";
-import { formatCount, money, moneyRange, percent } from "./format";
+import { formatCount, money,  percent } from "./format";
 import { CumulativeChart, MonthlyFlowChart } from "./charts";
 import "./styles.css";
 
-const CALENDLY = "https://calendly.com/samisher-sales/30min";
+// const CALENDLY = "https://calendly.com/samisher-sales/30min";
 
 const clamp = (value: number, min: number, max: number) =>
   Math.min(max, Math.max(min, value));
@@ -332,25 +332,25 @@ function Estimate({
 }) {
   const {
     serviceName,
-    resultLabel,
+    // resultLabel,
     unit,
     pricePerResultMin,
-    pricePerResultMax,
+    // pricePerResultMax,
     monthlyCostMin,
-    monthlyCostMax,
+    // monthlyCostMax,
     resultsPerMonth,
     conversionRate,
-    customersPerMonth,
+    // customersPerMonth,
     breakEvenMonth,
     profitAfter12Months,
     totalValue12Months,
     totalCost12Months,
   } = estimate;
 
-  const roi12 =
-    totalCost12Months > 0
-      ? Math.round((profitAfter12Months / totalCost12Months) * 100)
-      : 0;
+  // const roi12 =
+  //   totalCost12Months > 0
+  //     ? Math.round((profitAfter12Months / totalCost12Months) * 100)
+  //     : 0;
 
   return (
     <Box className="PE-Result">
@@ -451,28 +451,28 @@ function Estimate({
   );
 }
 
-/* ── Bottom CTA ───────────────────────────── */
-function CTA() {
-  return (
-    <Section className="PE-CTA" variant="Secondary" rounded="Bubble">
-      <Box variant="Secondary">
-        <Text textType="H4" color="White" weight="700">
-          Get a number you can take to the board.
-        </Text>
-        <Text textType="Text" color="Lite">
-          Exact pricing, confirmed on a free 30-minute call.
-        </Text>
-      </Box>
-      <Button rounded="Bubble">
-        <a
-          style={{ color: "#ffffff", textDecoration: "none" }}
-          href={CALENDLY}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Book a free call →
-        </a>
-      </Button>
-    </Section>
-  );
-}
+// /* ── Bottom CTA ───────────────────────────── */
+// function CTA() {
+//   return (
+//     <Section className="PE-CTA" variant="Secondary" rounded="Bubble">
+//       <Box variant="Secondary">
+//         <Text textType="H4" color="White" weight="700">
+//           Get a number you can take to the board.
+//         </Text>
+//         <Text textType="Text" color="Lite">
+//           Exact pricing, confirmed on a free 30-minute call.
+//         </Text>
+//       </Box>
+//       <Button rounded="Bubble">
+//         <a
+//           style={{ color: "#ffffff", textDecoration: "none" }}
+//           href={CALENDLY}
+//           target="_blank"
+//           rel="noopener noreferrer"
+//         >
+//           Book a free call →
+//         </a>
+//       </Button>
+//     </Section>
+//   );
+// }
