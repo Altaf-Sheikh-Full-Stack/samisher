@@ -24,7 +24,7 @@ const CTA = () => {
                 <Box>
                     <Text textType="H4" weight="500">Starting at </Text>
                     <Text color="Brand" textType="H2" weight="800">$7</Text>
-                    <Text textType="H4" weight="500">per appointment</Text>
+                    <Text textType="H4" weight="500">Per qualified meeting</Text>
                     <Text color="Lite">Every meeting has a price. You only pay when it's booked.</Text>
                 </Box>
                 <Box className="CTA-Right-Info">

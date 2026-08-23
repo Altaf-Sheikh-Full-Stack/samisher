@@ -127,11 +127,11 @@ export function ServiceBuilder({ onBookMeeting }: ServiceBuilderProps) {
       <div className="Estimator-Content">
         <div className="Estimator-Header">
           <div>
-            <Text className="Estimator-Eyebrow">Price estimator</Text>
-            <Text textType="H2" weight="700">Build your package</Text>
-            <Text textType="Text" color="Lite">
-              Add a service, set your target, and see the numbers update live.
-            </Text>
+            {/* <Text className="Estimator-Eyebrow">Price estimator</Text> */}
+            {/* <Text textType="H3" weight="700">Build your package</Text> */}
+            {/* <Text textType="Text" color="Lite"> */}
+              {/* Add a service, set your target, and see the numbers update live. */}
+            {/* </Text> */}
           </div>
           <Button
             variant="Primary"
@@ -226,12 +226,12 @@ export function ServiceBuilder({ onBookMeeting }: ServiceBuilderProps) {
 function EmptyState({ onAdd }: { onAdd: () => void }) {
   return (
     <div className="spb__empty">
-      <Text textType="H3" weight="500" >Get an estimate.</Text>
-      <Text textType="Text" color="Lite">
+      <Text textType="H3" weight="500" >Check Pricing and ROI</Text>
+      {/* <Text textType="H4" color="Lite">
 Add a service, set the outcome, and build your package.
-      </Text>
+      </Text> */}
       <Button variant="Primary" rounded="Bubble" onClick={onAdd}>
-        Add your first service
+        Add service +
       </Button>
     </div>
   );
