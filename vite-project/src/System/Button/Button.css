@@ -7,15 +7,17 @@
   cursor: pointer;
   font: 700 14px/1 Inter, sans-serif;
   letter-spacing: .01em;
+  
   background-image:
     linear-gradient(180deg, rgba(255, 255, 255, 0.16), rgba(255, 255, 255, 0) 46%),
     linear-gradient(180deg, var(--btn-face-top, #8b5cf6) 0%, var(--btn-face-bottom, #6d28d9) 100%);
   box-shadow:
     inset 0 1px 0 var(--btn-highlight, rgba(255, 255, 255, 0.3)),
-    inset 0 -1px 0 rgba(0, 0, 0, 0.16),
-    0 1px 2px rgba(10, 8, 30, 0.2),
-    0 8px 18px -6px var(--btn-glow, rgba(124, 58, 237, 0.42));
-  transition: transform 140ms ease, box-shadow 200ms ease, filter 200ms ease;
+    inset 0 -1px 0 rgba(0, 0, 0, 0.14),
+    0 2px 4px -1px rgba(10, 8, 30, 0.08),
+    0 6px 16px -8px var(--btn-glow, rgba(124, 58, 237, 0.28));
+   transition: box-shadow 220ms ease, background-image 220ms ease; 
+
 }
 
 /* soft light pooling across the top of the face */
@@ -26,31 +28,32 @@
   z-index: -1;
   pointer-events: none;
   background: radial-gradient(120% 90% at 50% -25%, rgba(255, 255, 255, 0.2), transparent 55%);
+  
 }
 
+/* light source flips — gradient reverses bottom-to-top */
 .Button:hover {
-  transform: translateY(-2px);
-  filter: saturate(1.06);
+  background-image:
+    linear-gradient(0deg, rgba(255, 255, 255, 0.16), rgba(255, 255, 255, 0) 46%),
+    linear-gradient(0deg, var(--btn-face-top, #8b5cf6), var(--btn-face-bottom, #6d28d9));
   box-shadow:
-    inset 0 1px 0 var(--btn-highlight, rgba(255, 255, 255, 0.32)),
-    inset 0 -1px 0 rgba(0, 0, 0, 0.16),
-    0 2px 3px rgba(10, 8, 30, 0.16),
-    0 14px 28px -8px var(--btn-glow, rgba(124, 58, 237, 0.48));
+    inset 0 -1px 0 var(--btn-highlight, rgba(255, 255, 255, 0.3)),
+    inset 0 1px 0 rgba(0, 0, 0, 0.12),
+    0 2px 6px -1px rgba(10, 8, 30, 0.07),
+    0 10px 22px -10px var(--btn-glow, rgba(124, 58, 237, 0.32));
+   
 }
 
 .Button:active {
-  transform: translateY(1px);
   box-shadow:
-    inset 0 2px 4px rgba(0, 0, 0, 0.28),
-    inset 0 1px 0 rgba(0, 0, 0, 0.08),
-    0 1px 2px rgba(10, 8, 30, 0.2);
+    inset 0 2px 4px rgba(0, 0, 0, 0.18),
+    inset 0 1px 0 rgba(0, 0, 0, 0.06),
+    0 1px 2px rgba(10, 8, 30, 0.08);
 }
 
 .Button:focus-visible { outline: 3px solid #c4b5fd; outline-offset: 3px; }
 .Button:disabled {
   opacity: .45;
   cursor: not-allowed;
-  transform: none !important;
-  filter: none !important;
   box-shadow: none !important;
 }
