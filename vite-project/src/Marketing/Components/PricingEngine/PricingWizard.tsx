@@ -17,7 +17,7 @@ import { formatCount, money,  percent } from "./format";
 import { CumulativeChart, MonthlyFlowChart } from "./charts";
 import "./styles.css";
 
-// const CALENDLY = "https://calendly.com/samisher-sales/30min";
+const CALENDLY = "https://calendly.com/samisher-sales/30min";
 
 const clamp = (value: number, min: number, max: number) =>
   Math.min(max, Math.max(min, value));
@@ -360,32 +360,30 @@ function Estimate({
             {serviceName}
           </Text>
         </Box>
-        <Button variant="Transparent" rounded="Bubble" onClick={onBack}>
-          ← Adjust
-        </Button>
+       
       </Box>
 
       <Box className="PE-Kpis">
         <Box className="PE-Kpi">
-          <Text textType="Text" weight="500" color="Lite" >Cost per {unit}</Text>
+          <Text textType="Text" weight="500" color="Lite" >Cost /{unit}</Text>
           <Text textType="H2" weight="800">
             ${pricePerResultMin}
           </Text>
         </Box>
         <Box className="PE-Kpi">
-          <Text textType="Text" weight="500" color="Lite">COST PER MONTH</Text>
+          <Text textType="Text" weight="500" color="Lite">Cost /Month</Text>
           <Text textType="H2" weight="800">
             ${monthlyCostMin}
           </Text>
           
         </Box>
         <Box className="PE-Kpi">
-          <Text textType="Text" weight="500" color="Lite">{unit} / month</Text>
+          <Text textType="Text" weight="500" color="Lite">{unit} / Month</Text>
           <Text textType="H2" weight="800">{formatCount(resultsPerMonth)}</Text>
           
         </Box>
         <Box className="PE-Kpi">
-          <Text textType="Text" color="Lite" weight="500">Conversion</Text>
+          <Text textType="Text" color="Lite" weight="500">Conversion Rate</Text>
           <Text textType="H2" weight="800">{percent(conversionRate)}</Text>
         
         </Box>
@@ -446,33 +444,37 @@ function Estimate({
           )}
         </Box>
       </Box>
-      {/* <CTA /> */}
+      {/* <Box>
+         <Button variant="Secondary" rounded="Bubble" onClick={onBack}>
+          ← Edit
+        </Button>
+        <Button variant="Primary" rounded="Bubble">Book meeting</Button>
+      </Box> */}
+      <CTA />
     </Box>
   );
 }
 
 // /* ── Bottom CTA ───────────────────────────── */
-// function CTA() {
-//   return (
-//     <Section className="PE-CTA" variant="Secondary" rounded="Bubble">
-//       <Box variant="Secondary">
-//         <Text textType="H4" color="White" weight="700">
-//           Get a number you can take to the board.
-//         </Text>
-//         <Text textType="Text" color="Lite">
-//           Exact pricing, confirmed on a free 30-minute call.
-//         </Text>
-//       </Box>
-//       <Button rounded="Bubble">
-//         <a
-//           style={{ color: "#ffffff", textDecoration: "none" }}
-//           href={CALENDLY}
-//           target="_blank"
-//           rel="noopener noreferrer"
-//         >
-//           Book a free call →
-//         </a>
-//       </Button>
-//     </Section>
-//   );
-// }
+function CTA() {
+  return (
+    <Section className="PE-CTA"  rounded="Bubble">
+      <Box variant="Secondary">
+        <Text textType="H4">
+          What are you waiting for? Book a meeting and get <Text textType="H3" weight="800">$200 off now!</Text>
+
+        </Text>
+      </Box>
+      <Button rounded="Bubble">
+        <a
+          style={{ color: "#ffffff", textDecoration: "none" }}
+          href={CALENDLY}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Let’s Unlock Your Growth
+        </a>
+      </Button>
+    </Section>
+  );
+}
