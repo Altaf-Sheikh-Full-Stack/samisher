@@ -12,12 +12,49 @@ interface ButtonProps {
     disabled?: boolean;
 }
 
-const variantConf: Record<Variant, { backgroundColour: string; color: string }> = {
-    Primary: { backgroundColour: "#7C3AED", color: "white" },
-    Secondary: { backgroundColour: "#111827", color: "white" },
-    Transparent: { backgroundColour: "white", color: "black" },
-    Danger: { backgroundColour: "#EF4444", color: "white" }
+type VariantVars = React.CSSProperties & Record<`--btn-${string}`, string>
 
+const variantConf: Record<Variant, { color: string; vars: VariantVars }> = {
+    Primary: {
+        color: "white",
+        vars: {
+            "--btn-face-top": "#8b5cf6",
+            "--btn-face-bottom": "#6d28d9",
+            "--btn-edge": "rgba(76, 29, 149, 0.55)",
+            "--btn-highlight": "rgba(255, 255, 255, 0.32)",
+            "--btn-glow": "rgba(124, 58, 237, 0.42)"
+        }
+    },
+    Secondary: {
+        color: "white",
+        vars: {
+            "--btn-face-top": "#273141",
+            "--btn-face-bottom": "#111827",
+            "--btn-edge": "rgba(255, 255, 255, 0.09)",
+            "--btn-highlight": "rgba(255, 255, 255, 0.14)",
+            "--btn-glow": "rgba(17, 24, 39, 0.35)"
+        }
+    },
+    Transparent: {
+        color: "black",
+        vars: {
+            "--btn-face-top": "#ffffff",
+            "--btn-face-bottom": "#eceef2",
+            "--btn-edge": "rgba(17, 24, 39, 0.12)",
+            "--btn-highlight": "rgba(255, 255, 255, 0.95)",
+            "--btn-glow": "rgba(15, 23, 42, 0.14)"
+        }
+    },
+    Danger: {
+        color: "white",
+        vars: {
+            "--btn-face-top": "#ef5350",
+            "--btn-face-bottom": "#d32f2f",
+            "--btn-edge": "rgba(127, 15, 15, 0.5)",
+            "--btn-highlight": "rgba(255, 255, 255, 0.3)",
+            "--btn-glow": "rgba(239, 68, 68, 0.4)"
+        }
+    }
 };
 
 const roundedConf: Record<Rounded, { borderRadius: number }> = {
@@ -35,12 +72,11 @@ const Button = ({
     disabled = false,
 }: ButtonProps) => {
 
-    const backgroundColourStyle = variantConf[variant].backgroundColour;
     const colorStyle = variantConf[variant].color;
     const borderRadiusStyle = roundedConf[rounded].borderRadius;
 
     const styles: React.CSSProperties = {
-        backgroundColor: backgroundColourStyle,
+        ...variantConf[variant].vars,
         color: colorStyle,
         borderRadius: borderRadiusStyle
     };
