@@ -43,7 +43,7 @@ const Hero = () => {
                 
             </Box>
 
-            <Text className="Hero-Note" textType="H5" weight="400" color="Lite">Starting at $7 per meeting · No long-term hiring commitment</Text>
+            <Text  textType="Text" weight="400" color="Lite">Starting at $7 /Qualified meetings</Text>
 
             <Box className="Hero-Img">
                 <img src={img} alt="" />
