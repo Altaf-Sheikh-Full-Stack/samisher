@@ -32,7 +32,7 @@
   min-width: 140px;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1090px) {
   .Footer {
     flex-direction: column;
     padding: 28px 20px;
