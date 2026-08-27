@@ -17,7 +17,7 @@ import { formatCount, money,  percent } from "./format";
 import { CumulativeChart, MonthlyFlowChart } from "./charts";
 import "./styles.css";
 
-const CALENDLY = "https://calendly.com/samisher-sales/30min";
+const CALENDLY = "https://cal.com/samisher/meeting";
 
 const clamp = (value: number, min: number, max: number) =>
   Math.min(max, Math.max(min, value));

@@ -52,7 +52,7 @@ const About = () => {
                 <Button rounded="Bubble" className="About-Button">
                     <a
                         style={{ color: '#ffffff', textDecoration: 'none' }}
-                        href="https://calendly.com/samisher-sales/30min"
+                        href="https://cal.com/samisher/meeting"
                         target="_blank"
                         rel="noopener noreferrer"
                     >

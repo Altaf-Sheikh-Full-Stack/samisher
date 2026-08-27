@@ -34,7 +34,7 @@ const Navbar = () => {
             </Box>
 
             <Box className='Navbar-Buttons' >
-                <Button rounded='Bubble'><a style={{ color: 'white', textDecoration: 'none' }} href="https://calendly.com/samisher-sales/30min" target="_blank" rel="noopener noreferrer"> Book Meeting →</a></Button>
+                <Button rounded='Bubble'><a style={{ color: 'white', textDecoration: 'none' }} href="https://cal.com/samisher/meeting" target="_blank" rel="noopener noreferrer"> Book Meeting →</a></Button>
             </Box>
 
             <button
@@ -57,7 +57,7 @@ const Navbar = () => {
                     <NavLink to="/pricing/" onClick={() => setMobileOpen(false)}>
                         <Text color='Lite'>Pricing</Text>
                     </NavLink>
-                    <Button rounded='Bubble' onClick={() => setMobileOpen(false)}><a style={{ color: 'white', textDecoration: 'none' }} href="https://calendly.com/samisher-sales/30min" target="_blank" rel="noopener noreferrer">Book Meeting →</a></Button>
+                    <Button rounded='Bubble' onClick={() => setMobileOpen(false)}><a style={{ color: 'white', textDecoration: 'none' }} href="https://cal.com/samisher/meeting" target="_blank" rel="noopener noreferrer">Book Meeting →</a></Button>
                 </Section>
             )}
         </Section>

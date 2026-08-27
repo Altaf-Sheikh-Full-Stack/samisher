@@ -35,7 +35,7 @@ const CTA = () => {
                     <Text>💰 Collection service</Text>
                 </Box>
                 <Box>
-                    <Button rounded="Bubble"><a style={{color:'white', textDecoration:'none'}} href="https://calendly.com/samisher-sales/30min" target="_blank" rel="noopener noreferrer">Book your free strategy call →</a></Button>
+                    <Button rounded="Bubble"><a style={{color:'white', textDecoration:'none'}} href="https://cal.com/samisher/meeting" target="_blank" rel="noopener noreferrer">Book your free strategy call →</a></Button>
                 </Box>
                 <Box className="CTA-Right-Reviews">
                     <Box className="CTA-Right-Reviews-Imgs">

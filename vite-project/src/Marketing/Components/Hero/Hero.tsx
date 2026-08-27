@@ -36,7 +36,7 @@ const Hero = () => {
 
             <Box className="Hero-CTA">
                 
-                <Button rounded='Bubble'><a style={{color:'white', textDecoration:'none'}} href="https://calendly.com/samisher-sales/30min" target="_blank" rel="noopener noreferrer">Schedule free demo</a></Button>
+                <Button rounded='Bubble'><a style={{color:'white', textDecoration:'none'}} href="https://cal.com/samisher/meeting" target="_blank" rel="noopener noreferrer">Schedule free demo</a></Button>
                    <NavLink to="/pricing/">
                         <Button rounded="Bubble" variant="Secondary">Estimate Pricing and ROI </Button>
                     </NavLink>
@@ -48,7 +48,7 @@ const Hero = () => {
             <Box className="Hero-Img">
                 <img src={img} alt="" />
                 <Box>
-                    <Button rounded="Bubble"><a style={{color:'white', textDecoration:'none'}} href="https://calendly.com/samisher-sales/30min" target="_blank" rel="noopener noreferrer">See how it works →</a></Button>
+                    <Button rounded="Bubble"><a style={{color:'white', textDecoration:'none'}} href="https://cal.com/samisher/meeting" target="_blank" rel="noopener noreferrer">See how it works →</a></Button>
                 </Box>
             </Box>
         </Section>
