@@ -36,14 +36,14 @@ const Hero = () => {
 
             <Box className="Hero-CTA">
                 
-                <Button rounded='Bubble'><a style={{color:'white', textDecoration:'none'}} href="https://cal.com/samisher/meeting" target="_blank" rel="noopener noreferrer">Join Our Sales Network</a></Button>
+                <Button rounded='Bubble'><a style={{color:'white', textDecoration:'none'}} href="https://cal.com/samisher/meeting" target="_blank" rel="noopener noreferrer">100x Your Revenue / $0</a></Button>
                    <NavLink to="/pricing/">
-                        <Button rounded="Bubble" variant="Secondary">Return on Investment</Button>
+                        <Button rounded="Bubble" variant="Secondary">Check Profit & Loss</Button>
                     </NavLink>
                 
             </Box>
 
-            <Text  textType="Text" weight="400" color="Lite">Starting at $7 /Qualified meetings</Text>
+            <Text  textType="Text" weight="400" color="Lite">$0 setup cost. $0 hidden fees. Pay as you earn.</Text>
 
             <Box className="Hero-Img">
                 <img src={img} alt="" />
