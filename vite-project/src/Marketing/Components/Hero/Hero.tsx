@@ -36,9 +36,9 @@ const Hero = () => {
 
             <Box className="Hero-CTA">
                 
-                <Button rounded='Bubble'><a style={{color:'white', textDecoration:'none'}} href="https://cal.com/samisher/meeting" target="_blank" rel="noopener noreferrer">Schedule free demo</a></Button>
+                <Button rounded='Bubble'><a style={{color:'white', textDecoration:'none'}} href="https://cal.com/samisher/meeting" target="_blank" rel="noopener noreferrer">Join Our Sales Network</a></Button>
                    <NavLink to="/pricing/">
-                        <Button rounded="Bubble" variant="Secondary">Estimate Pricing and ROI </Button>
+                        <Button rounded="Bubble" variant="Secondary">Return on Investment</Button>
                     </NavLink>
                 
             </Box>
