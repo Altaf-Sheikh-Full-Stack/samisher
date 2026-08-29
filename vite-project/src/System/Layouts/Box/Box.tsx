@@ -1,5 +1,5 @@
 
-type Variant = "Primary" | "Secondary" | "Transparent"
+type Variant = "Primary" | "Secondary" | "Transparent" | "White"
 
 interface BoxProps {
     variant?: Variant;
@@ -11,7 +11,8 @@ interface BoxProps {
 const variantConf: Record<Variant, { backgroundColour: string; }> = {
     Primary: { backgroundColour: "#7C3AED" },
     Secondary: { backgroundColour: "#111827" },
-    Transparent: { backgroundColour: "white" }
+    Transparent: { backgroundColour: "#ffffff00" },
+    White: { backgroundColour: "white" }
 };
 
 

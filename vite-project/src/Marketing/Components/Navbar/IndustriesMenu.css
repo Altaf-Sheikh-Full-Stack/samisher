@@ -1,0 +1,164 @@
+/* Clean, flat industries dropdown — no border, no radius, soft shadow only. */
+
+.IndustriesMenu {
+  position: absolute;
+  top: calc(100% + 0px);
+  left: 0;
+  right: 0;
+  display: none;
+  background: #ffffff;
+  box-shadow: 0 24px 48px -24px rgba(15, 23, 42, 0.35);
+}
+
+.Navbar-Industries:hover .IndustriesMenu {
+  display: block;
+}
+
+/* --- top: industries tabs --- */
+.IndustriesMenu-Tabs {
+  display: flex;
+  gap: 6px;
+  padding: 14px 20px;
+  border-bottom: 1px solid #eef0f3;
+}
+
+.IndustriesMenu-Tab {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 10px 16px;
+  transition: background 150ms ease;
+}
+
+.IndustriesMenu-Tab:hover,
+.IndustriesMenu-Tab.is-active {
+  background: #f4f4f6;
+}
+
+.IndustriesMenu-Tab .H1 {
+  font-size: 14px;
+}
+
+/* --- bottom body: two columns --- */
+.IndustriesMenu-Body {
+  display: flex;
+  align-items: stretch;
+}
+
+/* left: services list */
+.IndustriesMenu-Services {
+  width: 270px;
+  min-width: 270px;
+  padding: 16px 12px;
+  display: flex;
+  flex-direction: column;
+  border-right: 1px solid #eef0f3;
+}
+
+.IndustriesMenu-Service {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 13px 16px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  text-align: left;
+  transition: background 150ms ease;
+}
+
+.IndustriesMenu-Service:hover,
+.IndustriesMenu-Service.is-active {
+  background: #f4f4f6;
+}
+
+.IndustriesMenu-Service .H1 {
+  font-size: 15px;
+}
+
+.IndustriesMenu-ServiceArrow {
+  color: #0306af;
+  opacity: 0;
+  transform: translateX(-4px);
+  transition: opacity 150ms ease, transform 150ms ease;
+}
+
+.IndustriesMenu-Service:hover .IndustriesMenu-ServiceArrow,
+.IndustriesMenu-Service.is-active .IndustriesMenu-ServiceArrow {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* right: subservice grid cards */
+.IndustriesMenu-Subs {
+  flex: 1;
+  padding: 20px 24px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+  align-content: start;
+}
+
+.Sub-Card {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  text-decoration: none;
+  background: #fff;
+  box-shadow: 0 1px 2px rgba(15, 23, 42, 0.06);
+  transition: transform 160ms ease, box-shadow 160ms ease;
+}
+
+.Sub-Card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 14px 24px rgba(17, 24, 39, 0.08);
+}
+
+.Sub-CardImg {
+  height: 104px;
+  flex: none;
+  overflow: hidden;
+}
+
+.Sub-CardImg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 200ms ease;
+}
+
+.Sub-Card:hover .Sub-CardImg img {
+  transform: scale(1.05);
+}
+
+.Sub-CardCopy {
+  padding: 13px 15px 15px;
+  background: #fff;
+}
+
+.Sub-CardTitle {
+  color: #172033;
+  font: 700 14px/1.3 Manrope, sans-serif;
+}
+
+.Sub-CardDesc {
+  margin: 7px 0 0;
+  color: #667085;
+  font: 400 12px/1.5 Inter, sans-serif;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+@media (max-width: 1024px) {
+  .IndustriesMenu-Services {
+    width: 220px;
+    min-width: 220px;
+  }
+  .IndustriesMenu-Subs {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}

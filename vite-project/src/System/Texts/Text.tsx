@@ -24,7 +24,7 @@ interface TextProbs {
 
 
 const textTypeConf: Record<TextType, { fontFamliy: string, fontType: keyof React.JSX.IntrinsicElements,  fontSize: string }> = {
-    H1: { fontFamliy: 'Manrope', fontType: 'h1',  fontSize:"clamp(43px, 6vw, 72px)" },
+    H1: { fontFamliy: 'Manrope', fontType: 'h1',  fontSize:"clamp(37px, 6vw, 62px)" },
     H2: { fontFamliy: 'Manrope', fontType: 'h2',  fontSize:"clamp(32px, 4vw, 48px)" },
     H3: { fontFamliy: 'Inter', fontType: 'h3',  fontSize:"clamp(17px, 2vw, 20px)" },
     H4: { fontFamliy: 'Inter', fontType: 'h4',  fontSize:"" },
@@ -49,7 +49,7 @@ const weightConf: Record<Weight, { fontWeight: string }> = {
 
 const colorConf: Record<Color, { color: string }> = {
     Dark: { color: "#111827" },
-    Lite: { color: "#586174" },
+    Lite: { color: "#e7e7e7" },
     Black:{ color: "#000000" },
     White:{ color: "#FFFFFF" },
     Brand: { color: "#7C3AED" }

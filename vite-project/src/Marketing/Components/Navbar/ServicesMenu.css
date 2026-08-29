@@ -1,0 +1,160 @@
+/* Clean, flat mega dropdown — no border, no radius, soft shadow only. */
+
+.ServicesMenu {
+  position: absolute;
+  top: calc(100% + 0px);
+  left: 0;
+  right: 0;
+  display: none;
+  align-items: stretch;
+  background: #ffffff;
+  box-shadow: 0 24px 48px -24px rgba(15, 23, 42, 0.35);
+}
+
+/* --- left: services list --- */
+.ServicesMenu-List {
+  width: 270px;
+  min-width: 270px;
+  padding: 16px 12px;
+  display: flex;
+  flex-direction: column;
+}
+
+.ServicesMenu-Item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 13px 16px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  text-align: left;
+  transition: background 150ms ease;
+}
+
+.ServicesMenu-Item:hover,
+.ServicesMenu-Item.is-active {
+  background: #f4f4f6;
+}
+
+.ServicesMenu-Item .H1 {
+  font-size: 15px;
+}
+
+.ServicesMenu-ItemArrow {
+  color: #0306af;
+  opacity: 0;
+  transform: translateX(-4px);
+  transition: opacity 150ms ease, transform 150ms ease;
+}
+
+.ServicesMenu-Item:hover .ServicesMenu-ItemArrow,
+.ServicesMenu-Item.is-active .ServicesMenu-ItemArrow {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* --- right: subservice grid (uniform, equal cards) --- */
+.ServicesMenu-Detail {
+  flex: 1;
+  padding: 20px 24px 24px;
+  display: flex;
+  flex-direction: column;
+}
+
+.ServicesMenu-DetailHead {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  margin-bottom: 18px;
+}
+
+.ServicesMenu-DetailHead .H1 {
+  font-size: 20px;
+  letter-spacing: -0.02em;
+}
+
+.ServicesMenu-All {
+  text-decoration: none;
+}
+
+.ServicesMenu-All .H1 {
+  font-size: 13px;
+}
+
+.ServicesMenu-Bento {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 14px;
+}
+
+.Bento-Card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  text-decoration: none;
+  background: #fff;
+  box-shadow: 0 1px 2px rgba(15, 23, 42, 0.06);
+  transition: transform 160ms ease, box-shadow 160ms ease;
+}
+
+.Bento-Card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 14px 24px rgba(17, 24, 39, 0.08);
+}
+
+.Bento-CardImg {
+  height: 108px;
+  flex: none;
+  overflow: hidden;
+}
+
+.Bento-CardImg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 200ms ease;
+}
+
+.Bento-Card:hover .Bento-CardImg img {
+  transform: scale(1.05);
+}
+
+.Bento-CardCopy {
+  padding: 14px 16px 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  background: #fff;
+}
+
+.Bento-CardTitle {
+  color: #172033;
+  font: 700 14px/1.3 Manrope, sans-serif;
+}
+
+.Bento-CardDesc {
+  margin: 7px 0 0;
+  color: #667085;
+  font: 400 12px/1.5 Inter, sans-serif;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+@media (max-width: 1024px) {
+  .ServicesMenu-List {
+    width: 220px;
+    min-width: 220px;
+  }
+  .ServicesMenu-Bento {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .Bento-CardImg {
+    height: 92px;
+  }
+}

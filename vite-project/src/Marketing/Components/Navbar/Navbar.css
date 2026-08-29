@@ -6,14 +6,14 @@
   position: sticky;
   top: 0px;
   z-index: 1000;
-  margin: 10px auto 0;
+  margin: auto;
   padding: 11px 20px;
   /* border-radius: 12px !important; */
   /* background: #111827 !important; */
   /* border: 1px solid rgba(255, 255, 255, 0.08); */
-  box-shadow:
+  /* box-shadow:
     0 1px 2px rgba(15, 23, 42, 0.12),
-    0 8px 24px -12px rgba(15, 23, 42, 0.25);
+    0 8px 24px -12px rgba(15, 23, 42, 0.25); */
 }
 
 /* --- logo --- */
@@ -95,6 +95,81 @@
   background: #7c3aed;
 }
 
+/* --- services mega dropdown trigger --- */
+.Navbar-Services {
+  position: static;
+  /* Hover bridge: extend the hover hit-area down over the navbar's bottom
+     padding so the dropdown doesn't close while moving the cursor into it. */
+  padding-bottom: 22px;
+  margin-bottom: -22px;
+}
+
+.Navbar-ServicesTrigger {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 6px 0;
+}
+
+.Navbar-ServicesTrigger .H1 {
+  font-size: 14px;
+  font-weight: 500;
+  transition: color 160ms ease;
+}
+
+.Navbar-ServicesTrigger:hover .H1 {
+  color: #0306af !important;
+}
+
+.Navbar-ServicesChevron {
+  font-size: 12px;
+  color: #586174;
+  line-height: 1;
+  transition: transform 160ms ease;
+}
+
+.Navbar-Services:hover .ServicesMenu {
+  display: flex;
+}
+
+/* --- industries mega dropdown trigger (hover-to-open) --- */
+.Navbar-Industries {
+  position: static;
+  /* Hover bridge: keep the dropdown open while moving the cursor into it. */
+  padding-bottom: 22px;
+  margin-bottom: -22px;
+}
+
+.Navbar-IndustriesTrigger {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 6px 0;
+}
+
+.Navbar-IndustriesTrigger .H1 {
+  font-size: 14px;
+  font-weight: 500;
+  transition: color 160ms ease;
+}
+
+.Navbar-IndustriesTrigger:hover .H1 {
+  color: #0306af !important;
+}
+
+.Navbar-IndustriesChevron {
+  font-size: 12px;
+  color: #586174;
+  line-height: 1;
+  transition: transform 160ms ease;
+}
+
 .Navbar-Buttons {
   display: flex;
   align-items: center;
@@ -118,27 +193,19 @@
   transition: background 180ms ease;
 }
 
-.Navbar-MobileToggle:hover { background: rgba(255, 255, 255, 0.09); }
+.Navbar-MobileToggle:hover { background: rgba(17, 24, 39, 0.05); }
 
 .Navbar-MobileToggle span {
   display: block;
-  width: 18px;
-  height: 2px;
+  width: 5px;
+  height: 5px;
   background: #000000;
-  border-radius: 99px;
+  border-radius: 50%;
   transition: 0.2s ease;
 }
 
-.Navbar-MobileToggle.is-open span:nth-child(1) {
-  transform: translateY(7px) rotate(45deg);
-}
-
-.Navbar-MobileToggle.is-open span:nth-child(2) {
-  opacity: 0;
-}
-
-.Navbar-MobileToggle.is-open span:nth-child(3) {
-  transform: translateY(-7px) rotate(-45deg);
+.Navbar-MobileToggle.is-open span {
+  background: #7c3aed;
 }
 
 /* --- mobile menu --- */
@@ -148,36 +215,43 @@
 
 @media (max-width: 768px) {
   .Navbar {
-    padding: 8px 10px;
-    top: 8px;
-    width: min(100% - 28px, 1080px);
-    margin-top: 10px;
+    padding: 0 16px;
+    top: 0;
+    width: 100%;
+    margin-top: 0;
+    border-radius: 0 !important;
+    border: none;
+    box-shadow: none;
+    min-height: 64px;
   }
 
-  .Navbar-Items,
-  .Navbar-Buttons {
+  .Navbar-Items {
     display: none;
+  }
+
+  .Navbar-Buttons {
+    display: flex;
+    align-items: center;
+    margin-left: auto;
   }
 
   .Navbar-MobileToggle {
     display: flex;
-    margin-left: auto;
+    margin-left: 8px;
   }
 
   .Navbar-MobileMenu {
     display: flex;
     position: absolute;
-    top: calc(100% + 8px);
+    top: 100%;
     right: 0;
     left: 0;
     flex-direction: column;
     gap: 2px;
     padding: 10px;
     z-index: 50;
-    border-radius: 12px !important;
-    background: #111827 !important;
-    border: 1px solid rgba(255, 255, 255, 0.08);
-    box-shadow: 0 16px 40px -16px rgba(15, 23, 42, 0.45);
+    border-radius: 0 !important;
+    background: #ffffff !important;
   }
 
   .Navbar-MobileMenu a {
@@ -188,11 +262,57 @@
   }
 
   .Navbar-MobileMenu a:hover {
-    background: rgba(255, 255, 255, 0.06);
+    background: rgba(17, 24, 39, 0.05);
   }
 
-  .Navbar-MobileMenu .Button {
-    margin-top: 6px;
+  /* --- mobile services accordion --- */
+  .Navbar-MobileServiceHead,
+  .Navbar-MobileServiceLabel {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    text-align: left;
+    padding: 12px 14px;
+  }
+
+  .Navbar-MobileServiceHead .H1,
+  .Navbar-MobileServiceLabel .H1 {
+    font-size: 14px;
+  }
+
+  .Navbar-MobileChevron {
+    font-size: 12px;
+    color: #586174;
+    transition: transform 160ms ease;
+  }
+
+  .Navbar-MobileServiceHead.is-open .Navbar-MobileChevron,
+  .Navbar-MobileServiceLabel.is-open .Navbar-MobileChevron {
+    transform: rotate(180deg);
+  }
+
+  .Navbar-MobileServices {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .Navbar-MobileServiceLabel .H1 {
+    color: #111827 !important;
+    font-size: 14px;
+  }
+
+  .Navbar-MobileSubservices {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .Navbar-MobileSubservices a {
+    padding-left: 26px;
   }
 }
 
