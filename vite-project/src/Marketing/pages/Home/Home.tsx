@@ -8,7 +8,7 @@ import Funnel from "../../Components/Statistics/Statistics"
 import CTA from "../../Components/CTA/CTA"
 import FAQ from "../../Components/FAQ/FAQ"
 import Footer from "../../Components/Footer/Footer"
-import Intent from "../../Components/Process/Intent/Intent"
+
 
 export function meta() {
   const title = 'Samisher —  Guaranteed Revenue. Revenue-as-a-Service.'
