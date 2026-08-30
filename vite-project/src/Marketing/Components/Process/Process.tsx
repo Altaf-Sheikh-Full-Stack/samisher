@@ -75,34 +75,19 @@ const STEPS: Step[] = [
 
 const ICONS: Record<string, ReactNode> = {
     lead: (
-        <svg viewBox="0 0 24 24" aria-hidden="true">
-            <path d="M12 12a3.5 3.5 0 1 0-3.5-3.5A3.5 3.5 0 0 0 12 12Zm-7.5 8.2v-.7A5.3 5.3 0 0 1 9.8 14.2h4.4a5.3 5.3 0 0 1 5.3 5.3v.7" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" />
-            <path d="M18.2 8.2v4.2M16.1 10.3h4.2" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" />
-        </svg>
+        <Text color='Lite'>Find Revenue</Text>
     ),
     intent: (
-        <svg viewBox="0 0 24 24" aria-hidden="true">
-            <circle cx="12" cy="12" r="7.2" fill="none" stroke="currentColor" strokeWidth="1.8" />
-            <circle cx="12" cy="12" r="3.2" fill="none" stroke="currentColor" strokeWidth="1.8" />
-            <path d="M12 4.2v2.2M12 17.6v2.2M4.2 12h2.2M17.6 12h2.2" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" />
-        </svg>
+        <Text color='Lite'>Verify Revenue</Text>
     ),
     meeting: (
-        <svg viewBox="0 0 24 24" aria-hidden="true">
-            <rect x="4" y="6" width="16" height="14" rx="2.4" fill="none" stroke="currentColor" strokeWidth="1.8" />
-            <path d="M8 4.4v3.2M16 4.4v3.2M4 10.2h16" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" />
-        </svg>
+        <Text color='Lite'>Book Revenue</Text>
     ),
     closer: (
-        <svg viewBox="0 0 24 24" aria-hidden="true">
-            <path d="M5 13.2 9.4 17.6 19 8" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
-        </svg>
+        <Text color='Lite'>Close Revenue</Text>
     ),
     collection: (
-        <svg viewBox="0 0 24 24" aria-hidden="true">
-            <rect x="3.6" y="6.4" width="16.8" height="11.2" rx="2.2" fill="none" stroke="currentColor" strokeWidth="1.8" />
-            <path d="M12 9.4v5.2M10.2 14.6h3.6c.8 0 1.4-.6 1.4-1.3s-.6-1.3-1.4-1.3h-2.4c-.8 0-1.4-.6-1.4-1.3s.6-1.3 1.4-1.3h3.4" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" />
-        </svg>
+        <Text color='Lite'>Collect Revenue</Text>
     ),
 }
 
