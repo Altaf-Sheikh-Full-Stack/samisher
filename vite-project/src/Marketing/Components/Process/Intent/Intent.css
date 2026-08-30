@@ -7,6 +7,7 @@
     top: 10%;
     z-index: 2;
     gap: 30px;
+    background: linear-gradient(180deg, #fb923c 0%, #f97316 25%, #ea580c 50%, #c2410c 75%, #9a3412 100%) !important;
 }
 
 

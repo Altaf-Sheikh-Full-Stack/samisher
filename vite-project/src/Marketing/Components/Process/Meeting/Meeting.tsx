@@ -9,9 +9,9 @@ import './Meeting.css'
 const Meeting = () => {
     return (
         <Section className="Meeting" variant="Primary" rounded="Bubble">
-            <Box className="Meeting-Info" variant="Primary">
+            <Box className="Meeting-Info" variant="Transparent">
                 <Text textType="H2" color="Lite">Turn conversations into booked meetings</Text>
-                <Box variant="Primary" className="Meeting-Info-Point">
+                <Box variant="Transparent" className="Meeting-Info-Point">
                     <Text textType="H4" color="Lite">• AI scheduling</Text>
                     <Text textType="H4" color="Lite">• Human follow-up</Text>
                     <Text textType="H4" color="Lite">• Smoother coordination</Text>

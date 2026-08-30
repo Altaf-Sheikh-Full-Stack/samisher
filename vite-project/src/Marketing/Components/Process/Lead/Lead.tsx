@@ -9,9 +9,9 @@ import './Lead.css'
 const Lead = () => {
     return (
         <Section className="Lead" variant="Primary">
-            <Box className="Lead-Info" variant="Primary">
+            <Box className="Lead-Info" variant="Transparent">
                 <Text textType="H2" color="White" >From Zero to Qualified Leads Powered by AI</Text>
-                <Box variant="Primary" className="Lead-Info-Point">
+                <Box variant="Transparent" className="Lead-Info-Point">
                     <Text textType="H4"  color="Lite">• AI prospecting</Text>
                     <Text textType="H4" color="Lite">• Human qualification</Text>
                     <Text textType="H4" color="Lite">• Faster bookings</Text>

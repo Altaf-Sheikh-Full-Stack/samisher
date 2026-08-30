@@ -8,9 +8,9 @@ import img1 from '../../../../assets/Process/Closer/ChatGPT Image Aug 11, 2026, 
 const Closer = () => {
     return(
         <Section className="Closer" variant="Secondary" rounded="Bubble">
-                    <Box className="Closer-Info" variant="Secondary">
+                    <Box className="Closer-Info" variant="Transparent">
                         <Text textType="H2" color="Lite">Turn qualified interest into closed revenue</Text>
-                        <Box variant="Secondary" className="Closer-Info-Point">
+                        <Box variant="Transparent" className="Closer-Info-Point">
                             <Text textType="H4" color="Lite">• AI-powered qualification</Text>
                             <Text textType="H4" color="Lite">• Human-driven closing</Text>
                             <Text textType="H4" color="Lite">• Seamless integration</Text>
