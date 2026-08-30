@@ -42,7 +42,7 @@
   content: "";
   position: absolute;
   inset: -10px;
-  border-radius: 24px;
+  /* border-radius: 24px; */
   background: color-mix(in srgb, var(--tab-color) 28%, transparent);
   opacity: 0;
   transform: scale(0.86);
