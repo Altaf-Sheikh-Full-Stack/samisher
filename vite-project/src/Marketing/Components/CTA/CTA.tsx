@@ -20,12 +20,12 @@ const CTA = () => {
                     Get a clear plan for the right prospects, message, and meeting volume—before you commit to a campaign.
                 </Text>
             </Box>
-            <Box variant="Transparent" className="CTA-Right" >
+            <Box variant="White" className="CTA-Right" >
                 <Box>
                     <Text textType="H4" weight="500">Starting at </Text>
                     <Text color="Brand" textType="H2" weight="800">$7</Text>
                     <Text textType="H4" weight="500">Per qualified meeting</Text>
-                    <Text color="Lite">Every meeting has a price. You only pay when it's booked.</Text>
+                    <Text color="Dark">Every meeting has a price. You only pay when it's booked.</Text>
                 </Box>
                 <Box className="CTA-Right-Info">
                     <Text >🧲 Lead generation</Text>

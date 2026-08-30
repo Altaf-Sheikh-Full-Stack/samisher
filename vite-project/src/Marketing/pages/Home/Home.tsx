@@ -1,7 +1,7 @@
 import Hero from "../../Components/Hero/Hero"
 import Navbar from "../../Components/Navbar/Navbar"
 import './Home.css'
-import Company from "../../Components/Company/Company"
+// import Company from "../../Components/Company/Company"
 import Banner from "../../Components/Banner/Banner"
 import Stack from "../../Components/Stack/Stack"
 import Process from "../../Components/Process/Process"
@@ -39,7 +39,7 @@ const Home = () => {
             <Navbar />
             <Hero />
             <Process/>
-            <Company />
+            {/* <Company /> */}
             <Stack />
             <Funnel/>
             <FAQ/>

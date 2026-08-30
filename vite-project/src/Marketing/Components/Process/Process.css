@@ -149,6 +149,15 @@
     padding: 48px 16px 72px;
   }
 
+  .Process-Tabs {
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  .Process-Tab {
+    flex: 0 0 auto;
+  }
+
   .Process-Card {
     flex-direction: column;
     align-items: stretch;
@@ -170,18 +179,19 @@
 
 @media (max-width: 520px) {
   .Process-Tabs {
-    gap: 10px;
+    gap: 8px;
+    width: 100%;
   }
 
   .Process-Tab {
-    width: 46px;
-    height: 46px;
-    border-radius: 14px;
+    height: auto;
+    padding: 9px 12px;
+    border-radius: 12px;
   }
 
-  .Process-Tab svg {
-    width: 22px;
-    height: 22px;
+  .Process-Tab .H1 {
+    font-size: 11px !important;
+    white-space: nowrap;
   }
 
   .Process-Points {
