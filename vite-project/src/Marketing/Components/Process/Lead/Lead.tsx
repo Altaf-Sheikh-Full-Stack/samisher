@@ -8,16 +8,18 @@ import './Lead.css'
 
 const Lead = () => {
     return (
-        <Section className="Lead" variant="Primary" rounded="Bubble">
+        <Section className="Lead" variant="Primary">
             <Box className="Lead-Info" variant="Primary">
-                <Text textType="H2" color="Lite">From Zero to Qualified Leads — Powered by AI + Humans.</Text>
+                <Text textType="H2" color="White" >From Zero to Qualified Leads Powered by AI</Text>
                 <Box variant="Primary" className="Lead-Info-Point">
                     <Text textType="H4"  color="Lite">• AI prospecting</Text>
                     <Text textType="H4" color="Lite">• Human qualification</Text>
                     <Text textType="H4" color="Lite">• Faster bookings</Text>
                     <Text textType="H4" color="Lite">• Clear reporting</Text>
                 </Box>
-                <Button variant="Secondary" rounded="Bubble" >Book demo</Button>
+                <Button variant="Secondary" rounded="Bubble">
+                    <a style={{ color: '#ffffff', textDecoration: 'none' }} href="https://cal.com/samisher/meeting" target="_blank" rel="noopener noreferrer">Book demo</a>
+                </Button>
             </Box>
             <Box className="Lead-Img">
                 <img src={img1} alt="" loading="lazy" decoding="async" />

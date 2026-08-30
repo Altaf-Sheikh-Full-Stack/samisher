@@ -31,4 +31,16 @@
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
+  <url>
+    <loc>https://samisher.com/blogs/what-does-a-b2b-appointment-setting-agency-actually-do/</loc>
+    <lastmod>2026-08-24T09:03:21.000Z</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://samisher.com/blogs/b2b-lead-generation-what-actually-makes-a-lead-qualified/</loc>
+    <lastmod>2026-08-24T13:13:35.000Z</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
 </urlset>

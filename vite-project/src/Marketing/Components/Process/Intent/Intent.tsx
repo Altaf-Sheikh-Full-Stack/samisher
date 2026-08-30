@@ -10,13 +10,15 @@ const Intent = () => {
         <Section className="Intent" variant="Secondary" rounded="Bubble">
                     <Box className="Intent-Info" variant="Secondary">
                         <Text textType="H2" color="Lite">Target the buyers already in market</Text>
-                        <Box variant="Secondary" className="Lead-Info-Point">
+                        <Box variant="Secondary" className="Intent-Info-Point">
                             <Text color="Lite" textType="H4">Spot active buyers</Text>
                             <Text color="Lite" textType="H4">Prioritize hot leads</Text>
                             <Text color="Lite" textType="H4">Trigger faster outreach</Text>
                             <Text color="Lite" textType="H4">Improve close rates</Text>
                         </Box>
-                        <Button variant="Primary" rounded="Bubble" >Book demo</Button>
+                        <Button variant="Primary" rounded="Bubble">
+                            <a style={{ color: '#ffffff', textDecoration: 'none' }} href="https://cal.com/samisher/meeting" target="_blank" rel="noopener noreferrer">Book demo</a>
+                        </Button>
                     </Box>
                     <Box className="Intent-Img">
                         <img src={img1} alt="" loading="lazy" decoding="async" />

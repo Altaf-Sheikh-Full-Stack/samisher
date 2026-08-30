@@ -4,6 +4,7 @@ import './Home.css'
 import Company from "../../Components/Company/Company"
 import Banner from "../../Components/Banner/Banner"
 import Stack from "../../Components/Stack/Stack"
+import Process from "../../Components/Process/Process"
 import Funnel from "../../Components/Statistics/Statistics"
 import CTA from "../../Components/CTA/CTA"
 import FAQ from "../../Components/FAQ/FAQ"
@@ -37,6 +38,7 @@ const Home = () => {
             <Banner />
             <Navbar />
             <Hero />
+            <Process/>
             <Company />
             <Stack />
             <Funnel/>

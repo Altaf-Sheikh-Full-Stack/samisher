@@ -11,13 +11,15 @@ const Meeting = () => {
         <Section className="Meeting" variant="Primary" rounded="Bubble">
             <Box className="Meeting-Info" variant="Primary">
                 <Text textType="H2" color="Lite">Turn conversations into booked meetings</Text>
-                <Box variant="Primary" className="Lead-Info-Point">
+                <Box variant="Primary" className="Meeting-Info-Point">
                     <Text textType="H4" color="Lite">• AI scheduling</Text>
                     <Text textType="H4" color="Lite">• Human follow-up</Text>
                     <Text textType="H4" color="Lite">• Smoother coordination</Text>
                     <Text textType="H4" color="Lite">• Higher conversion rates</Text>
                 </Box>
-                <Button variant="Secondary" rounded="Bubble" >Book demo</Button>
+                <Button variant="Secondary" rounded="Bubble">
+                    <a style={{ color: '#ffffff', textDecoration: 'none' }} href="https://cal.com/samisher/meeting" target="_blank" rel="noopener noreferrer">Book demo</a>
+                </Button>
             </Box>
             <Box className="Meeting-Img">
                 <img src={img1} alt="" loading="lazy" decoding="async" />

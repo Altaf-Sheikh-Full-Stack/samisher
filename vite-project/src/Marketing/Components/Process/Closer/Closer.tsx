@@ -10,13 +10,15 @@ const Closer = () => {
         <Section className="Closer" variant="Secondary" rounded="Bubble">
                     <Box className="Closer-Info" variant="Secondary">
                         <Text textType="H2" color="Lite">Turn qualified interest into closed revenue</Text>
-                        <Box variant="Secondary" className="Lead-Info-Point">
+                        <Box variant="Secondary" className="Closer-Info-Point">
                             <Text textType="H4" color="Lite">• AI-powered qualification</Text>
                             <Text textType="H4" color="Lite">• Human-driven closing</Text>
                             <Text textType="H4" color="Lite">• Seamless integration</Text>
                             <Text textType="H4" color="Lite">• Improved conversion rates</Text>
                         </Box>
-                        <Button variant="Primary" rounded="Bubble" >Book demo</Button>
+                        <Button variant="Primary" rounded="Bubble">
+                            <a style={{ color: '#ffffff', textDecoration: 'none' }} href="https://cal.com/samisher/meeting" target="_blank" rel="noopener noreferrer">Book demo</a>
+                        </Button>
                     </Box>
                     <Box className="Closer-Img">
                         <img src={img1} alt="" loading="lazy" decoding="async" />
