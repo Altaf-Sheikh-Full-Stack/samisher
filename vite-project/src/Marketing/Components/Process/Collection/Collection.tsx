@@ -8,7 +8,7 @@ import img1 from '../../../../assets/Funnel/ChatGPT Image Aug 12, 2026, 08_09_01
 
 const Collection = () => {
     return (
-        <Section className="Collection" variant="Primary" rounded="Bubble">
+        <Section className="Collection" variant="Primary" >
             <Box className="Collection-Info" variant="Transparent">
                 <Text textType="H2" color="Lite">Turn outstanding invoices into collected revenue</Text>
                 <Box variant="Transparent" className="Collection-Info-Point">
