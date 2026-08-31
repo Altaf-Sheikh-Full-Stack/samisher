@@ -141,18 +141,18 @@ function StepCard({
 }: StepCardProps) {
   return (
     <Box className="PE-Step">
-      <Box className="PE-StepHdr">
+      {/* <Box className="PE-StepHdr">
         <Text textType="Text" color="Lite" className="PE-Count">
           Step {current + 1} of {stepCount}
         </Text>
         <Box className="PE-Track">
           <i style={{ width: `${((current + 1) / stepCount) * 100}%` }} />
         </Box>
-      </Box>
+      </Box> */}
       {current === 0 && (
         <Box className="PE-Body">
-          <Text textType="H3" color="Dark" weight="700">
-            What should we deliver?
+          <Text textType="H3" color="Dark" weight="500">
+            What’s your biggest sales bottleneck right now?
           </Text>
           <Box className="PE-Grid">
             {services.map((s) => (
