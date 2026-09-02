@@ -130,7 +130,7 @@
 .Process-Img {
   width: 50%;
   min-height: 280px;
-  border-radius: 20px;
+  /* border-radius: 20px; */
   overflow: hidden;
   background: #e5e7eb;
 }
@@ -141,7 +141,7 @@
   height: 100%;
   min-height: 280px;
   object-fit: cover;
-  border-radius: 20px;
+  /* border-radius: 13px; */
 }
 
 @media (max-width: 900px) {

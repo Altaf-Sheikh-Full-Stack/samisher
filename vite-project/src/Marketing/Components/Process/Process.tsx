@@ -2,7 +2,7 @@ import { useState, type CSSProperties, type KeyboardEvent, type ReactNode } from
 import Button from '../../../System/Button/Button'
 import Box from '../../../System/Layouts/Box/Box'
 import Text from '../../../System/Texts/Text'
-import leadImg from '../../../assets/Process/Lead/ChatGPT Image Aug 10, 2026, 07_04_09 PM.png'
+import leadImg from '../../../assets/Process/Lead/Component 4 (1).webp'
 import intentImg from '../../../assets/Process/Intent/ChatGPT Image Aug 11, 2026, 03_25_34 PM.png'
 import meetingImg from '../../../assets/Process/Meeting/ChatGPT Image Aug 11, 2026, 08_25_23 PM.png'
 import closerImg from '../../../assets/Process/Closer/ChatGPT Image Aug 11, 2026, 10_49_29 PM.png'
