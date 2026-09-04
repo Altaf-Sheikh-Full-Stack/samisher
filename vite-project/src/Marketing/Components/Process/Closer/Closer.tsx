@@ -3,7 +3,7 @@ import Box from "../../../../System/Layouts/Box/Box"
 import Section from "../../../../System/Layouts/Section/Section"
 import Text from "../../../../System/Texts/Text"
 import './Closer.css'
-import img1 from '../../../../assets/Process/Closer/ChatGPT Image Aug 11, 2026, 10_49_29 PM.png'
+import img1 from '../../../../assets/Process/Closer/Component 7.webp'
 
 const Closer = () => {
     return(

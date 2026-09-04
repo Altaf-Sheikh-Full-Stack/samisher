@@ -2,7 +2,7 @@ import Button from "../../../../System/Button/Button"
 import Box from "../../../../System/Layouts/Box/Box"
 import Section from "../../../../System/Layouts/Section/Section"
 import Text from "../../../../System/Texts/Text"
-import img1 from '../../../../assets/Process/Lead/ChatGPT Image Aug 10, 2026, 07_04_09 PM.png'
+import img1 from '../../../../assets/Process/Lead/Component 4 (1).webp'
 import './Lead.css'
 
 

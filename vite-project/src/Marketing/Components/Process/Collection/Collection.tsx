@@ -4,7 +4,7 @@ import Section from "../../../../System/Layouts/Section/Section"
 import Text from "../../../../System/Texts/Text"
 import './Collection.css'
 // NOTE: placeholder visual — replace with a dedicated Collection asset when available.
-import img1 from '../../../../assets/Funnel/ChatGPT Image Aug 12, 2026, 08_09_01 PM.png'
+import img1 from '../../../../assets/Process/Money/Component 8.webp'
 
 const Collection = () => {
     return (

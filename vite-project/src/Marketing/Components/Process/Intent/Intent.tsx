@@ -3,7 +3,7 @@ import Box from "../../../../System/Layouts/Box/Box"
 import Section from "../../../../System/Layouts/Section/Section"
 import Text from "../../../../System/Texts/Text"
 import './Intent.css'
-import img1 from '../../../../assets/Process/Intent/ChatGPT Image Aug 11, 2026, 03_25_34 PM.png'
+import img1 from '../../../../assets/Process/Intent/Component 5.webp'
 
 const Intent = () => {
     return(
