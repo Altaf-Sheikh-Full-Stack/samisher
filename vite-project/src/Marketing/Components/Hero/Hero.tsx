@@ -9,7 +9,7 @@ const Hero = () => {
         <div className="Home"  >
             <Box className="Hero-Text">
                 {/* <span className="Hero-Eyebrow">Performance-based B2B growth</span> */}
-                <Text textType="H1" weight="700" color="White">Guaranteed 🎯 Revenue. <br /> One Click Away. </Text>
+                <Text textType="H1" weight="700" color="White">Guaranteed Revenue. <br /> One Click Away. 🌈</Text>
                 <Text textType="H3" color="Lite" weight="500"  >From finding the right prospects to collecting the money, we handle your entire sales process. </Text>
             </Box>
 {/* 
