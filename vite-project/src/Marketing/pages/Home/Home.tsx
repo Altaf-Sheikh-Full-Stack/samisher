@@ -35,16 +35,16 @@ export function meta() {
 const Home = () => {
     return (
         <>
-            <Banner />
+            {/* <Banner /> */}
             <Navbar />
-            <Hero />
-            <Process/>
+            {/* <Hero /> */}
+            {/* <Process/> */}
             {/* <Company /> */}
-            <Stack />
-            <Funnel/>
-            <FAQ/>
-            <CTA/>
-            <Footer/>
+            {/* <Stack /> */}
+            {/* <Funnel/> */}
+            {/* <FAQ/> */}
+            {/* <CTA/> */}
+            {/* <Footer/> */}
         </>
 
     )

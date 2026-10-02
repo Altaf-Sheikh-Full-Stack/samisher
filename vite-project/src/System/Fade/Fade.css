@@ -1,0 +1,25 @@
+.FadeIn {
+    filter: blur(var(--fade-blur));
+    transition:
+        opacity var(--fade-duration) ease,
+        filter var(--fade-duration) ease,
+        transform var(--fade-duration) ease;
+
+    transition-delay: var(--fade-delay);
+}
+
+.FadeIn-visible {
+    opacity: 1;
+    filter: blur(0);
+    transform: translateY(0);
+}
+
+/* Respect users who prefer reduced motion */
+@media (prefers-reduced-motion: reduce) {
+    .FadeIn {
+        opacity: 1;
+        filter: none;
+        transform: none;
+        transition: none;
+    }
+}

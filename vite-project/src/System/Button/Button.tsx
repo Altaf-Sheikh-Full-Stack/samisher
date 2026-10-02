@@ -1,7 +1,9 @@
+
 import './Button.css'
 
 type Variant = "Primary" | "Secondary" | "Transparent" | "Danger"
 type Rounded = "Flat" | "Bubble" | "Round"
+type Size = "Small" | "Medium" | "Large"
 
 interface ButtonProps {
     variant?: Variant;
@@ -10,86 +12,91 @@ interface ButtonProps {
     onClick?: React.MouseEventHandler<HTMLButtonElement>;
     className?: string;
     disabled?: boolean;
+    size?:Size;
 }
 
-type VariantVars = React.CSSProperties & Record<`--btn-${string}`, string>
 
-const variantConf: Record<Variant, { color: string; vars: VariantVars }> = {
+const sizeConf: Record<Size, { padding: string; fontSize: string }> = {
+    Small: {
+        padding: "8px 12px",
+        fontSize: "12px"
+    },
+    Medium: {
+        padding: "10px 16px",
+        fontSize: "14px"
+    },
+    Large: {
+        padding: "15px 20px",
+        fontSize: "16px"
+    }
+};
+
+
+const variantConf: Record<Variant, { color: string; background: string }> = {
     Primary: {
-        color: "white",
-        vars: {
-            "--btn-face-top": "#8b5cf6",
-            "--btn-face-bottom": "#6d28d9",
-            "--btn-edge": "rgba(76, 29, 149, 0.55)",
-            "--btn-highlight": "rgba(255, 255, 255, 0.32)",
-            "--btn-glow": "rgba(124, 58, 237, 0.42)"
-        }
+        color: "black",
+        background: "blueviolet"
     },
     Secondary: {
-        color: "white",
-        vars: {
-            "--btn-face-top": "#273141",
-            "--btn-face-bottom": "#111827",
-            "--btn-edge": "rgba(255, 255, 255, 0.09)",
-            "--btn-highlight": "rgba(255, 255, 255, 0.14)",
-            "--btn-glow": "rgba(17, 24, 39, 0.35)"
-        }
+        color: "black",
+        background: "white"
     },
     Transparent: {
         color: "black",
-        vars: {
-            "--btn-face-top": "#ffffff",
-            "--btn-face-bottom": "#eceef2",
-            "--btn-edge": "rgba(17, 24, 39, 0.12)",
-            "--btn-highlight": "rgba(255, 255, 255, 0.95)",
-            "--btn-glow": "rgba(15, 23, 42, 0.14)"
-        }
+        background: "transparent"
     },
     Danger: {
         color: "white",
-        vars: {
-            "--btn-face-top": "#ef5350",
-            "--btn-face-bottom": "#d32f2f",
-            "--btn-edge": "rgba(127, 15, 15, 0.5)",
-            "--btn-highlight": "rgba(255, 255, 255, 0.3)",
-            "--btn-glow": "rgba(239, 68, 68, 0.4)"
-        }
+        background: "#FF0141"
     }
 };
 
 const roundedConf: Record<Rounded, { borderRadius: number }> = {
     Flat: { borderRadius: 0 },
     Bubble: { borderRadius: 7 },
-    Round: { borderRadius: 50 }
+    Round: { borderRadius: 100 }
 };
 
 const Button = ({
     variant = "Primary",
     children,
-    rounded = "Flat",
+    rounded = "Round",
     onClick,
     className,
     disabled = false,
+    size = "Medium"
 }: ButtonProps) => {
+
+    
+
+    
+
 
     const colorStyle = variantConf[variant].color;
     const borderRadiusStyle = roundedConf[rounded].borderRadius;
+    const backgroundStyle = variantConf[variant].background;
+    const paddingStyle = sizeConf[size].padding;
+    const fontSizeStyle = sizeConf[size].fontSize;
 
     const styles: React.CSSProperties = {
-        ...variantConf[variant].vars,
         color: colorStyle,
-        borderRadius: borderRadiusStyle
+        background: backgroundStyle,
+        borderRadius: borderRadiusStyle,
+        padding: paddingStyle,
+        fontSize: fontSizeStyle
     };
 
     return (
-        <button
-            className={`Button ${className || ""}`}
-            style={styles}
-            onClick={onClick}
-            disabled={disabled}
-        >
-            {children}
-        </button>
+       
+            <button
+                className={`Button ${className || ""}`}
+                style={styles}
+                onClick={onClick}
+                disabled={disabled}
+            >
+                {children}
+            </button>
+        
     );
 };
 
