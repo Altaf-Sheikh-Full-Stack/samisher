@@ -1,7 +1,7 @@
-import Section from "../../../System/Layouts/Section/Section";
-import Text from "../../../System/Texts/Text";
+import Section from "../../../Design/Layouts/Section/Section";
+import Text from "../../../Design/Texts/Text";
 import CompanyData from "./CompanyData";
-import Box from "../../../System/Layouts/Box/Box";
+import Box from "../../../Design/Layouts/Box/Box";
 import "./Company.css";
 
 const Company = () => {

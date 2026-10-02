@@ -1,6 +1,6 @@
-import Button from "../../../System/Button/Button"
-import Box from "../../../System/Layouts/Box/Box"
-import Text from "../../../System/Texts/Text"
+import Button from "../../../Design/Button/Button"
+import Box from "../../../Design/Layouts/Box/Box"
+import Text from "../../../Design/Texts/Text"
 import './Hero.css'
 import { NavLink } from "react-router"
 

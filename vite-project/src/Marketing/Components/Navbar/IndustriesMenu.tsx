@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import Text from '../../../System/Texts/Text'
+import Text from '../../../Design/Texts/Text'
 import { industries } from '../Stack/IndustriesData'
 import './IndustriesMenu.css'
 

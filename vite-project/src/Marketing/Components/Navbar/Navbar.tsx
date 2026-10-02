@@ -1,14 +1,17 @@
 import './Navbar.css'
 
 import { useState } from 'react'
-import Button from "../../../System/Button/Button"
-import Section from "../../../System/Layouts/Section/Section"
-import Box from '../../../System/Layouts/Box/Box'
-import Text from '../../../System/Texts/Text'
+import Button from "../../../Design/Button/Button"
+import Section from "../../../Design/Layouts/Section/Section"
+import Box from '../../../Design/Layouts/Box/Box'
+import Text from '../../../Design/Texts/Text'
 import { NavLink } from "react-router";
 import ServicesMenu from './ServicesMenu'
 import IndustriesMenu from './IndustriesMenu'
 import { services } from '../Stack/StackData'
+import logo from '/A.svg'
+import Image from '../../../Design/Img/Img'
+
 
 const Navbar = () => {
     const [mobileOpen, setMobileOpen] = useState(false)
@@ -20,7 +23,8 @@ const Navbar = () => {
         <Section className="Navbar" variant='Transparent' >
             <Box className='Navbar-Logo' >
                 <NavLink to="/" end>
-                    <Text color='Brand' weight='800'  textType='H3' >Samisher</Text>
+                <Image highRes={logo} lowRes={logo} />
+                    
                 </NavLink>
 
                 <Box className='Navbar-Items' >

@@ -1,7 +1,7 @@
-import Button from "../../../../System/Button/Button"
-import Box from "../../../../System/Layouts/Box/Box"
-import Section from "../../../../System/Layouts/Section/Section"
-import Text from "../../../../System/Texts/Text"
+import Button from "../../../../Design/Button/Button"
+import Box from "../../../../Design/Layouts/Box/Box"
+import Section from "../../../../Design/Layouts/Section/Section"
+import Text from "../../../../Design/Texts/Text"
 import './Collection.css'
 // NOTE: placeholder visual — replace with a dedicated Collection asset when available.
 import img1 from '../../../../assets/Process/Money/Component 8.webp'

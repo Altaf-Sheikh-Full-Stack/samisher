@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { services } from '../Stack/StackData'
-import Text from '../../../System/Texts/Text'
+import Text from '../../../Design/Texts/Text'
 import './ServicesMenu.css'
 
 const ServicesMenu = () => {

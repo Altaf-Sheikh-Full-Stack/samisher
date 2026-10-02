@@ -27,7 +27,7 @@ export function Layout({ children }: { children: ReactNode }) {
         <meta charSet="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta name="theme-color" content="#ffffff" />
-        <link rel="icon" type="image/svg+xml" href="/S.svg" />
+        <link rel="icon" type="image/svg+xml" href="/A.svg" />
         {/* <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link

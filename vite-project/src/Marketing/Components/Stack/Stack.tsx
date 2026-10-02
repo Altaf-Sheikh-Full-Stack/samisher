@@ -1,5 +1,5 @@
-import Section from '../../../System/Layouts/Section/Section'
-import Text from '../../../System/Texts/Text'
+import Section from '../../../Design/Layouts/Section/Section'
+import Text from '../../../Design/Texts/Text'
 import './Stack.css'
 
 const sections = [

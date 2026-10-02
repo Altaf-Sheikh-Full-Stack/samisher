@@ -1,7 +1,7 @@
 
-import Section from '../../../System/Layouts/Section/Section'
-import Box from '../../../System/Layouts/Box/Box'
-import Text from '../../../System/Texts/Text'
+import Section from '../../../Design/Layouts/Section/Section'
+import Box from '../../../Design/Layouts/Box/Box'
+import Text from '../../../Design/Texts/Text'
 import './Statistics.css'
 import StatisticsData from './StatisticsData'
 const Statistics = () => {

@@ -1,8 +1,8 @@
 import { useMemo, useState } from "react";
-import Section from "../../../System/Layouts/Section/Section";
-import Box from "../../../System/Layouts/Box/Box";
-import Text from "../../../System/Texts/Text";
-import Button from "../../../System/Button/Button";
+import Section from "../../../Design/Layouts/Section/Section";
+import Box from "../../../Design/Layouts/Box/Box";
+import Text from "../../../Design/Texts/Text";
+import Button from "../../../Design/Button/Button";
 import { services, closingOptions, marketOptions, getService } from "./data";
 import { buildEstimate } from "./logic";
 import type {
