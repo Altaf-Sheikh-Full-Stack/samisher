@@ -1,7 +1,7 @@
 import { useState, useEffect, useCallback } from 'react'
 import Button from "../../../Design/Button/Button"
-import Box from "../../../Design/Layouts/Box/Box"
-import Section from "../../../Design/Layouts/Section/Section"
+import Box from "../../../Design/Container/Box/Box"
+import Section from "../../../Design/Container/Section/Section"
 import Text from "../../../Design/Texts/Text"
 import CareerData, { type Job } from "./CareerData"
 import "./Career.css"

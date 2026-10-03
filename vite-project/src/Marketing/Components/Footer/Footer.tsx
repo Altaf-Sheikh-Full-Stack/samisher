@@ -1,43 +1,42 @@
-import Box from "../../../Design/Layouts/Box/Box"
-import Section from "../../../Design/Layouts/Section/Section"
 import Text from "../../../Design/Texts/Text"
 import { Link } from 'react-router'
 import './Footer.css'
+import Container from "../../../Design/Container/Container"
 
 const Footer = () => {
     return (
-        <Section className="Footer" size="Fluid" variant="Secondary">
-            <Box className="Footer-Brand" variant="Secondary">
-                <Text textType="H2" color="White" weight="800">Samisher</Text>
-                <Text color="Lite">
+        <Container className="Footer" color="White">
+            <Container className="Footer-Brand" color="White">
+                <Text textType="H2" color="Black" weight="800">Samisher</Text>
+                <Text color="Dark">
                     Helping B2B teams book qualified meetings with a predictable, performance-based model.
                 </Text>
-            </Box>
+            </Container>
 
-            <Box variant="Secondary" className="Footer-Links">
-                <Box variant="Secondary" className="Footer-Left">
-                    <Text textType="H3" color="Brand">Socials</Text>
-                    <Text color="Lite">LinkedIn</Text>
-                    <Text color="Lite">X.com</Text>
-                    <Text color="Lite">Instagram</Text>
-                </Box>
+            <Container className="Footer-Links" color="White">
+                <Container className="Footer-Left" color="White">
+                    <Text textType="H3" color="Black">Socials</Text>
+                    <Text textType="Text" color="Dark">LinkedIn</Text>
+                    <Text color="Dark">X.com</Text>
+                    <Text color="Dark">Instagram</Text>
+                </Container>
 
-                <Box variant="Secondary" className="Footer-Right">
-                    <Text textType="H3" color="Brand">Know more</Text>
-                    <Link to="/about/"><Text color="Lite">About us</Text></Link>
-                    <Link to="/pricing/"><Text color="Lite">Pricing</Text></Link>
-                    <Link to="/career/"><Text color="Lite">Career</Text></Link>
-                    <Link to="/blogs/"><Text color="Lite">Blogs</Text></Link>
-                </Box>
-                <Box variant="Secondary" className="Footer-Right">
-                    <Text textType="H3" color="Brand">Trust and safety</Text>
-                    <Text color="Lite">Privacy policy</Text>
-                    <Link to="/pricing/"><Text color="Lite">Terms of Service</Text></Link>
-                    <Text color="Lite">Refund Policy</Text>
-                    <Text color="Lite">Data Processing Addendum </Text>
-                </Box>
-            </Box>
-        </Section>
+                <Container className="Footer-Right" color="White">
+                    <Text textType="H3" color="Black">Know more</Text>
+                    <Link to="/about/"><Text color="Dark">About us</Text></Link>
+                    <Link to="/pricing/"><Text color="Dark">Pricing</Text></Link>
+                    <Link to="/career/"><Text color="Dark">Career</Text></Link>
+                    <Link to="/blogs/"><Text color="Dark">Blogs</Text></Link>
+                </Container>
+                <Container className="Footer-Right" color="White">
+                    <Text textType="H3" color="Black">Trust and safety</Text>
+                    <Text color="Dark">Privacy policy</Text>
+                    <Link to="/pricing/"><Text color="Dark">Terms of Service</Text></Link>
+                    <Text color="Dark">Refund Policy</Text>
+                    <Text color="Dark">Data Processing Addendum </Text>
+                </Container>
+            </Container>
+        </Container>
     )
 }
 

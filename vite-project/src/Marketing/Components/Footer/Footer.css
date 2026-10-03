@@ -7,7 +7,11 @@
   width: 100%;
   padding-bottom: 64px;
 }
-.Footer a { text-decoration: none; }.Footer-Left p, .Footer-Right p { color: #cbd5e1 !important; font-size: 14px !important; }
+.Footer a { 
+  text-decoration: none;
+ }
+ 
+
 
 .Footer-Brand {
   display: flex;

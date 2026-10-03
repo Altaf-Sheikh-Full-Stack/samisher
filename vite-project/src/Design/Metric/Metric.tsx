@@ -1,4 +1,4 @@
-import Section from "../Layouts/Section/Section";
+import Section from "../Container/Section/Section";
 import "./Metric.css";
 
 interface Props {

@@ -2,29 +2,28 @@ import './Navbar.css'
 
 import { useState } from 'react'
 import Button from "../../../Design/Button/Button"
-import Section from "../../../Design/Layouts/Section/Section"
-import Box from '../../../Design/Layouts/Box/Box'
+import Section from "../../../Design/Container/Section/Section"
+import Box from '../../../Design/Container/Box/Box'
 import Text from '../../../Design/Texts/Text'
 import { NavLink } from "react-router";
 import ServicesMenu from './ServicesMenu'
-import IndustriesMenu from './IndustriesMenu'
 import { services } from '../Stack/StackData'
 import logo from '/A.svg'
 import Image from '../../../Design/Img/Img'
+import Container from '../../../Design/Container/Container'
 
 
 const Navbar = () => {
     const [mobileOpen, setMobileOpen] = useState(false)
     const [mobileServices, setMobileServices] = useState(false)
-    const [mobileIndustries, setMobileIndustries] = useState(false)
     const [activeService, setActiveService] = useState<number | null>(null)
 
     return (
-        <Section className="Navbar" variant='Transparent' >
+        <Container className="Navbar" color='White' >
+
             <Box className='Navbar-Logo' >
                 <NavLink to="/" end>
-                <Image highRes={logo} lowRes={logo} />
-                    
+                    <Image highRes={logo} lowRes={logo} alt='Samisher logo' height={50}  />
                 </NavLink>
 
                 <Box className='Navbar-Items' >
@@ -33,38 +32,32 @@ const Navbar = () => {
                             type="button"
                             className='Navbar-ServicesTrigger'
                         >
-                            <Text color='Dark' weight='400'>Services</Text>
+                            <Text color='Black' weight='400'>Services</Text>
                             <span className='Navbar-ServicesChevron' aria-hidden="true">⌄</span>
                         </button>
                         <ServicesMenu />
                     </div>
-                    <div className='Navbar-Industries'>
-                        <button
-                            type="button"
-                            className='Navbar-IndustriesTrigger'
-                        >
-                            <Text color='Dark' weight='400'>Industries</Text>
-                            <span className='Navbar-IndustriesChevron' aria-hidden="true">⌄</span>
-                        </button>
-                        <IndustriesMenu />
-                    </div>
                     <NavLink to="/about/" className={({ isActive }) => isActive ? 'is-active' : ''}>
-                        <Text color='Dark' weight='400' >About us</Text>
+                        <Text color='Black' weight='400' >About us</Text>
                     </NavLink>
                     <NavLink to="/career/" className={({ isActive }) => isActive ? 'is-active' : ''}>
-                        <Text color='Dark' weight='400'>Career</Text>
+                        <Text color='Black' weight='400'>Career</Text>
                     </NavLink>
                     <NavLink to="/blogs/" className={({ isActive }) => isActive ? 'is-active' : ''}>
-                        <Text color='Dark' weight='400'>Blogs</Text>
+                        <Text color='Black' weight='400'>Blogs</Text>
                     </NavLink>
                     <NavLink to="/pricing/" className={({ isActive }) => isActive ? 'is-active' : ''}>
-                        <Text color='Dark' weight='400'>Pricing</Text>
+                        <Text color='Black' weight='400'>Pricing</Text>
                     </NavLink>
                 </Box>
+         
             </Box>
+        
+
+
 
             <Box className='Navbar-Buttons' >
-                <Button rounded='Bubble'><a style={{ color: 'white', textDecoration: 'none' }} href="https://cal.com/samisher/meeting" target="_blank" rel="noopener noreferrer"> Book Meeting →</a></Button>
+                <Button rounded='Round'  size='Large'><a style={{ color: 'white', textDecoration: 'none' }} href="https://cal.com/samisher/meeting" target="_blank" rel="noopener noreferrer">Book Demo</a></Button>
             </Box>
 
             <button
@@ -94,57 +87,18 @@ const Navbar = () => {
                         {mobileServices && (
                             <div className="Navbar-MobileServices">
                                 {services.map((service, i) => (
-                                    <div className="Navbar-MobileService" key={service.label}>
+                                    <div className="Navbar-MobileService" key={service.Name}>
                                         <button
                                             type="button"
                                             className="Navbar-MobileServiceLabel"
                                             onClick={() => setActiveService((prev) => (prev === i ? null : i))}
                                         >
-                                            <Text color='Dark' weight='600'>{service.title}</Text>
+                                            <Text color='Dark' weight='600'>{service.Name}</Text>
                                             <span className='Navbar-MobileChevron' aria-hidden="true">⌄</span>
                                         </button>
-                                        {activeService === i && (
-                                            <div className="Navbar-MobileSubservices">
-                                                {service.subservices.map((sub) => (
-                                                    <NavLink to="/pricing/" key={sub.title} onClick={() => setMobileOpen(false)}>
-                                                        <Text color='Lite' weight='400'>{sub.title}</Text>
-                                                    </NavLink>
-                                                ))}
-                                            </div>
-                                        )}
+                                       
                                     </div>
                                 ))}
-                            </div>
-                        )}
-                    </div>
-
-                    <div className="Navbar-MobileGroup">
-                        <button
-                            type="button"
-                            className={`Navbar-MobileServiceHead ${mobileIndustries ? 'is-open' : ''}`}
-                            onClick={() => setMobileIndustries((prev) => !prev)}
-                        >
-                            <Text color='Lite'>Industries</Text>
-                            <span className='Navbar-MobileChevron' aria-hidden="true">⌄</span>
-                        </button>
-
-                        {mobileIndustries && (
-                            <div className="Navbar-MobileSubservices">
-                                <NavLink to="/pricing/" onClick={() => setMobileOpen(false)}>
-                                    <Text color='Lite' weight='400'>B2B SaaS</Text>
-                                </NavLink>
-                                <NavLink to="/pricing/" onClick={() => setMobileOpen(false)}>
-                                    <Text color='Lite' weight='400'>IT Services</Text>
-                                </NavLink>
-                                <NavLink to="/pricing/" onClick={() => setMobileOpen(false)}>
-                                    <Text color='Lite' weight='400'>AI Companies</Text>
-                                </NavLink>
-                                <NavLink to="/pricing/" onClick={() => setMobileOpen(false)}>
-                                    <Text color='Lite' weight='400'>B2B Agencies</Text>
-                                </NavLink>
-                                <NavLink to="/pricing/" onClick={() => setMobileOpen(false)}>
-                                    <Text color='Lite' weight='400'>B2B Consulting</Text>
-                                </NavLink>
                             </div>
                         )}
                     </div>
@@ -163,7 +117,8 @@ const Navbar = () => {
                     </NavLink>
                 </Section>
             )}
-        </Section>
+
+        </Container>
     )
 }
 

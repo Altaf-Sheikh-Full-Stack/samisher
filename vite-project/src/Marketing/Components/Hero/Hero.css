@@ -16,110 +16,28 @@
   gap: 10px;
   padding-bottom: 30px;
 }
-.Hero-Eyebrow {
-  align-self: center;
-  padding: 8px 12px;
-  border: 1px solid #ddd6fe;
-  border-radius: 999px;
-  background: #f5f3ff;
-  color: #6d28d9;
-  font:
-    800 11px/1 Inter,
-    sans-serif;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
+
+
+.Home-Boll-Img{
+  height: 100px;
+  width: 300px;
+  border-radius: 100px;
+  margin: auto;
+
 }
+
+
 .Hero-Text h1 {
   letter-spacing: -0.06em;
 }
-.Hero-Text h3 {
+.Hero-Body h5 {
   max-width: 700px;
   margin: 0 auto;
   line-height: 1.55;
 }
 
-.Hero-Point {
-  display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 1px;
-  max-width: 1100px;
-  width: 100%;
-  margin: auto;
-}
 
-.Hero-PointItem {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-  text-align: left;
-  min-height: 54px;
-  border-right: 1px solid #e5e7eb;
-}
 
-.Hero-PointItem span {
-  font-size: 1.2rem;
-  line-height: 1;
-}
-
-.Hero-PointItem p {
-  margin: 0;
-}
-.Hero-PointItem:last-child {
-  border-right: 0;
-}
-.Hero-PointItem p {
-  /* color: #445066; */
-  /* font-size: 14px !important; */
-}
-
-.Hero-CTA {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 16px;
-  flex-wrap: wrap;
-}
-
-.Hero-Img {
-  display: grid;
-  place-items: center;
-  z-index: 0;
-  margin-top: 28px;
-  border: 1px solid #e2e8f0;
-  border-radius: 20px;
-  overflow: hidden;
-  box-shadow: 0 25px 65px rgba(27, 35, 56, 0.13);
-}
-
-.Hero-Img img {
-  filter: blur(5px);
-  max-width: 100%;
-  grid-column: 1/2;
-  grid-row: 1/2;
-  z-index: 0;
-}
-
-.Hero-Img div {
-  grid-column: 1/2;
-  grid-row: 1/2;
-  width: 100%;
-  background-color: transparent !important;
-  z-index: 1;
-}
-.Hero-Note {
-  /* color: #667085 !important; */
-  /* font-size: 13px !important; */
-}
-
-@media (max-width: 768px) {
-  .Hero-Point {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-  .Hero-PointItem:nth-child(2) {
-    border-right: 0;
-  }
-}
 
 @media (max-width: 520px) {
   .Home {
@@ -127,31 +45,4 @@
     padding: 20px 16px;
   }
 
-  .Hero-Point {
-    grid-template-columns: 1fr;
-    gap: 12px;
-  }
-
-  .Hero-PointItem {
-    justify-content: flex-start;
-    border-right: 0;
-    border-bottom: 1px solid #e5e7eb;
-    text-align: left;
-  }
-  .Hero-PointItem:last-child {
-    border-bottom: 0;
-  }
-
-  .Hero-CTA {
-    flex-direction: column;
-    width: 100%;
-  }
-
-  .Hero-CTA button {
-    width: 100% !important;
-  }
-
-  .Hero-CTA > * {
-    width: 100%;
-  }
 }

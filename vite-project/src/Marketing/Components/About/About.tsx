@@ -1,6 +1,6 @@
 import Button from "../../../Design/Button/Button"
-import Section from "../../../Design/Layouts/Section/Section"
-import Box from "../../../Design/Layouts/Box/Box"
+import Section from "../../../Design/Container/Section/Section"
+import Box from "../../../Design/Container/Box/Box"
 import Text from "../../../Design/Texts/Text"
 import "./About.css"
 

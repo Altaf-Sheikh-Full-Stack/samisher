@@ -20,6 +20,6 @@ export default [
   ...(hasSanity
     ? [route('blogs/:slug/', './Marketing/pages/BlogPost/BlogPost.tsx')]
     : []),
-  route('studio', './sanity/studio-route.tsx'),
+  route('studio', './Marketing/sanity/studio-route.tsx'),
   route('*', './Marketing/pages/NotFound/NotFound.tsx'),
 ] satisfies RouteConfig

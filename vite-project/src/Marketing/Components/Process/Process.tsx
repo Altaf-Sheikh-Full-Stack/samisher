@@ -1,6 +1,6 @@
 import { useState, type CSSProperties, type KeyboardEvent, type ReactNode } from 'react'
 import Button from '../../../Design/Button/Button'
-import Box from '../../../Design/Layouts/Box/Box'
+import Box from '../../../Design/Container/Box/Box'
 import Text from '../../../Design/Texts/Text'
 import leadImg from '../../../assets/Process/Lead/Component 4 (1).webp'
 import intentImg from '../../../assets/Process/Intent/Component 5.webp'
@@ -27,20 +27,11 @@ const STEPS: Step[] = [
         color: '#ec4899',
         background: 'linear-gradient(180deg, #f9a8d4 0%, #ec4899 28%, #be185d 62%, #831843 100%)',
         title: 'From Zero to Qualified Leads Powered by AI',
-        points: ['AI prospecting', 'Human qualification', 'Faster bookings', 'Clear reporting'],
+        points: ['Find ICP Leads', 'Verify Contact details', 'Create Report', 'Find Intent'],
         image: leadImg,
         imageAlt: 'AI-powered lead generation workflow',
     },
-    {
-        id: 'intent',
-        label: 'Intent',
-        color: '#f97316',
-        background: 'linear-gradient(180deg, #fdba74 0%, #fb923c 28%, #ea580c 62%, #9a3412 100%)',
-        title: 'Target the buyers already in market',
-        points: ['Spot active buyers', 'Prioritize hot leads', 'Trigger faster outreach', 'Improve close rates'],
-        image: intentImg,
-        imageAlt: 'Buyer intent targeting',
-    },
+   
     {
         id: 'meeting',
         label: 'Meeting booking',
@@ -75,19 +66,16 @@ const STEPS: Step[] = [
 
 const ICONS: Record<string, ReactNode> = {
     lead: (
-        <Text color='Lite'>Find Revenue</Text>
-    ),
-    intent: (
-        <Text color='Lite'>Verify Revenue</Text>
+        <Text color='Dark' >Prospecting</Text>
     ),
     meeting: (
-        <Text color='Lite'>Book Revenue</Text>
+        <Text color='Dark'>Meeting booked</Text>
     ),
     closer: (
-        <Text color='Lite'>Close Revenue</Text>
+        <Text color='Dark' >Close deal</Text>
     ),
     collection: (
-        <Text color='Lite'>Collect Revenue</Text>
+        <Text color='Dark'>Collect Revenue</Text>
     ),
 }
 
@@ -136,15 +124,16 @@ const Process = () => {
                     aria-labelledby={`process-tab-${step.id}`}
                 >
                     <Box className="Process-Info" variant="Transparent">
-                        <Text textType="H2" color="White">{step.title}</Text>
+                        <Text textType="H2" weight='400' color="White" font='Roboto'>{step.title}</Text>
                         <Box variant="Transparent" className="Process-Points">
                             {step.points.map((point) => (
-                                <Text key={point} textType="H4" color="Lite">{point}</Text>
+                                <Text key={point} textType="Text" font='Geist'  color="Lite">{point}</Text>
                             ))}
                         </Box>
-                        <Button variant="Secondary" rounded="Bubble">
-                            <a style={{ color: '#ffffff', textDecoration: 'none' }} href="https://cal.com/samisher/meeting" target="_blank" rel="noopener noreferrer">Book demo</a>
+                        <Button variant="Secondary" rounded="Round" size='Small'>
+                            <a style={{  textDecoration: 'none' }} href="https://cal.com/samisher/meeting" target="_blank" rel="noopener noreferrer">Book demo</a>
                         </Button>
+                        
                     </Box>
                     <Box className="Process-Img">
                         <img src={step.image} alt={step.imageAlt} loading="lazy" decoding="async" />

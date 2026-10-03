@@ -4,6 +4,7 @@ import './Button.css'
 type Variant = "Primary" | "Secondary" | "Transparent" | "Danger"
 type Rounded = "Flat" | "Bubble" | "Round"
 type Size = "Small" | "Medium" | "Large"
+type Shadow = "True" | "False"
 
 interface ButtonProps {
     variant?: Variant;
@@ -13,8 +14,18 @@ interface ButtonProps {
     className?: string;
     disabled?: boolean;
     size?:Size;
+    shadow?: Shadow;
 }
 
+
+const shadowConf: Record<Shadow, { boxShadow: string }> = {
+    "True": {
+        boxShadow: "rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;"
+    },
+    "False": {
+        boxShadow: "none"
+    }
+};
 
 const sizeConf: Record<Size, { padding: string; fontSize: string }> = {
     Small: {
@@ -35,11 +46,11 @@ const sizeConf: Record<Size, { padding: string; fontSize: string }> = {
 const variantConf: Record<Variant, { color: string; background: string }> = {
     Primary: {
         color: "black",
-        background: "blueviolet"
+        background: "#111827"
     },
     Secondary: {
         color: "black",
-        background: "white"
+        background: "whitesmoke"
     },
     Transparent: {
         color: "black",
@@ -64,7 +75,9 @@ const Button = ({
     onClick,
     className,
     disabled = false,
-    size = "Medium"
+    size = "Medium",
+    shadow = "False"
+    
 }: ButtonProps) => {
 
     
@@ -77,13 +90,15 @@ const Button = ({
     const backgroundStyle = variantConf[variant].background;
     const paddingStyle = sizeConf[size].padding;
     const fontSizeStyle = sizeConf[size].fontSize;
+    const boxShadowStyle = shadowConf[shadow].boxShadow;
 
     const styles: React.CSSProperties = {
         color: colorStyle,
         background: backgroundStyle,
         borderRadius: borderRadiusStyle,
         padding: paddingStyle,
-        fontSize: fontSizeStyle
+        fontSize: fontSizeStyle,
+        boxShadow: boxShadowStyle,
     };
 
     return (

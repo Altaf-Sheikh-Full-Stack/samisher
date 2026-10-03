@@ -1,19 +1,11 @@
-import Hero from "../../Components/Hero/Hero"
-import Navbar from "../../Components/Navbar/Navbar"
 import './Home.css'
 // import Company from "../../Components/Company/Company"
-import Banner from "../../Components/Banner/Banner"
-import Stack from "../../Components/Stack/Stack"
-import Process from "../../Components/Process/Process"
-import Funnel from "../../Components/Statistics/Statistics"
-import CTA from "../../Components/CTA/CTA"
-import FAQ from "../../Components/FAQ/FAQ"
-import Footer from "../../Components/Footer/Footer"
+import HomeLayout from "../../Layout/Home/Home"
 
 
 export function meta() {
-  const title = 'Samisher —  Guaranteed Revenue. Revenue-as-a-Service.'
-  const description = 'Grow your revenue without building a sales team. Our Revenue-as-a-Service solution handles prospecting, sales outreach, conversions, and revenue growth — all with zero upfront costs.'
+  const title = 'Samisher - More Revenue. Lower Costs.'
+  const description = 'No Sales Team Needed. Agent Sales 25/7. Lower Costs. More Revenue. No Deal. No Bill.'
 
   return [
     { title },
@@ -24,27 +16,18 @@ export function meta() {
     { property: 'og:type', content: 'website' },
     { property: 'og:url', content: 'https://samisher.com/' },
     { property: 'og:site_name', content: 'Samisher' },
-    { property: 'og:image', content: 'https://samisher.com/S.svg' },
+    { property: 'og:image', content: 'https://samisher.com/A.svg' },
     { name: 'twitter:card', content: 'summary_large_image' },
     { name: 'twitter:title', content: title },
     { name: 'twitter:description', content: description },
-    { name: 'twitter:image', content: 'https://samisher.com/S.svg' },
+    { name: 'twitter:image', content: 'https://samisher.com/A.svg' },
   ]
 }
 
 const Home = () => {
     return (
         <>
-            {/* <Banner /> */}
-            <Navbar />
-            {/* <Hero /> */}
-            {/* <Process/> */}
-            {/* <Company /> */}
-            {/* <Stack /> */}
-            {/* <Funnel/> */}
-            {/* <FAQ/> */}
-            {/* <CTA/> */}
-            {/* <Footer/> */}
+           <HomeLayout />
         </>
 
     )
