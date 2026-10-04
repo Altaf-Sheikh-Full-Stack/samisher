@@ -4,3 +4,7 @@
   font:  sans-serif;
 }
 
+.Button:hover{
+  outline: 2px rgb(174, 0, 255) solid;
+  outline-offset: 2px;
+}

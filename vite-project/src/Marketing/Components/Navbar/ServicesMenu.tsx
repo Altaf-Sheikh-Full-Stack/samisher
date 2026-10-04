@@ -16,6 +16,7 @@ const ServicesMenu = () => {
                         className={`ServicesMenu-Item ${i === active ? 'is-active' : ''}`}
                         onMouseEnter={() => setActive(i)}
                     >
+                        <img style={{height:20}} src={service.Img} alt="" />
                         <Text color="Black" weight={i === active ? '700' : '400'}>{service.Name}</Text>
                     </button>
                 ))}

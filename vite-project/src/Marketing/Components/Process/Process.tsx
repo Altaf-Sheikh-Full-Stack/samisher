@@ -79,7 +79,7 @@ const ICONS: Record<string, ReactNode> = {
     ),
 }
 
-const Process = () => {
+const Process = ( => {
     const [activeIndex, setActiveIndex] = useState(2)
     const step = STEPS[activeIndex]
 
@@ -127,13 +127,10 @@ const Process = () => {
                         <Text textType="H2" weight='400' color="White" font='Roboto'>{step.title}</Text>
                         <Box variant="Transparent" className="Process-Points">
                             {step.points.map((point) => (
-                                <Text key={point} textType="Text" font='Geist'  color="Lite">{point}</Text>
+                                <Button key={point}  size='Large' variant='Secondary' >{point}</Button>
                             ))}
                         </Box>
-                        <Button variant="Secondary" rounded="Round" size='Small'>
-                            <a style={{  textDecoration: 'none' }} href="https://cal.com/samisher/meeting" target="_blank" rel="noopener noreferrer">Book demo</a>
-                        </Button>
-                        
+
                     </Box>
                     <Box className="Process-Img">
                         <img src={step.image} alt={step.imageAlt} loading="lazy" decoding="async" />

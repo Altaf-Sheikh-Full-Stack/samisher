@@ -19,7 +19,6 @@
   align-items: center;
   justify-content: center;
   gap: 18px;
-  /* background-color: red; */
   padding: 10px;
   border: 1px solid rgb(221, 221, 221);
   border-radius: 50px;
@@ -30,7 +29,6 @@
   position: relative;
   border: none;
   border-radius: 100px;
-  /* padding: 15px 12px; */
   padding: 20px;
   cursor: pointer;
   background-color: rgba(245, 245, 245, 0.425) ;
@@ -42,9 +40,7 @@
 }
 
 .Process-Tab.is-active {
-  /* transform: scale(1.04); */
   color: white ;
-  /* background: var(--tab-color); */
   background-color: var(--tab-color);
 }
 
@@ -84,19 +80,68 @@
 
 .Process-Card {
   display: flex;
-  align-items: center;
   gap: 36px;
   width: 100%;
   min-height: 420px;
   padding: 36px;
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  
+
+
+
+  background: rgba(255, 255, 255, 0.1);
+ 
+  -webkit-backdrop-filter: blur(5px);
+  
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 
+    0 8px 32px rgba(0, 0, 0, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.5),
+    inset 0 -1px 0 rgba(255, 255, 255, 0.1),
+    inset 0 0 0px 0px rgba(255, 255, 255, 0);
+  position: relative;
+  overflow: hidden;
+  
+}
+
+
+
+
+
+.Process-Card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.8),
+    transparent
+  );
+}
+
+.Process-Card::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 1px;
+  height: 100%;
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.8),
+    transparent,
+    rgba(255, 255, 255, 0.3)
+  );
 }
 
 .Process-Info {
   width: 50%;
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  justify-content: space-evenly;
   gap: 8px;
 }
 
@@ -107,22 +152,19 @@
 
 .Process-Points {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr;
   gap: 14px 28px;
   margin: 18px 0 28px;
   width: 100%;
 }
 
-.Process-Points h4 {
-  margin: 0;
-  font-weight: 400;
-  font-size: clamp(15px, 1.5vw, 18px);
+.Process-Points button {
+  width: max-content;
 }
 
 .Process-Img {
   width: 50%;
   min-height: 280px;
-  /* border-radius: 20px; */
   overflow: hidden;
   background: #e5e7eb;
 }
