@@ -2,9 +2,11 @@
   border: none;
   cursor: pointer;
   font:  sans-serif;
+  transition: 250ms;
 }
 
 .Button:hover{
-  outline: 2px rgb(174, 0, 255) solid;
+  outline: 1px rgb(174, 0, 255) dotted;
   outline-offset: 2px;
+  transform: scale(1.1);
 }

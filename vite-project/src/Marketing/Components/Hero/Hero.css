@@ -4,10 +4,8 @@
   gap: 26px;
   text-align: center !important;
   justify-content: center !important;
-  /* height: calc(100vh - 110px); */
   padding: 100px;
-  /* padding-bottom: 100px; */
-  /* max-height: 1080px; */
+ 
 }
 
 .Hero-Text {
@@ -15,6 +13,24 @@
   flex-direction: column;
   gap: 10px;
   padding-bottom: 30px;
+  z-index: 5;
+
+}
+
+.Hero-Text-Img-box img{
+      z-index: 1;
+    object-fit: cover;
+    object-position: center 44%;
+    opacity: .92;
+    filter: blur(2px) saturate(1.1);
+    width: 50%;
+    margin: auto;
+    height: 230px;
+    position: absolute;
+    inset: 0 0 auto;
+    -webkit-mask-image: radial-gradient(60% 125% at 50% 0, #000 14%, #0006 46%, #0000 72%);
+     mask-image: radial-gradient(60% 125% at 50% 0, #000 14%, #0006 46%, #0000 72%);
+
 }
 
 

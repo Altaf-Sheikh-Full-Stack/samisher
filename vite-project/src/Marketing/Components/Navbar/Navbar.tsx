@@ -19,7 +19,7 @@ const Navbar = () => {
     const [activeService, setActiveService] = useState<number | null>(null)
 
     return (
-        <Container className="Navbar" color='White' >
+        <Container  className="Navbar" color='Transparent' >
 
             <Box className='Navbar-Logo' >
                 <NavLink to="/" end>

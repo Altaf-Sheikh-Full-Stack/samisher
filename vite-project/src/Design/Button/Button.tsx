@@ -15,6 +15,7 @@ interface ButtonProps {
     disabled?: boolean;
     size?:Size;
     shadow?: Shadow;
+    style?: React.CSSProperties;
 }
 
 
@@ -76,8 +77,8 @@ const Button = ({
     className,
     disabled = false,
     size = "Medium",
-    shadow = "False"
-    
+    shadow = "False",
+    style
 }: ButtonProps) => {
 
     
@@ -105,7 +106,7 @@ const Button = ({
        
             <button
                 className={`Button ${className || ""}`}
-                style={styles}
+                style={{ ...styles, ...style }}
                 onClick={onClick}
                 disabled={disabled}
             >

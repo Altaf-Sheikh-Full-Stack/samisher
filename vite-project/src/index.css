@@ -5,10 +5,25 @@
   font-synthesis: none;
 }
 
-* { box-sizing: border-box; }
-html { scroll-behavior: smooth; }
-body { margin: 0; min-width: 320px; }
-a { color: inherit; }
-section { width: min(100% - 48px, 1180px); }
+* {
+  box-sizing: border-box;
+}
+html {
+  scroll-behavior: smooth;
+}
+body {
+  margin: 0;
+  min-width: 320px;
+}
+a {
+  color: inherit;
+}
+section {
+  width: min(100% - 48px, 1180px);
+}
 
-@media (max-width: 600px) { section { width: calc(100% - 32px); } }
+@media (max-width: 600px) {
+  section {
+    width: calc(100% - 32px);
+  }
+}

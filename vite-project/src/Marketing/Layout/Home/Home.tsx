@@ -11,14 +11,14 @@ const HomeLayout = () => {
     return (
         <div className="HomeLayout">
             <div className='HomeLayout-Navbar'>
-                {/* <Navbar /> */}
+                <Navbar />
             </div>
             <div className='HomeLayout-Hero'>
                 {/* <Hero /> */}
             </div>
 
             <div className='HomeLayout-Stack'>
-                <Process />
+                {/* <Process /> */}
             </div>
             <div className='HomeLayout-Footer'>
                 {/* <Footer /> */}
