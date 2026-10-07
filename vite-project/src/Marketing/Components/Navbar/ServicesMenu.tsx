@@ -12,12 +12,12 @@ const ServicesMenu = () => {
                 {services.map((service, i) => (
                     <button
                         type="button"
-                        key={service.Name}
+                        key={service.name}
                         className={`ServicesMenu-Item ${i === active ? 'is-active' : ''}`}
                         onMouseEnter={() => setActive(i)}
                     >
-                        <img style={{height:20}} src={service.Img} alt="" />
-                        <Text color="Black" weight={i === active ? '700' : '400'}>{service.Name}</Text>
+                        <img style={{height:20}} src={service.icon} alt="" />
+                        <Text color="Black" weight={i === active ? '700' : '400'}>{service.name}</Text>
                     </button>
                 ))}
             </nav>

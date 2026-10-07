@@ -6,29 +6,29 @@ import img4 from '../../../assets/Hero/Component 26.svg'
 
 
 export interface ServiceItem {
-    Name: string
-    Img: string
+    name: string
+    icon: string
 }
 
 
 
 export const services: ServiceItem[] = [
     {
-        Name: 'Zeno',
-        Img: img1
+        name: 'Zeno',
+        icon: img1
     },
     {
-        Name: 'Alto',
-        Img: img2
+        name: 'Alto',
+        icon: img2
         
     },
     {
-        Name: 'Mire',
-        Img: img3
+        name: 'Mire',
+        icon: img3
        
     },
     {
-        Name: 'Ciro',
-        Img: img4
+        name: 'Ciro',
+        icon: img4
     },
 ]

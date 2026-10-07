@@ -19,11 +19,11 @@ const Navbar = () => {
     const [activeService, setActiveService] = useState<number | null>(null)
 
     return (
-        <Container  className="Navbar" color='Transparent' >
+        <Container className="Navbar" color='Transparent' >
 
             <Box className='Navbar-Logo' >
                 <NavLink to="/" end>
-                    <Image highRes={logo} lowRes={logo} alt='Samisher logo' height={50}  />
+                    <Image highRes={logo} lowRes={logo} alt='Samisher logo' height={50} />
                 </NavLink>
 
                 <Box className='Navbar-Items' >
@@ -32,32 +32,34 @@ const Navbar = () => {
                             type="button"
                             className='Navbar-ServicesTrigger'
                         >
-                            <Text color='Black' weight='400'>Services</Text>
+                            <Text color='Black' weight='400'>Product</Text>
                             <span className='Navbar-ServicesChevron' aria-hidden="true">⌄</span>
                         </button>
                         <ServicesMenu />
                     </div>
                     <NavLink to="/about/" className={({ isActive }) => isActive ? 'is-active' : ''}>
-                        <Text color='Black' weight='400' >About us</Text>
+                        <Text color='Black' weight='400' >Customer success</Text>
                     </NavLink>
-                    <NavLink to="/career/" className={({ isActive }) => isActive ? 'is-active' : ''}>
-                        <Text color='Black' weight='400'>Career</Text>
-                    </NavLink>
+
                     <NavLink to="/blogs/" className={({ isActive }) => isActive ? 'is-active' : ''}>
-                        <Text color='Black' weight='400'>Blogs</Text>
+                        <Text color='Black' weight='400'>Framework</Text>
                     </NavLink>
+                    {/* <NavLink to="/career/" className={({ isActive }) => isActive ? 'is-active' : ''}>
+                        <Text color='Black' weight='400'>Career</Text>
+                    </NavLink> */}
                     <NavLink to="/pricing/" className={({ isActive }) => isActive ? 'is-active' : ''}>
                         <Text color='Black' weight='400'>Pricing</Text>
                     </NavLink>
                 </Box>
-         
+
             </Box>
-        
+
 
 
 
             <Box className='Navbar-Buttons' >
-                <Button rounded='Round'  size='Large'><a style={{ color: 'white', textDecoration: 'none' }} href="https://cal.com/samisher/meeting" target="_blank" rel="noopener noreferrer">Book Demo</a></Button>
+                <Button style={{border:'1px grey solid'}} size='Large' variant='Transparent'>Login</Button>
+                <Button rounded='Round' size='Large'><a style={{ textDecoration: 'none' }} href="https://cal.com/samisher/meeting" target="_blank" rel="noopener noreferrer">Book Demo</a></Button>
             </Box>
 
             <button
@@ -87,16 +89,16 @@ const Navbar = () => {
                         {mobileServices && (
                             <div className="Navbar-MobileServices">
                                 {services.map((service, i) => (
-                                    <div className="Navbar-MobileService" key={service.Name}>
+                                    <div className="Navbar-MobileService" key={service.name}>
                                         <button
                                             type="button"
                                             className="Navbar-MobileServiceLabel"
                                             onClick={() => setActiveService((prev) => (prev === i ? null : i))}
                                         >
-                                            <Text color='Dark' weight='600'>{service.Name}</Text>
+                                            <Text color='Dark' weight='600'>{service.name}</Text>
                                             <span className='Navbar-MobileChevron' aria-hidden="true">⌄</span>
                                         </button>
-                                       
+
                                     </div>
                                 ))}
                             </div>

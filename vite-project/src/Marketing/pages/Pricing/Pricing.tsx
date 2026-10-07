@@ -3,6 +3,7 @@ import Banner from "../../Components/Banner/Banner"
 import Navbar from "../../Components/Navbar/Navbar"
 
 import { PricingWizard } from "../../Components/PricingEngine"
+import PricingLayout from "../../Layout/Pricing/Pricing"
 export function meta() {
   const title = 'Pricing — See what results cost and what they return.'
   const description = 'Estimate in 2 minutes: pay per qualified result, see per-result price, monthly spend, conversion, and when you break even.'
@@ -32,9 +33,7 @@ export function meta() {
 const Pricing = () => {
     return(
         <>
-            <Banner/>
-            <Navbar/>
-            <PricingWizard/>
+            <PricingLayout/>
         </>
     )
 }

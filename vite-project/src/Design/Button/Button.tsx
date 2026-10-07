@@ -46,7 +46,7 @@ const sizeConf: Record<Size, { padding: string; fontSize: string }> = {
 
 const variantConf: Record<Variant, { color: string; background: string }> = {
     Primary: {
-        color: "black",
+        color: "white",
         background: "#111827"
     },
     Secondary: {
@@ -100,13 +100,14 @@ const Button = ({
         padding: paddingStyle,
         fontSize: fontSizeStyle,
         boxShadow: boxShadowStyle,
+        
     };
 
     return (
        
             <button
                 className={`Button ${className || ""}`}
-                style={{ ...styles, ...style }}
+                style={{ ...styles, ...style, }}
                 onClick={onClick}
                 disabled={disabled}
             >
