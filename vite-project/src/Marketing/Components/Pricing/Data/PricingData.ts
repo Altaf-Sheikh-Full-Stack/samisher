@@ -3,66 +3,108 @@ import img2 from '../../../../assets/Hero/Component 24.svg'
 import img3 from '../../../../assets/Hero/Component 25.svg'
 import img4 from '../../../../assets/Hero/Component 26.svg'
 
-
-interface Pricing {
+export interface Pricing {
     icons: string
     name: string
-    price: string
     summery: string
     item: string[]
-    bcolor:string
-    color:string
-    
+    bcolor: string
+    color: string
+
+    // Pricing logic
+    type: 'lead' | 'meeting' | 'deal' | 'invoice'
+
+    // configurable rates
+    basePrice?: number
+    unitPrice?: number
 }
-
-
-
 
 const pricingData: Pricing[] = [
     {
         icons: img4,
         name: 'Zeno',
-        price: '15',
-        summery: 'All in one B2B lead Gen, Enrich, Intent package. Pay only when the lead book meeting ',
+        type: 'lead',
+
+        summery:
+            'All in one B2B lead Gen, Enrich, Intent package. Pay only when the lead book meeting',
+
         item: [
-            'Item1', 'Item 2'
+            'Lead generation',
+            '$0.20 per lead'
         ],
-        bcolor:'#0B3CFF',
-        color:'white'
-        
+
+        bcolor: '#0B3CFF',
+        color: 'white',
+
+        // $0.20 per lead
+        unitPrice: 0.20
     },
+
     {
         icons: img3,
         name: 'Alto',
-        price: '15',
-        summery: 'hello world',
+        type: 'meeting',
+
+        summery:
+            'Book meetings based on campaign activity.',
+
         item: [
-            'Item1', 'Item 2'
+            '$20 base campaign price',
+            'Activity based pricing'
         ],
-        bcolor:'#FE05EE',
-        color:'white'
+
+        bcolor: '#FE05EE',
+        color: 'white',
+
+        // $20 minimum/base price
+        basePrice: 20,
+
+        // Example: $2 per booked meeting
+        unitPrice: 2
     },
+
     {
         icons: img2,
         name: 'Mire',
-        price: '15',
-        summery: 'hello world',
+        type: 'deal',
+
+        summery:
+            'Pay based on successful deals closed.',
+
         item: [
-            'Item1', 'Item 2'
+            '$20 base campaign price',
+            'Pay per closed deal'
         ],
-        bcolor:'#D0FE04',
-        color:'black'
+
+        bcolor: '#D0FE04',
+        color: 'black',
+
+        basePrice: 20,
+
+        // Example rate — easy to change later
+        unitPrice: 50
     },
+
     {
         icons: img1,
         name: 'Ciro',
-        price: '15',
-        summery: 'hello world',
+        type: 'invoice',
+
+        summery:
+            'Pay based on invoices successfully sent.',
+
         item: [
-            'Item1', 'Item 2'
+            '$20 base campaign price',
+            'Pay per invoice'
         ],
-        bcolor:'#05FF0E',
-        color:'black'
+
+        bcolor: '#05FF0E',
+        color: 'black',
+
+        basePrice: 20,
+
+        // Example rate
+        unitPrice: 10
     }
 ]
 
