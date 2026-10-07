@@ -1,0 +1,658 @@
+diff --git a/vite-project/src/Design/Button/Button.css b/vite-project/src/Design/Button/Button.css
+index 9b8f17a..4f30e6c 100644
+--- a/vite-project/src/Design/Button/Button.css
++++ b/vite-project/src/Design/Button/Button.css
+@@ -1,8 +1,9 @@
+ .Button {
+   border: none;
+   cursor: pointer;
+-  font:  sans-serif;
++  font-family: Geist;
+   transition: 250ms;
++  font-weight: 600;
+ }
+ 
+ .Button:hover{
+diff --git a/vite-project/src/Design/Button/Button.tsx b/vite-project/src/Design/Button/Button.tsx
+index ce59ffd..a06733b 100644
+--- a/vite-project/src/Design/Button/Button.tsx
++++ b/vite-project/src/Design/Button/Button.tsx
+@@ -46,7 +46,7 @@ const sizeConf: Record<Size, { padding: string; fontSize: string }> = {
+ 
+ const variantConf: Record<Variant, { color: string; background: string }> = {
+     Primary: {
+-        color: "black",
++        color: "white",
+         background: "#111827"
+     },
+     Secondary: {
+@@ -100,13 +100,14 @@ const Button = ({
+         padding: paddingStyle,
+         fontSize: fontSizeStyle,
+         boxShadow: boxShadowStyle,
++        
+     };
+ 
+     return (
+        
+             <button
+                 className={`Button ${className || ""}`}
+-                style={{ ...styles, ...style }}
++                style={{ ...styles, ...style, }}
+                 onClick={onClick}
+                 disabled={disabled}
+             >
+diff --git a/vite-project/src/Marketing/Components/Navbar/Navbar.css b/vite-project/src/Marketing/Components/Navbar/Navbar.css
+index ce88fe2..fc0ffa4 100644
+--- a/vite-project/src/Marketing/Components/Navbar/Navbar.css
++++ b/vite-project/src/Marketing/Components/Navbar/Navbar.css
+@@ -81,9 +81,10 @@
+ }
+ 
+ .Navbar-Items a:hover::after {
+-  transform: scaleX(1);
++  transform: scaleX(.5);
+ }
+ 
++
+ .Navbar-Items a.is-active::after {
+   transform: scaleX(1);
+   background: #7c3aed;
+@@ -168,6 +169,7 @@
+   display: flex;
+   align-items: center;
+   justify-content: flex-end;
++  gap: 10px;
+ }
+ 
+ /* --- mobile toggle --- */
+diff --git a/vite-project/src/Marketing/Components/Navbar/Navbar.tsx b/vite-project/src/Marketing/Components/Navbar/Navbar.tsx
+index 1708b11..fe9cfa2 100644
+--- a/vite-project/src/Marketing/Components/Navbar/Navbar.tsx
++++ b/vite-project/src/Marketing/Components/Navbar/Navbar.tsx
+@@ -19,11 +19,11 @@ const Navbar = () => {
+     const [activeService, setActiveService] = useState<number | null>(null)
+ 
+     return (
+-        <Container  className="Navbar" color='Transparent' >
++        <Container className="Navbar" color='Transparent' >
+ 
+             <Box className='Navbar-Logo' >
+                 <NavLink to="/" end>
+-                    <Image highRes={logo} lowRes={logo} alt='Samisher logo' height={50}  />
++                    <Image highRes={logo} lowRes={logo} alt='Samisher logo' height={50} />
+                 </NavLink>
+ 
+                 <Box className='Navbar-Items' >
+@@ -32,32 +32,34 @@ const Navbar = () => {
+                             type="button"
+                             className='Navbar-ServicesTrigger'
+                         >
+-                            <Text color='Black' weight='400'>Services</Text>
++                            <Text color='Black' weight='400'>Product</Text>
+                             <span className='Navbar-ServicesChevron' aria-hidden="true">⌄</span>
+                         </button>
+                         <ServicesMenu />
+                     </div>
+                     <NavLink to="/about/" className={({ isActive }) => isActive ? 'is-active' : ''}>
+-                        <Text color='Black' weight='400' >About us</Text>
+-                    </NavLink>
+-                    <NavLink to="/career/" className={({ isActive }) => isActive ? 'is-active' : ''}>
+-                        <Text color='Black' weight='400'>Career</Text>
++                        <Text color='Black' weight='400' >Customer success</Text>
+                     </NavLink>
++
+                     <NavLink to="/blogs/" className={({ isActive }) => isActive ? 'is-active' : ''}>
+-                        <Text color='Black' weight='400'>Blogs</Text>
++                        <Text color='Black' weight='400'>Framework</Text>
+                     </NavLink>
++                    {/* <NavLink to="/career/" className={({ isActive }) => isActive ? 'is-active' : ''}>
++                        <Text color='Black' weight='400'>Career</Text>
++                    </NavLink> */}
+                     <NavLink to="/pricing/" className={({ isActive }) => isActive ? 'is-active' : ''}>
+                         <Text color='Black' weight='400'>Pricing</Text>
+                     </NavLink>
+                 </Box>
+-         
++
+             </Box>
+-        
++
+ 
+ 
+ 
+             <Box className='Navbar-Buttons' >
+-                <Button rounded='Round'  size='Large'><a style={{ color: 'white', textDecoration: 'none' }} href="https://cal.com/samisher/meeting" target="_blank" rel="noopener noreferrer">Book Demo</a></Button>
++                <Button style={{border:'1px grey solid'}} size='Large' variant='Transparent'>Login</Button>
++                <Button rounded='Round' size='Large'><a style={{ textDecoration: 'none' }} href="https://cal.com/samisher/meeting" target="_blank" rel="noopener noreferrer">Book Demo</a></Button>
+             </Box>
+ 
+             <button
+@@ -87,16 +89,16 @@ const Navbar = () => {
+                         {mobileServices && (
+                             <div className="Navbar-MobileServices">
+                                 {services.map((service, i) => (
+-                                    <div className="Navbar-MobileService" key={service.Name}>
++                                    <div className="Navbar-MobileService" key={service.name}>
+                                         <button
+                                             type="button"
+                                             className="Navbar-MobileServiceLabel"
+                                             onClick={() => setActiveService((prev) => (prev === i ? null : i))}
+                                         >
+-                                            <Text color='Dark' weight='600'>{service.Name}</Text>
++                                            <Text color='Dark' weight='600'>{service.name}</Text>
+                                             <span className='Navbar-MobileChevron' aria-hidden="true">⌄</span>
+                                         </button>
+-                                       
++
+                                     </div>
+                                 ))}
+                             </div>
+diff --git a/vite-project/src/Marketing/Components/Navbar/ServicesMenu.tsx b/vite-project/src/Marketing/Components/Navbar/ServicesMenu.tsx
+index 50a48c1..32e6e2a 100644
+--- a/vite-project/src/Marketing/Components/Navbar/ServicesMenu.tsx
++++ b/vite-project/src/Marketing/Components/Navbar/ServicesMenu.tsx
+@@ -12,12 +12,12 @@ const ServicesMenu = () => {
+                 {services.map((service, i) => (
+                     <button
+                         type="button"
+-                        key={service.Name}
++                        key={service.name}
+                         className={`ServicesMenu-Item ${i === active ? 'is-active' : ''}`}
+                         onMouseEnter={() => setActive(i)}
+                     >
+-                        <img style={{height:20}} src={service.Img} alt="" />
+-                        <Text color="Black" weight={i === active ? '700' : '400'}>{service.Name}</Text>
++                        <img style={{height:20}} src={service.icon} alt="" />
++                        <Text color="Black" weight={i === active ? '700' : '400'}>{service.name}</Text>
+                     </button>
+                 ))}
+             </nav>
+diff --git a/vite-project/src/Marketing/Components/Pricing/Data/PricingData.ts b/vite-project/src/Marketing/Components/Pricing/Data/PricingData.ts
+new file mode 100644
+index 0000000..acf003d
+--- /dev/null
++++ b/vite-project/src/Marketing/Components/Pricing/Data/PricingData.ts
+@@ -0,0 +1,68 @@
++import img1 from '../../../../assets/Hero/Component 23.svg'
++import img2 from '../../../../assets/Hero/Component 24.svg'
++import img3 from '../../../../assets/Hero/Component 25.svg'
++import img4 from '../../../../assets/Hero/Component 26.svg'
++
++
++interface Pricing {
++    icons: string
++    name: string
++    price: string
++    summery: string
++    item: string[]
++    bcolor:string
++    color:string
++}
++
++
++
++
++const pricingData: Pricing[] = [
++    {
++        icons: img4,
++        name: 'Zeno',
++        price: '15',
++        summery: 'Choose this if you want end to end prospect finder ',
++        item: [
++            'Item1', 'Item 2'
++        ],
++        bcolor:'#0B3CFF',
++        color:'white'
++        
++    },
++    {
++        icons: img3,
++        name: 'Alto',
++        price: '15',
++        summery: 'hello world',
++        item: [
++            'Item1', 'Item 2'
++        ],
++        bcolor:'#FE05EE',
++        color:'white'
++    },
++    {
++        icons: img2,
++        name: 'Mire',
++        price: '15',
++        summery: 'hello world',
++        item: [
++            'Item1', 'Item 2'
++        ],
++        bcolor:'#D0FE04',
++        color:'black'
++    },
++    {
++        icons: img1,
++        name: 'Ciro',
++        price: '15',
++        summery: 'hello world',
++        item: [
++            'Item1', 'Item 2'
++        ],
++        bcolor:'#05FF0E',
++        color:'black'
++    }
++]
++
++export default pricingData
+\ No newline at end of file
+diff --git a/vite-project/src/Marketing/Components/Pricing/Data/SliderData.ts b/vite-project/src/Marketing/Components/Pricing/Data/SliderData.ts
+new file mode 100644
+index 0000000..1cea467
+--- /dev/null
++++ b/vite-project/src/Marketing/Components/Pricing/Data/SliderData.ts
+@@ -0,0 +1,9 @@
++
++
++
++const SliderData: string[] = [
++  "3K", "10K", "25K", "50K", "100K", "200K", "300K", 
++  "400K", "600K", "800K", "1M", "1.5M", "1.5M+"
++];
++
++export default SliderData
+diff --git a/vite-project/src/Marketing/Components/Pricing/Pricing.css b/vite-project/src/Marketing/Components/Pricing/Pricing.css
+new file mode 100644
+index 0000000..924a440
+--- /dev/null
++++ b/vite-project/src/Marketing/Components/Pricing/Pricing.css
+@@ -0,0 +1,52 @@
++.Pricing{
++    display: grid;
++    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
++    
++}
++
++
++.Pricing-Card{
++    margin: 10px;
++    padding: 10px;
++    /* display: grid; */
++    /* grid-template-rows: subgrid; */
++    /* grid-row: 1/4; */
++}
++
++
++.Pricing-Card-Top-Icons{
++    width: 100px;
++    display: flex;
++    justify-content: space-between;
++    align-items: center;
++    padding: 5px;
++    border-radius: 100px;
++    padding-right: 20px;
++}
++
++.Pricing-Card-Top-Price{
++    display: flex;
++    align-items: end;
++    margin-top: 30px;
++    margin-bottom: 30px;
++}
++
++.Pricing-Card-Top-Price p{
++    margin-bottom: 10px;
++}
++
++.Pricing-Card-Button{
++    width: 100%;
++    margin-top: 30px;
++    margin-bottom: 30px;
++}
++
++.Pricing-Card-Button:hover{
++    transform: scale(1) !important;
++}
++
++.Pricing-Card-Bottom{
++    display: flex;
++    flex-direction: column;
++    gap: 10px;
++}
+\ No newline at end of file
+diff --git a/vite-project/src/Marketing/Components/Pricing/Pricing.tsx b/vite-project/src/Marketing/Components/Pricing/Pricing.tsx
+new file mode 100644
+index 0000000..7e7bb25
+--- /dev/null
++++ b/vite-project/src/Marketing/Components/Pricing/Pricing.tsx
+@@ -0,0 +1,44 @@
++import Container from "../../../Design/Container/Container"
++import Image from "../../../Design/Img/Img"
++import Text from "../../../Design/Texts/Text"
++import pricingData from "./Data/PricingData"
++import './Pricing.css'
++import Button from "../../../Design/Button/Button"
++import Slider from "./Slider"
++
++
++const Pricing = ( => {
++    return (
++        <Container>
++               <Container>
++                <Slider/>
++            </Container>
++        <Container color="Secondary" className="Pricing">
++         
++            {pricingData.map((service) => (
++                <Container color="White"  className="Pricing-Card"  >
++                    <Container className="Pricing-Card-Top" >
++                        <Container color="Secondary" className="Pricing-Card-Top-Icons">
++                            <Image height={20} width={20} highRes={service.icons} lowRes={service.icons} />
++                            <Text>{service.name}</Text>
++                        </Container>
++                        <Container className="Pricing-Card-Top-Price" >
++                            <Text weight="600" color="Black" textType="H2" font="Onest">${service.price}</Text>
++                            <Text textType="Text">/Campaign</Text>
++                        </Container>
++                            <Text>{service.summery}</Text>
++                    </Container>
++                    <Button className="Pricing-Card-Button" style={{background:service.bcolor, color:service.color}} size="Large" shadow="True" >Start Campaign</Button>
++                    <Container className="Pricing-Card-Bottom">
++                        {service.item.map((items) => (
++                            <Text>{items}</Text>
++                        ))}
++                    </Container>
++                </Container>
++            ))}
++        </Container>
++        </Container>
++    )
++}
++
++export default Pricing
+diff --git a/vite-project/src/Marketing/Components/Pricing/Slider.css b/vite-project/src/Marketing/Components/Pricing/Slider.css
+new file mode 100644
+index 0000000..3b403f4
+--- /dev/null
++++ b/vite-project/src/Marketing/Components/Pricing/Slider.css
+@@ -0,0 +1,110 @@
++/* Container layout styling */
++.slider-container {
++  max-width: 900px;
++  margin: auto;
++  padding: 20px;
++  text-align: center;
++}
++
++.slider-title {
++  margin-bottom: 40px;
++}
++
++.slider-wrapper {
++  position: relative;
++  width: 100%;
++  padding-bottom: 20px;
++}
++
++/* Label row container positioning */
++.slider-labels {
++  position: relative;
++  width: 100%;
++  height: 25px;
++  margin-bottom: 12px;
++}
++
++/* Individual label alignment overrides */
++.slider-label {
++  position: absolute;
++  transform: translateX(-50%);
++  font-size: 13px;
++  font-weight: 500;
++  color: #b3b3b3;
++  transition: color 0.2s ease;
++  white-space: nowrap;
++}
++
++/* Highlights the text directly above the active thumb selection */
++.slider-label.active {
++  color: #1a1a1a;
++  font-weight: 700;
++}
++
++/* Track container layer styles */
++.slider-track-container {
++  position: relative;
++  width: 100%;
++  height: 6px;
++  background-color: #e6e6e6;
++  border-radius: 3px;
++}
++
++/* Purple dynamic filled progress bar track selection indicator */
++.slider-track-filled {
++  position: absolute;
++  top: 0;
++  left: 0;
++  height: 100%;
++  background-color: #635bff;
++  border-radius: 3px;
++  z-index: 1;
++  pointer-events: none;
++}
++
++/* Core native slider overrides styling adjustments */
++.real-slider {
++  position: absolute;
++  top: -5px;
++  left: 0;
++  width: 100%;
++  height: 16px;
++  margin: 0;
++  -webkit-appearance: none;
++  appearance: none;
++  background: transparent;
++  outline: none;
++  z-index: 2;
++  cursor: pointer;
++}
++
++/* Chrome, Safari, Opera, Edge thumb elements layout design rules */
++.real-slider::-webkit-slider-thumb {
++  -webkit-appearance: none;
++  appearance: none;
++  width: 30px;
++  height: 20px;
++  border-radius: 100rem;
++  background-color: #635bff;
++  transition: transform 250ms ease;
++}
++
++.real-slider::-webkit-slider-thumb:hover {
++  transform: scale(1.08);
++}
++
++/* Firefox alternative design runtime adjustments compatibility */
++.real-slider::-moz-range-thumb {
++  width: 24px;
++  height: 24px;
++  border: none;
++  border-radius: 50%;
++  background-color: #635bff;
++  background-image: linear-gradient(90deg, transparent 35%, #fff 35%, #fff 45%, transparent 45%, transparent 55%, #fff 55%, #fff 65%, transparent 65%);
++  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
++  transition: transform 0.1s ease;
++}
++
++.real-slider::-moz-range-thumb:hover {
++  transform: scale(1.08);
++}
+diff --git a/vite-project/src/Marketing/Components/Pricing/Slider.tsx b/vite-project/src/Marketing/Components/Pricing/Slider.tsx
+new file mode 100644
+index 0000000..e0e7890
+--- /dev/null
++++ b/vite-project/src/Marketing/Components/Pricing/Slider.tsx
+@@ -0,0 +1,61 @@
++
++
++import { useState } from "react";
++import "./Slider.css";
++import SliderData from "./Data/SliderData";
++import Container from "../../../Design/Container/Container";
++import Text from "../../../Design/Texts/Text";
++
++
++
++const Slider = () => {
++
++    const [index, setIndex] = useState(2);
++
++
++    const progressPercent = (index / (SliderData.length - 1)) * 100;
++
++    const handleChange = (e: any) => {
++        setIndex(parseInt(e.target.value, 10));
++    };
++
++    return (
++        <Container className="slider-container">
++            <Text font="Geist" textType="Text" className="slider-title">Your revenue target for the campaign?</Text>
++            <Container className="slider-wrapper">
++
++                <Container className="slider-labels">
++                    {SliderData.map((mark, idx) => (
++                        <span
++                            key={mark}
++                            className={`slider-label ${idx === index ? "active" : ""}`}
++                            style={{ left: `${(idx / (SliderData.length - 1)) * 100}%` }}
++                        >
++                            {mark}
++                            
++                        </span>
++                        
++                    ))}
++                </Container>
++
++                <Container className="slider-track-container">
++                    <div
++                        className="slider-track-filled"
++                        style={{ width: `${progressPercent}%` }}
++                    ></div>
++                    <input
++                        type="range"
++                        min="0"
++                        max={SliderData.length - 1}
++                        value={index}
++                        onChange={handleChange}
++                        className="real-slider"
++                    />
++                </Container>
++            </Container>
++        </Container>
++    );
++}
++
++
++export default Slider
+\ No newline at end of file
+diff --git a/vite-project/src/Marketing/Components/Stack/StackData.ts b/vite-project/src/Marketing/Components/Stack/StackData.ts
+index 397e058..cb970ac 100644
+--- a/vite-project/src/Marketing/Components/Stack/StackData.ts
++++ b/vite-project/src/Marketing/Components/Stack/StackData.ts
+@@ -6,29 +6,29 @@ import img4 from '../../../assets/Hero/Component 26.svg'
+ 
+ 
+ export interface ServiceItem {
+-    Name: string
+-    Img: string
++    name: string
++    icon: string
+ }
+ 
+ 
+ 
+ export const services: ServiceItem[] = [
+     {
+-        Name: 'Zeno',
+-        Img: img1
++        name: 'Zeno',
++        icon: img1
+     },
+     {
+-        Name: 'Alto',
+-        Img: img2
++        name: 'Alto',
++        icon: img2
+         
+     },
+     {
+-        Name: 'Mire',
+-        Img: img3
++        name: 'Mire',
++        icon: img3
+        
+     },
+     {
+-        Name: 'Ciro',
+-        Img: img4
++        name: 'Ciro',
++        icon: img4
+     },
+ ]
+diff --git a/vite-project/src/Marketing/Layout/Pricing/Pricing.css b/vite-project/src/Marketing/Layout/Pricing/Pricing.css
+new file mode 100644
+index 0000000..ef7ed86
+--- /dev/null
++++ b/vite-project/src/Marketing/Layout/Pricing/Pricing.css
+@@ -0,0 +1,5 @@
++.PricingLayout{
++    max-width: 1280px;
++    margin: auto;
++    border: 2px dotted rgb(221, 221, 221);
++}
+\ No newline at end of file
+diff --git a/vite-project/src/Marketing/Layout/Pricing/Pricing.tsx b/vite-project/src/Marketing/Layout/Pricing/Pricing.tsx
+index 973498e..5365ed3 100644
+--- a/vite-project/src/Marketing/Layout/Pricing/Pricing.tsx
++++ b/vite-project/src/Marketing/Layout/Pricing/Pricing.tsx
+@@ -1,9 +1,18 @@
+-
++import Navbar from "../../Components/Navbar/Navbar"
++import Pricing from "../../Components/Pricing/Pricing"
++import './Pricing.css'
+ 
+ 
+ const PricingLayout = () => {
+-    return(
+-        
++    return (
++        <div className="PricingLayout">
++            <div>
++                <Navbar />
++            </div>
++            <div>
++                <Pricing/>
++            </div>
++        </div>
+     )
+ }
+ 
+diff --git a/vite-project/src/Marketing/pages/Pricing/Pricing.tsx b/vite-project/src/Marketing/pages/Pricing/Pricing.tsx
+index a34bbfc..aa93d24 100644
+--- a/vite-project/src/Marketing/pages/Pricing/Pricing.tsx
++++ b/vite-project/src/Marketing/pages/Pricing/Pricing.tsx
+@@ -3,6 +3,7 @@ import Banner from "../../Components/Banner/Banner"
+ import Navbar from "../../Components/Navbar/Navbar"
+ 
+ import { PricingWizard } from "../../Components/PricingEngine"
++import PricingLayout from "../../Layout/Pricing/Pricing"
+ export function meta() {
+   const title = 'Pricing — See what results cost and what they return.'
+   const description = 'Estimate in 2 minutes: pay per qualified result, see per-result price, monthly spend, conversion, and when you break even.'
+@@ -32,9 +33,7 @@ export function meta() {
+ const Pricing = () => {
+     return(
+         <>
+-            <Banner/>
+-            <Navbar/>
+-            <PricingWizard/>
++            <PricingLayout/>
+         </>
+     )
+ }

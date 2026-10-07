@@ -12,6 +12,7 @@ interface Pricing {
     item: string[]
     bcolor:string
     color:string
+    
 }
 
 
@@ -22,7 +23,7 @@ const pricingData: Pricing[] = [
         icons: img4,
         name: 'Zeno',
         price: '15',
-        summery: 'Choose this if you want end to end prospect finder ',
+        summery: 'All in one B2B lead Gen, Enrich, Intent package. Pay only when the lead book meeting ',
         item: [
             'Item1', 'Item 2'
         ],

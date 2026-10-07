@@ -1,0 +1,267 @@
+diff --git a/vite-project/package-lock.json b/vite-project/package-lock.json
+index b73723e..642951d 100644
+--- a/vite-project/package-lock.json
++++ b/vite-project/package-lock.json
+@@ -11225,18 +11225,6 @@
+         "node": ">= 4"
+       }
+     },
+-    "node_modules/immer": {
+-      "version": "11.1.16",
+-      "resolved": "https://registry.npmjs.org/immer/-/immer-11.1.16.tgz",
+-      "integrity": "sha512-Xs7H9rBc+kti1J6RueUvbEBkmOz7jqj11XYgf+YMXAYzu8EeE7hwZ9poLXdVfVnGmJu7QAf41T7H2KuF6QoK6Q==",
+-      "license": "MIT",
+-      "optional": true,
+-      "peer": true,
+-      "funding": {
+-        "type": "opencollective",
+-        "url": "https://opencollective.com/immer"
+-      }
+-    },
+     "node_modules/import-meta-resolve": {
+       "version": "4.2.0",
+       "resolved": "https://registry.npmjs.org/import-meta-resolve/-/import-meta-resolve-4.2.0.tgz",
+@@ -16140,21 +16128,6 @@
+         }
+       }
+     },
+-    "node_modules/vite-tsconfig-paths/node_modules/typescript": {
+-      "version": "5.9.3",
+-      "resolved": "https://registry.npmjs.org/typescript/-/typescript-5.9.3.tgz",
+-      "integrity": "sha512-jl1vZzPDinLr9eUt3J/t7V6FgNEw9QjvBPdysz9KfQDD41fQrC2Y4vKQdiaUpFT4bXlb1RHhLpp8wtm6M5TgSw==",
+-      "license": "Apache-2.0",
+-      "optional": true,
+-      "peer": true,
+-      "bin": {
+-        "tsc": "bin/tsc",
+-        "tsserver": "bin/tsserver"
+-      },
+-      "engines": {
+-        "node": ">=14.17"
+-      }
+-    },
+     "node_modules/w3c-keyname": {
+       "version": "2.2.8",
+       "resolved": "https://registry.npmjs.org/w3c-keyname/-/w3c-keyname-2.2.8.tgz",
+diff --git a/vite-project/src/Marketing/Components/Pricing/Data/PricingData.ts b/vite-project/src/Marketing/Components/Pricing/Data/PricingData.ts
+index acf003d..81e4ab0 100644
+--- a/vite-project/src/Marketing/Components/Pricing/Data/PricingData.ts
++++ b/vite-project/src/Marketing/Components/Pricing/Data/PricingData.ts
+@@ -12,6 +12,7 @@ interface Pricing {
+     item: string[]
+     bcolor:string
+     color:string
++    
+ }
+ 
+ 
+@@ -22,7 +23,7 @@ const pricingData: Pricing[] = [
+         icons: img4,
+         name: 'Zeno',
+         price: '15',
+-        summery: 'Choose this if you want end to end prospect finder ',
++        summery: 'All in one B2B lead Gen, Enrich, Intent package. Pay only when the lead book meeting ',
+         item: [
+             'Item1', 'Item 2'
+         ],
+diff --git a/vite-project/src/Marketing/Components/Pricing/Pricing.tsx b/vite-project/src/Marketing/Components/Pricing/Pricing.tsx
+index 7e7bb25..9596da1 100644
+--- a/vite-project/src/Marketing/Components/Pricing/Pricing.tsx
++++ b/vite-project/src/Marketing/Components/Pricing/Pricing.tsx
+@@ -4,10 +4,10 @@ import Text from "../../../Design/Texts/Text"
+ import pricingData from "./Data/PricingData"
+ import './Pricing.css'
+ import Button from "../../../Design/Button/Button"
+-import Slider from "./Slider"
++import Slider from "./PriceTop"
+ 
+ 
+-const Pricing = ( => {
++const Pricing = () => {
+     return (
+         <Container>
+                <Container>
+diff --git a/vite-project/src/Marketing/Components/Pricing/Slider.css b/vite-project/src/Marketing/Components/Pricing/Slider.css
+deleted file mode 100644
+index 3b403f4..0000000
+--- a/vite-project/src/Marketing/Components/Pricing/Slider.css
++++ /dev/null
+@@ -1,110 +0,0 @@
+-/* Container layout styling */
+-.slider-container {
+-  max-width: 900px;
+-  margin: auto;
+-  padding: 20px;
+-  text-align: center;
+-}
+-
+-.slider-title {
+-  margin-bottom: 40px;
+-}
+-
+-.slider-wrapper {
+-  position: relative;
+-  width: 100%;
+-  padding-bottom: 20px;
+-}
+-
+-/* Label row container positioning */
+-.slider-labels {
+-  position: relative;
+-  width: 100%;
+-  height: 25px;
+-  margin-bottom: 12px;
+-}
+-
+-/* Individual label alignment overrides */
+-.slider-label {
+-  position: absolute;
+-  transform: translateX(-50%);
+-  font-size: 13px;
+-  font-weight: 500;
+-  color: #b3b3b3;
+-  transition: color 0.2s ease;
+-  white-space: nowrap;
+-}
+-
+-/* Highlights the text directly above the active thumb selection */
+-.slider-label.active {
+-  color: #1a1a1a;
+-  font-weight: 700;
+-}
+-
+-/* Track container layer styles */
+-.slider-track-container {
+-  position: relative;
+-  width: 100%;
+-  height: 6px;
+-  background-color: #e6e6e6;
+-  border-radius: 3px;
+-}
+-
+-/* Purple dynamic filled progress bar track selection indicator */
+-.slider-track-filled {
+-  position: absolute;
+-  top: 0;
+-  left: 0;
+-  height: 100%;
+-  background-color: #635bff;
+-  border-radius: 3px;
+-  z-index: 1;
+-  pointer-events: none;
+-}
+-
+-/* Core native slider overrides styling adjustments */
+-.real-slider {
+-  position: absolute;
+-  top: -5px;
+-  left: 0;
+-  width: 100%;
+-  height: 16px;
+-  margin: 0;
+-  -webkit-appearance: none;
+-  appearance: none;
+-  background: transparent;
+-  outline: none;
+-  z-index: 2;
+-  cursor: pointer;
+-}
+-
+-/* Chrome, Safari, Opera, Edge thumb elements layout design rules */
+-.real-slider::-webkit-slider-thumb {
+-  -webkit-appearance: none;
+-  appearance: none;
+-  width: 30px;
+-  height: 20px;
+-  border-radius: 100rem;
+-  background-color: #635bff;
+-  transition: transform 250ms ease;
+-}
+-
+-.real-slider::-webkit-slider-thumb:hover {
+-  transform: scale(1.08);
+-}
+-
+-/* Firefox alternative design runtime adjustments compatibility */
+-.real-slider::-moz-range-thumb {
+-  width: 24px;
+-  height: 24px;
+-  border: none;
+-  border-radius: 50%;
+-  background-color: #635bff;
+-  background-image: linear-gradient(90deg, transparent 35%, #fff 35%, #fff 45%, transparent 45%, transparent 55%, #fff 55%, #fff 65%, transparent 65%);
+-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+-  transition: transform 0.1s ease;
+-}
+-
+-.real-slider::-moz-range-thumb:hover {
+-  transform: scale(1.08);
+-}
+diff --git a/vite-project/src/Marketing/Components/Pricing/Slider.tsx b/vite-project/src/Marketing/Components/Pricing/Slider.tsx
+deleted file mode 100644
+index e0e7890..0000000
+--- a/vite-project/src/Marketing/Components/Pricing/Slider.tsx
++++ /dev/null
+@@ -1,61 +0,0 @@
+-
+-
+-import { useState } from "react";
+-import "./Slider.css";
+-import SliderData from "./Data/SliderData";
+-import Container from "../../../Design/Container/Container";
+-import Text from "../../../Design/Texts/Text";
+-
+-
+-
+-const Slider = () => {
+-
+-    const [index, setIndex] = useState(2);
+-
+-
+-    const progressPercent = (index / (SliderData.length - 1)) * 100;
+-
+-    const handleChange = (e: any) => {
+-        setIndex(parseInt(e.target.value, 10));
+-    };
+-
+-    return (
+-        <Container className="slider-container">
+-            <Text font="Geist" textType="Text" className="slider-title">Your revenue target for the campaign?</Text>
+-            <Container className="slider-wrapper">
+-
+-                <Container className="slider-labels">
+-                    {SliderData.map((mark, idx) => (
+-                        <span
+-                            key={mark}
+-                            className={`slider-label ${idx === index ? "active" : ""}`}
+-                            style={{ left: `${(idx / (SliderData.length - 1)) * 100}%` }}
+-                        >
+-                            {mark}
+-                            
+-                        </span>
+-                        
+-                    ))}
+-                </Container>
+-
+-                <Container className="slider-track-container">
+-                    <div
+-                        className="slider-track-filled"
+-                        style={{ width: `${progressPercent}%` }}
+-                    ></div>
+-                    <input
+-                        type="range"
+-                        min="0"
+-                        max={SliderData.length - 1}
+-                        value={index}
+-                        onChange={handleChange}
+-                        className="real-slider"
+-                    />
+-                </Container>
+-            </Container>
+-        </Container>
+-    );
+-}
+-
+-
+-export default Slider
+\ No newline at end of file

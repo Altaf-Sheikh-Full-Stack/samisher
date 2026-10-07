@@ -4,10 +4,10 @@ import Text from "../../../Design/Texts/Text"
 import pricingData from "./Data/PricingData"
 import './Pricing.css'
 import Button from "../../../Design/Button/Button"
-import Slider from "./Slider"
+import Slider from "./PriceTop"
 
 
-const Pricing = ( => {
+const Pricing = () => {
     return (
         <Container>
                <Container>
