@@ -30,8 +30,10 @@ const Pricing = () => {
     // Change these later without changing
     // the actual pricing UI.
 
-    const LEAD_TO_DEAL_RATE = 0.02;     // 2%
+    const LEAD_TO_MEETING_RATE = 0.02;     // 2%
     const MEETING_TO_DEAL_RATE = 0.20;  // 20%
+    const DEAL_To_INVOICE_RATE = 0.40; // 40%
+    const  INVOICE_TO_COLLECTION = 0.60; // 60%
 
 
     // -----------------------------------
@@ -55,13 +57,15 @@ const Pricing = () => {
             target / sellingPrice
         );
 
+        
+
 
         // -----------------------------------
         // LEADS
         // -----------------------------------
 
         const leadsRequired = Math.ceil(
-            dealsRequired / LEAD_TO_DEAL_RATE
+            dealsRequired / LEAD_TO_MEETING_RATE
         );
 
 
@@ -73,6 +77,20 @@ const Pricing = () => {
             dealsRequired / MEETING_TO_DEAL_RATE
         );
 
+        // -----------------------------------
+        // CLOSING
+        // -----------------------------------
+
+        const closeRequired = Math.ceil(
+            dealsRequired / DEAL_To_INVOICE_RATE
+        );
+        
+         const invoiceRequired = Math.ceil(
+            dealsRequired / INVOICE_TO_COLLECTION
+        );
+        
+
+  
 
         return pricingData.map((service) => {
 
@@ -122,7 +140,7 @@ const Pricing = () => {
 
             if (service.type === "deal") {
 
-                quantity = dealsRequired;
+                quantity = closeRequired;
 
                 price =
                     (service.basePrice ?? 0) +
@@ -139,7 +157,7 @@ const Pricing = () => {
 
             if (service.type === "invoice") {
 
-                quantity = dealsRequired;
+                quantity = invoiceRequired;
 
                 price =
                     (service.basePrice ?? 0) +
