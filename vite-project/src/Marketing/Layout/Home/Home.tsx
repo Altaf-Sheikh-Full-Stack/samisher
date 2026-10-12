@@ -2,7 +2,7 @@ import Footer from '../../Components/Footer/Footer';
 import Hero from '../../Components/Hero/Hero';
 import Meeting from '../../Components/Meeting/Meeting';
 import Navbar from '../../Components/Navbar/Navbar';
-import Process from '../../Components/Process/Process';
+import Process from '../../Components/Process/Process.tsx';
 import './Home.css'
 
 

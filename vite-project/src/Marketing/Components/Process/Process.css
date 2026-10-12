@@ -29,11 +29,14 @@
   position: relative;
   border: none;
   border-radius: 100px;
-  padding: 20px;
+  padding: 10px;
   cursor: pointer;
   background-color: rgba(245, 245, 245, 0.3) ;
-  display: grid;
-  place-items: center;
+  display: flex;
+  gap: 10px;
+  flex-direction:row;
+  padding-right: 15px;
+  align-items: center;
   transition:
     transform 200ms ease,
     box-shadow 200ms ease;
