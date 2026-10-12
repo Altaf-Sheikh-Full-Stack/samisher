@@ -1,3 +1,5 @@
+
+
 .Pricing{
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -8,9 +10,9 @@
 .Pricing-Card{
     margin: 10px;
     padding: 10px;
-    /* display: grid; */
-    /* grid-template-rows: subgrid; */
-    /* grid-row: 1/4; */
+    display: grid;
+    grid-template-rows: subgrid;
+    grid-row: 1/4;
 }
 
 

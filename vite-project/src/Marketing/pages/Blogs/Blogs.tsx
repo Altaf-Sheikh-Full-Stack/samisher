@@ -1,7 +1,7 @@
 import { Link, useLoaderData } from 'react-router'
 import Banner from '../../Components/Banner/Banner'
 import Navbar from '../../Components/Navbar/Navbar'
-import CTA from '../../Components/CTA/CTA'
+// import CTA from '../../Components/CTA/CTA'
 import Footer from '../../Components/Footer/Footer'
 import { getSanityClient } from '../../sanity/client'
 import { postsQuery } from '../../sanity/queries'
@@ -183,7 +183,7 @@ export default function Blogs() {
           </div>
         )}
       </section>
-      <CTA />
+      {/* <CTA /> */}
       <Footer />
     </>
   )

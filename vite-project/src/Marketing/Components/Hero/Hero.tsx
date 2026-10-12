@@ -20,7 +20,7 @@ const Hero = () => {
             <Container color="Transparent" className="Hero-Text">
                
                 <Text textType="H1" font="Onest" weight="700" color="Black">
-                    Say hello to boll
+                     Enterprise sales, made easy. <br /> Meet Boll.
                 </Text>
                 <Container color="Secondary" className="Home-Boll-Img">
                     <img src={img4} alt="" />
@@ -33,8 +33,7 @@ const Hero = () => {
 
             <Container className="Hero-Body">
                 <Text textType="H5" font="Geist" color="Dark" weight="500">
-                    From finding the right prospects to collecting the money, we handle
-                    your entire sales process.
+                    We turn prospects into paying customers by finding qualified buyers, booking sales meetings, closing deals, and collecting payments. 
                 </Text>
             </Container>
 

@@ -6,7 +6,7 @@ import {
 } from '@portabletext/react'
 import Banner from '../../Components/Banner/Banner'
 import Navbar from '../../Components/Navbar/Navbar'
-import CTA from '../../Components/CTA/CTA'
+// import CTA from '../../Components/CTA/CTA'
 import Footer from '../../Components/Footer/Footer'
 import { getSanityClient } from '../../sanity/client'
 import { postBySlugQuery } from '../../sanity/queries'
@@ -365,7 +365,7 @@ export default function BlogPost() {
           </section>
         )}
       </article>
-      <CTA />
+      {/* <CTA /> */}
       <Footer />
     </>
   )

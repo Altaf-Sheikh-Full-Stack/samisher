@@ -18,7 +18,7 @@ const PriceTop = ({
 }: PriceTopProps) => {
 
     return (
-        <Container className="PriceTop">
+        <Container className="PriceTop" color="Transparent">
 
             <Container className="PriceTop-Top">
                 <Text textType="H4" font="Geist">
@@ -39,7 +39,7 @@ const PriceTop = ({
             </Container>
 
 
-            <Container className="PriceTop-Bottom">
+            <Container  className="PriceTop-Bottom">
                 <Text textType="H4" font="Geist">
                     Avg product/service selling price
                 </Text>
