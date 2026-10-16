@@ -2,6 +2,7 @@
     text-align: center;
     padding: 9px;
     width: 100%;
+    z-index: 999;
 }
 
 .Banner span{

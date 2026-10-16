@@ -11,31 +11,71 @@ import img5 from "../../../assets/Hero/Component 27.svg";
 import "./Hero.css";
 import { NavLink } from "react-router";
 
+import humen1 from '../../../assets/People/image 125.webp'
+import humen2 from '../../../assets/People/image 126.webp'
+import humen3 from '../../../assets/People/image 127.webp'
+
 const Hero = () => {
     return (
         <Container className="Home">
-             <Container  className="Hero-Text-Img-box">
-                    <img className="" src={img5} alt="" />
-                </Container>
+            <Container className="Hero-Text-Img-box">
+                <img className="" src={img5} alt="" />
+            </Container>
             <Container color="Transparent" className="Hero-Text">
-               
+
+
                 <Text textType="H1" font="Onest" weight="700" color="Black">
-                     Enterprise sales, made easy. <br /> Meet Boll.
+                    Enterprise sales? Now easy. <br /> Human + Agent.
                 </Text>
                 <Container color="Secondary" className="Home-Boll-Img">
+                    <img src={humen1} />
+                    <img src={humen2} alt="" />
+                    <img src={humen3} alt="" />
                     <img src={img4} alt="" />
                     <img src={img3} alt="" />
                     <img src={img2} alt="" />
                     <img src={img1} alt="" />
-                </Container>
 
+                </Container>
             </Container>
+
 
             <Container className="Hero-Body">
                 <Text textType="H5" font="Geist" color="Dark" weight="500">
-                    We turn prospects into paying customers by finding qualified buyers, booking sales meetings, closing deals, and collecting payments. 
+                    An Agent That
+                    <span className="Hero-Body-Scout">
+                        <img src={img1} alt="" />
+                        Find lead
+                    </span> From  100+ sources {" "}
+
+
+                    <span className="Hero-Body-Scheduler">
+                        <img src={img2} alt="" />
+                        Book Demo
+                    </span>On  Autopilot, And{" "}
+
+
+                    <span className="Hero-Body-Closer">
+                        <img src={img3} alt="" />
+                        Close Deal
+                    </span>While You Sleep{" "}
+
+
+                    <span className="Hero-Body-Collector">
+                        <img src={img4} alt="" />
+                        Send invoice
+                    </span>  To Collects Payments.{" "}
+
                 </Text>
             </Container>
+
+            {/* 
+            <Container className="Hero-Body">
+                <Text textType="H5" font="Geist" color="Dark" weight="500">
+
+                    We turn prospects into paying customers by identifying qualified buyers, booking sales meetings, closing deals, and collecting payments.
+                </Text>
+            </Container> */}
 
             <Container className="Hero-CTA">
                 <Button size="Large" rounded="Round">

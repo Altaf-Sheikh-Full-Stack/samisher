@@ -1,16 +1,14 @@
 
-.FAQ-Section{
-  margin: auto;
-}
 
 .FAQ {
   margin: auto;
   padding: 64px;
   display: grid;
-  grid-template-columns: minmax(260px, 0.78fr) minmax(0, 1.22fr);
-  gap: clamp(42px, 7vw, 96px);
-  align-items: start;
-  box-shadow: 0 18px 50px rgba(76, 29, 149, 0.08);
+  width: 100%;
+  /* grid-template-columns: minmax(260px, 0.78fr) minmax(0, 1.22fr); */
+  /* gap: clamp(42px, 7vw, 96px); */
+  /* align-items: start; */
+  /* box-shadow: 0 18px 50px rgba(76, 29, 149, 0.08); */
 }
 
 .FAQ-Intro {
@@ -88,13 +86,13 @@
   justify-content: space-between;
   gap: 24px;
   text-align: left;
-  font: 700 16px/1.45 Inter, sans-serif;
+  font:  16px/1.45 Roboto ;
   transition: background-color 160ms ease, color 160ms ease;
 }
 
 .FAQ-Question:hover {
-  color: #6d28d9;
-  background: #faf7ff;
+  color: #000000;
+  background: #ffffff;
 }
 
 .FAQ-Icon {
@@ -104,14 +102,14 @@
   place-items: center;
   border-radius: 50%;
   background: #f3f0ff;
-  color: #6d28d9;
+  color: #000000;
   font: 400 22px/1 Inter, sans-serif;
   flex: 0 0 auto;
   transition: transform 180ms ease, background-color 180ms ease;
 }
 
 .FAQ-Item--open .FAQ-Icon {
-  background: #7c3aed;
+  background: #000000;
   color: #ffffff;
   transform: rotate(180deg);
 }

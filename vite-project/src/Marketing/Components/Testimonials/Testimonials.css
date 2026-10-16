@@ -1,0 +1,85 @@
+.Testimonials {
+  margin: 3em auto;
+  display: flex;
+  gap: 1em;
+  overflow-x: auto;
+  width: 100%;
+  scroll-behavior: smooth;
+  scroll-snap-type: mandatory;
+  anchor-name: --scroll;
+  scroll-marker-group: after;
+}
+
+.Testimonials::scroll-marker-group {
+  display: flex;
+  justify-content: center;
+  gap: 1em;
+}
+
+.Testimonials::-webkit-scrollbar {
+  display: none;
+}
+
+.Testimonials::scroll-button(right),
+.Testimonials::scroll-button(left) {
+  content: "↻";
+  height: 50px;
+  width: 50px;
+  font-size: 40px;
+  border: none;
+  border-radius: 50px;
+  background-color: rgb(212, 212, 212);
+  cursor: pointer;
+  position: fixed;
+  position-anchor: --scroll;
+  position-area: right center;
+  translate: -50%;
+  z-index: 999;
+}
+
+.Testimonials::scroll-button(right):hover,
+.Testimonials::scroll-button(left):hover {
+  background-color: rgb(192, 192, 192);
+}
+
+.Testimonials::scroll-button(left) {
+  content: "↺";
+  position-area: left center;
+  translate: 50%;
+}
+
+.Testimonials-Card {
+  flex: 0 0 100%;
+  scroll-snap-align: start;
+  display: flex;
+}
+
+.Testimonials-Card::scroll-marker {
+  content: "";
+  height: 1em;
+  width: 1em;
+  border-radius: 50px;
+  background-color: rgb(116, 116, 116);
+}
+
+.Testimonials-Card::scroll-marker:target-current {
+  background-color: black;
+}
+
+.Testimonials-Card-Left {
+  width: 70%;
+  padding: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.Testimonials-Card-Left-Card {
+  display: flex;
+  gap: 50px;
+  
+}
+
+.Testimonials-Card-Right {
+  width: 30%;
+}

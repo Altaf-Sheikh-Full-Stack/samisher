@@ -57,11 +57,15 @@ const Navbar = () => {
 
 
 
-            <Box className='Navbar-Buttons' >
-                <Button style={{border:'1px grey solid'}} size='Large' variant='Transparent'>Login</Button>
+            <Box className='Navbar-Buttons'  >
+                <Button style={{ border: '1px grey solid' }} size='Large' variant='Transparent'>Login</Button>
                 <Button rounded='Round' size='Large'><a style={{ textDecoration: 'none' }} href="https://cal.com/samisher/meeting" target="_blank" rel="noopener noreferrer">Book Demo</a></Button>
             </Box>
 
+            <Box className={`Navbar-ButtonsMobile`}  >
+                <Button style={{ border: '1px grey solid' }}  variant='Transparent'>Login</Button>
+                <Button rounded='Round' ><a style={{ textDecoration: 'none' }} href="https://cal.com/samisher/meeting" target="_blank" rel="noopener noreferrer">Book Demo</a></Button>
+            </Box>
             <button
                 type="button"
                 className={`Navbar-MobileToggle ${mobileOpen ? 'is-open' : ''}`}
@@ -82,7 +86,7 @@ const Navbar = () => {
                             className={`Navbar-MobileServiceHead ${mobileServices ? 'is-open' : ''}`}
                             onClick={() => setMobileServices((prev) => !prev)}
                         >
-                            <Text color='Lite'>Services</Text>
+                            <Text color='Dark'>Product</Text>
                             <span className='Navbar-MobileChevron' aria-hidden="true">⌄</span>
                         </button>
 
@@ -96,7 +100,7 @@ const Navbar = () => {
                                             onClick={() => setActiveService((prev) => (prev === i ? null : i))}
                                         >
                                             <Text color='Dark' weight='600'>{service.name}</Text>
-                                            <span className='Navbar-MobileChevron' aria-hidden="true">⌄</span>
+                                            
                                         </button>
 
                                     </div>
@@ -106,16 +110,13 @@ const Navbar = () => {
                     </div>
 
                     <NavLink to="/about/" onClick={() => setMobileOpen(false)}>
-                        <Text color='Lite'>About us</Text>
-                    </NavLink>
-                    <NavLink to="/career/" onClick={() => setMobileOpen(false)}>
-                        <Text color='Lite'>Career</Text>
+                        <Text color='Dark'>Customer success</Text>
                     </NavLink>
                     <NavLink to="/blogs/" onClick={() => setMobileOpen(false)}>
-                        <Text color='Lite'>Blogs</Text>
+                        <Text color='Dark'>Framework</Text>
                     </NavLink>
                     <NavLink to="/pricing/" onClick={() => setMobileOpen(false)}>
-                        <Text color='Lite'>Pricing</Text>
+                        <Text color='Dark'>Pricing</Text>
                     </NavLink>
                 </Section>
             )}

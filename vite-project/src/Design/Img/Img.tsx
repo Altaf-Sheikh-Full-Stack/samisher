@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import "./Img.css";
 
 interface ImageProps {
-    lowRes: string;
+    lowRes?: string;
     highRes: string;
     alt?: string;
     className?: string;
