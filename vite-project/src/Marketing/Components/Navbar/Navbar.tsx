@@ -16,7 +16,7 @@ import Container from '../../../Design/Container/Container'
 const Navbar = () => {
     const [mobileOpen, setMobileOpen] = useState(false)
     const [mobileServices, setMobileServices] = useState(false)
-    const [activeService, setActiveService] = useState<number | null>(null)
+    // const [activeService, setActiveService] = useState<number | null>(null)
 
     return (
         <Container className="Navbar" color='Transparent' >
@@ -97,7 +97,7 @@ const Navbar = () => {
                                         <button
                                             type="button"
                                             className="Navbar-MobileServiceLabel"
-                                            onClick={() => setActiveService((prev) => (prev === i ? null : i))}
+                                            
                                         >
                                             <Text color='Dark' weight='600'>{service.name}</Text>
                                             
