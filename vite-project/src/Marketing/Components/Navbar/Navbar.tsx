@@ -92,7 +92,7 @@ const Navbar = () => {
 
                         {mobileServices && (
                             <div className="Navbar-MobileServices">
-                                {services.map((service, i) => (
+                                {services.map((service) => (
                                     <div className="Navbar-MobileService" key={service.name}>
                                         <button
                                             type="button"
