@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from "react";
+import {  useMemo, useState } from "react";
 
 import Container from "../../../Design/Container/Container";
 import Image from "../../../Design/Img/Img";
@@ -9,7 +9,7 @@ import PriceTop from "./PriceTop";
 import { calculatePricing, formatCurrency } from "./pricingLogic";
 
 import "./Pricing.css";
-import PriceBottom from "./PriceBottom";
+
 
 
 const Pricing = () => {
