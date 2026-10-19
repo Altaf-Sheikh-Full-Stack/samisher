@@ -1,4 +1,4 @@
-import { useState, type CSSProperties, type KeyboardEvent, type ReactNode } from 'react'
+import { useState, type CSSProperties, type KeyboardEvent, } from 'react'
 import Button from '../../../Design/Button/Button'
 import Box from '../../../Design/Container/Box/Box'
 import Text from '../../../Design/Texts/Text'
