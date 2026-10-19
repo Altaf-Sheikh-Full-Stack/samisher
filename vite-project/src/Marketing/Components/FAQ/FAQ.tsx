@@ -1,6 +1,5 @@
 import { useState } from 'react'
 import Section from '../../../Design/Container/Section/Section'
-import Text from '../../../Design/Texts/Text'
 import './FAQ.css'
 import FAQData from './FAQData'
 
