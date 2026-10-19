@@ -22,15 +22,16 @@ export interface Pricing {
 const pricingData: Pricing[] = [
     {
         icons: img4,
-        name: 'Zeno',
+        name: 'Scout',
         type: 'lead',
 
         summery:
-            'All in one B2B lead Gen, Enrich, Intent package. Pay only when the lead book meeting',
+            'Find high quality lead and accurate intent',
 
         item: [
-            'Lead generation',
-            '$0.20 per lead'
+            '100+ Channel',
+            'Intent manager',
+            'Prospect verification'
         ],
 
         bcolor: '#0B3CFF',
@@ -42,15 +43,15 @@ const pricingData: Pricing[] = [
 
     {
         icons: img3,
-        name: 'Alto',
+        name: 'Scheduler',
         type: 'meeting',
 
         summery:
-            'Book meetings based on campaign activity.',
+            'Book meetings with Decision-Makers',
 
         item: [
-            '$20 base campaign price',
-            'Activity based pricing'
+            'All in Scout',
+            'Meeting booking'
         ],
 
         bcolor: '#FE05EE',
@@ -65,11 +66,11 @@ const pricingData: Pricing[] = [
 
     {
         icons: img2,
-        name: 'Mire',
+        name: 'Closer',
         type: 'deal',
 
         summery:
-            'Pay based on successful deals closed.',
+            'Close deal',
 
         item: [
             '$20 base campaign price',
@@ -87,7 +88,7 @@ const pricingData: Pricing[] = [
 
     {
         icons: img1,
-        name: 'Ciro',
+        name: 'Collector',
         type: 'invoice',
 
         summery:

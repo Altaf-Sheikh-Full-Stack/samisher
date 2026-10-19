@@ -1,5 +1,5 @@
 .Testimonials {
-  margin: 3em auto;
+  /* margin: 3em auto; */
   display: flex;
   gap: 1em;
   overflow-x: auto;
@@ -71,7 +71,7 @@
   padding: 50px;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: space-around;
 }
 
 .Testimonials-Card-Left-Card {
@@ -82,4 +82,34 @@
 
 .Testimonials-Card-Right {
   width: 30%;
+}
+
+
+@media (max-width: 888px){
+  .Testimonials-Card-Left{
+    padding: 20px;
+  }
+
+
+}
+
+
+@media (max-width: 712px){
+
+  .Testimonials-Card-Left h3{
+    margin-bottom: 20px;
+  }
+
+  .Testimonials-Card{
+    flex-direction: column;
+  }
+  .Testimonials-Card-Left{
+    width: 100%;
+  }
+
+  .Testimonials-Card-Right{
+    width: calc(100% - 40px);
+    margin: 20px;
+    box-sizing: border-box;
+  }
 }

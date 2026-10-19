@@ -14,8 +14,8 @@ const Process = () => {
     
     const [activePoint, setActivePoint] = useState<number | null>(0)
     const step = ProcessData[activeIndex]
-    const ImageHigh = activePoint === null ? step.high[0] : (step.high[activePoint] ?? step.high[0])
-    const ImageLow = activePoint === null ? step.low[0]: (step.low[activePoint] ?? step.low[0])
+    const ImageHigh = activePoint === null ? step.img[0] : (step.img[activePoint] ?? step.img[0])
+    const Tital = activePoint === null ? step.title[0] : (step.title[activePoint] ?? step.title[0])
     const Alt = activePoint === null ? step.alt[0] : `${step.alt[activePoint]} – ${step.alt[0]}`
 
     const selectStep = (index: number) => {
@@ -69,7 +69,7 @@ const Process = () => {
 
                         <Box className="Process-Info" variant="Transparent">
                             <Container color='Transparent'>
-                                <Text textType="H2" weight='400' color="Dark" font='Geist'>{step.title}</Text>
+                                <Text textType="H2" weight='400' color="Black" font='Geist'>{Tital}</Text>
                             </Container>
 
                             <Box variant="Transparent" className="Process-Points">
@@ -89,7 +89,7 @@ const Process = () => {
 
                         </Box>
                         <Box className="Process-Img">
-                            <Image highRes={ImageHigh} lowRes={ImageLow} alt={Alt}/>
+                            <Image highRes={ImageHigh} lowRes={ImageHigh} alt={Alt}/>
 
                         </Box>
 

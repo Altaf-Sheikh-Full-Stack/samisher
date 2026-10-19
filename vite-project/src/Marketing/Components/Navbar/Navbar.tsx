@@ -59,12 +59,12 @@ const Navbar = () => {
 
             <Box className='Navbar-Buttons'  >
                 <Button style={{ border: '1px grey solid' }} size='Large' variant='Transparent'>Login</Button>
-                <Button rounded='Round' size='Large'><a style={{ textDecoration: 'none' }} href="https://cal.com/samisher/meeting" target="_blank" rel="noopener noreferrer">Book Demo</a></Button>
+                <Button rounded='Round' size='Large'><a style={{ textDecoration: 'none' }} href="https://cal.com/samisher/demo" target="_blank" rel="noopener noreferrer">Book Demo</a></Button>
             </Box>
 
             <Box className={`Navbar-ButtonsMobile`}  >
                 <Button style={{ border: '1px grey solid' }}  variant='Transparent'>Login</Button>
-                <Button rounded='Round' ><a style={{ textDecoration: 'none' }} href="https://cal.com/samisher/meeting" target="_blank" rel="noopener noreferrer">Book Demo</a></Button>
+                <Button rounded='Round' ><a style={{ textDecoration: 'none' }} href="https://cal.com/samisher/demo" target="_blank" rel="noopener noreferrer">Book Demo</a></Button>
             </Box>
             <button
                 type="button"

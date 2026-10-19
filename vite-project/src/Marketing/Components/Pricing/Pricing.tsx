@@ -116,8 +116,8 @@ const Pricing = () => {
                                     {formatCurrency(service.price)}
                                 </Text>
 
-                                <Text textType="Text">
-                                    /Campaign
+                                <Text textType="Text" >
+                                     / Campaign / Paid Once
                                 </Text>
 
                             </Container>
@@ -125,8 +125,9 @@ const Pricing = () => {
 
                             {/* DESCRIPTION */}
 
-                            <Text>
-                                {service.summery}
+                            <Text weight="700">
+                                Best for:
+                                <Text>{service.summery}</Text>
                             </Text>
 
                         </Container>
@@ -154,19 +155,10 @@ const Pricing = () => {
                             {service.item.map((item, index) => (
 
                                 <Text key={index}>
-                                    {item}
+                                   ✅ {item}
                                 </Text>
 
                             ))}
-
-
-                            {/* Calculated quantity */}
-
-                            <Text>
-                                {service.quantity} {service.unitLabel}
-                                {service.quantity !== 1 ? "s" : ""}
-                            </Text>
-
                         </Container>
 
                     </Container>
@@ -175,7 +167,7 @@ const Pricing = () => {
 
             </Container>
 
-            <PriceBottom cost={cost} profit={revenueTarget - cost} />
+            {/* <PriceBottom cost={cost} profit={revenueTarget - cost} /> */}
 
         </>
     );

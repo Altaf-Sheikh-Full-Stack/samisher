@@ -1,10 +1,8 @@
-import Section from "../../../Design/Container/Section/Section";
 import Text from "../../../Design/Texts/Text";
 import CompanyData from "./CompanyData";
 import Box from "../../../Design/Container/Box/Box";
 import "./Company.css";
 import Container from "../../../Design/Container/Container";
-import Image from "../../../Design/Img/Img";
 import PeopleImage from "./People";
 
 
@@ -18,6 +16,7 @@ const Company = () => {
                     ))}
 
                 </Container>
+
                 <Container>
                     <Text textType="H5" color="Black">Rated 5/5 ⭐️⭐️⭐️⭐️</Text>
                     <Text textType="Text"  >Trusted by 500+ Partners </Text>

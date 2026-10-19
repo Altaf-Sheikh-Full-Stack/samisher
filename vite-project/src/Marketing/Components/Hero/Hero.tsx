@@ -1,7 +1,6 @@
 import Button from "../../../Design/Button/Button";
 import Container from "../../../Design/Container/Container";
-import Fade from "../../../Design/Fade/Fade";
-import Image from "../../../Design/Img/Img";
+
 import Text from "../../../Design/Texts/Text";
 import img1 from "../../../assets/Hero/Component 23.svg";
 import img2 from "../../../assets/Hero/Component 24.svg";
@@ -9,24 +8,27 @@ import img3 from "../../../assets/Hero/Component 25.svg";
 import img4 from "../../../assets/Hero/Component 26.svg";
 import img5 from "../../../assets/Hero/Component 27.svg";
 import "./Hero.css";
-import { NavLink } from "react-router";
+
 
 import humen1 from '../../../assets/People/image 125.webp'
 import humen2 from '../../../assets/People/image 126.webp'
 import humen3 from '../../../assets/People/image 127.webp'
 
+
+import Rating from "../Rating/Rating";
 const Hero = () => {
     return (
         <Container className="Home">
             <Container className="Hero-Text-Img-box">
                 <img className="" src={img5} alt="" />
             </Container>
+            
             <Container color="Transparent" className="Hero-Text">
-
-
+                <Rating/>
                 <Text textType="H1" font="Onest" weight="700" color="Black">
-                    Enterprise sales? Now easy. <br /> Human + Agent.
+                    Enterprise sales? Done for you. <br /> Human + Agent.
                 </Text>
+                
                 <Container color="Secondary" className="Home-Boll-Img">
                     <img src={humen1} />
                     <img src={humen2} alt="" />
@@ -81,7 +83,7 @@ const Hero = () => {
                 <Button size="Large" rounded="Round">
                     <a
                         style={{ color: "white", textDecoration: "none" }}
-                        href="https://cal.com/samisher/meeting"
+                        href="https://cal.com/samisher/demo"
                         target="_blank"
                         rel="noopener noreferrer"
                     >

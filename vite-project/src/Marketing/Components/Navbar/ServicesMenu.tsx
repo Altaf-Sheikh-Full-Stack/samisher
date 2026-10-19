@@ -17,7 +17,7 @@ const ServicesMenu = () => {
                         onMouseEnter={() => setActive(i)}
                     >
                         <img style={{height:20}} src={service.icon} alt="" />
-                        <Text color="Black" weight={i === active ? '700' : '400'}>{service.name}</Text>
+                        <Text color="Black" weight={i === active ? '700' : '400'}> <a href="https://cal.com/samisher/demo">{service.name}</a> </Text>
                     </button>
                 ))}
             </nav>
