@@ -16,6 +16,10 @@ interface ButtonProps {
     size?:Size;
     shadow?: Shadow;
     style?: React.CSSProperties;
+    /** Whether the button colour dims on hover. Defaults to true. */
+    dimOnHover?: boolean;
+    /** How much darker the button gets on hover (0 - 1). Defaults to 0.12. */
+    dimAmount?: number;
 }
 
 
@@ -78,13 +82,10 @@ const Button = ({
     disabled = false,
     size = "Medium",
     shadow = "False",
-    style
+    style,
+    dimOnHover = true,
+    dimAmount = 0.12
 }: ButtonProps) => {
-
-    
-
-    
-
 
     const colorStyle = variantConf[variant].color;
     const borderRadiusStyle = roundedConf[rounded].borderRadius;
@@ -93,6 +94,9 @@ const Button = ({
     const fontSizeStyle = sizeConf[size].fontSize;
     const boxShadowStyle = shadowConf[shadow].boxShadow;
 
+    // Brightness multiplier applied on hover to dim (darken) the button colour.
+    const dimBrightness = Math.min(Math.max(1 - dimAmount, 0), 1);
+
     const styles: React.CSSProperties = {
         color: colorStyle,
         background: backgroundStyle,
@@ -100,15 +104,14 @@ const Button = ({
         padding: paddingStyle,
         fontSize: fontSizeStyle,
         boxShadow: boxShadowStyle,
-        
-        
-    };
+        "--button-dim-brightness": dimBrightness,
+    } as React.CSSProperties;
 
     return (
-       
+        
             <button
-                className={`Button ${className || ""}`}
-                style={{ ...styles, ...style, }}
+                className={`Button${dimOnHover ? "" : " Button--no-dim"}${className ? ` ${className}` : ""}`}
+                style={{ ...styles, ...style }}
                 onClick={onClick}
                 disabled={disabled}
             >

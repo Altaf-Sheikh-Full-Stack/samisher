@@ -6,8 +6,24 @@
   font-weight: 600;
 }
 
-.Button:hover{
+/* Dim (darken) the button colour on hover */
+.Button:hover {
+  /* filter: brightness(var(--button-dim-brightness, 0.88)); */
+  background-color: var(--button-dim-brightness);
   /* outline: 1px rgb(174, 0, 255) dotted; */
   /* outline-offset: 2px; */
   /* transform: scale(1.1); */
+}
+
+/* Opt out of the hover dimming */
+.Button--no-dim:hover {
+  filter: none;
+}
+
+.Button:disabled {
+  cursor: not-allowed;
+}
+
+.Button:disabled:hover {
+  filter: none;
 }
