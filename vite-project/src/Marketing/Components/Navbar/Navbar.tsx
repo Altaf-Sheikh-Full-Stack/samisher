@@ -19,7 +19,7 @@ const Navbar = () => {
     // const [activeService, setActiveService] = useState<number | null>(null)
 
     return (
-        <Container className="Navbar" color='Transparent' >
+        <Container className="Navbar" color='White' >
 
             <Box className='Navbar-Logo' >
                 <NavLink to="/" end>
@@ -58,15 +58,15 @@ const Navbar = () => {
 
 
             <Box className='Navbar-Buttons'  >
-                <Button style={{ border: '1px grey solid' }} size='Large' variant='Transparent'>Login</Button>
+                <Button style={{ }} size='Large' variant='Secondary'>Login</Button>
                 <Button rounded='Round' size='Large'><a style={{ textDecoration: 'none' }} href="https://cal.com/samisher/demo" target="_blank" rel="noopener noreferrer">Book Demo</a></Button>
             </Box>
 
             <Box className={`Navbar-ButtonsMobile`}  >
-                <Button style={{ border: '1px grey solid' }}  variant='Transparent'>Login</Button>
+                <Button style={{  }}  variant='Transparent'>Login</Button>
                 <Button rounded='Round' ><a style={{ textDecoration: 'none' }} href="https://cal.com/samisher/demo" target="_blank" rel="noopener noreferrer">Book Demo</a></Button>
             </Box>
-            <button
+            {/* <button
                 type="button"
                 className={`Navbar-MobileToggle ${mobileOpen ? 'is-open' : ''}`}
                 onClick={() => setMobileOpen((prev) => !prev)}
@@ -76,7 +76,7 @@ const Navbar = () => {
                 <span />
                 <span />
                 <span />
-            </button>
+            </button> */}
 
             {mobileOpen && (
                 <Section className='Navbar-MobileMenu' variant='Transparent'>

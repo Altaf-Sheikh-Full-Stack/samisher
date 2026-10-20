@@ -101,6 +101,7 @@ const Button = ({
         fontSize: fontSizeStyle,
         boxShadow: boxShadowStyle,
         
+        
     };
 
     return (

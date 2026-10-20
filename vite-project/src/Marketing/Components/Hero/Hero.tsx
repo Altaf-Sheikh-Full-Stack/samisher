@@ -16,6 +16,7 @@ import humen3 from '../../../assets/People/image 127.webp'
 
 
 import Rating from "../Rating/Rating";
+import Chatbot from "../Chatbot/Chatbot";
 const Hero = () => {
     return (
         <Container className="Home">
@@ -26,9 +27,9 @@ const Hero = () => {
             <Container color="Transparent" className="Hero-Text">
                 <Rating/>
                 <Text textType="H1" font="Onest" weight="700" color="Black">
-                    Enterprise sales? Done for you. <br /> Human + Agent.
+                    Enterprise sales? Done for you. <br /> 
                 </Text>
-                
+                <Text textType="H2" font="Onest" weight="600">Human + Agent.</Text>
                 <Container color="Secondary" className="Home-Boll-Img">
                     <img src={humen1} />
                     <img src={humen2} alt="" />
@@ -39,6 +40,7 @@ const Hero = () => {
                     <img src={img1} alt="" />
 
                 </Container>
+                
             </Container>
 
 
@@ -70,6 +72,8 @@ const Hero = () => {
 
                 </Text>
             </Container>
+
+            <Chatbot/>
 
             {/* 
             <Container className="Hero-Body">

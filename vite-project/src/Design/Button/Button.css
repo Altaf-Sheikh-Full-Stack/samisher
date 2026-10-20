@@ -7,7 +7,7 @@
 }
 
 .Button:hover{
-  outline: 1px rgb(174, 0, 255) dotted;
-  outline-offset: 2px;
-  transform: scale(1.1);
+  /* outline: 1px rgb(174, 0, 255) dotted; */
+  /* outline-offset: 2px; */
+  /* transform: scale(1.1); */
 }
