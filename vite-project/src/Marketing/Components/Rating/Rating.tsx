@@ -26,7 +26,7 @@ const Rating = () => {
                     <Container color="Transparent" className="Rating-star-2" >★</Container>
                 </Container>
                 <Container className="Rating-Info-Text" color="Transparent">
-                    <Text weight="500">Loved by 500+ GTM Teams</Text>
+                    <Text weight="500" color="Black">500+ <span style={{fontWeight:'normal'}} >Loved by  GTM Teams</span> </Text>
                 </Container>
             </Container>
 

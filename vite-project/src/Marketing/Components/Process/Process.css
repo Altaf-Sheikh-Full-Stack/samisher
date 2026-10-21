@@ -92,6 +92,7 @@
  
   -webkit-backdrop-filter: blur(5px) !important;
   width: 100% !important;
+  border-radius: 50px;
 
 
 }
@@ -104,7 +105,7 @@
   margin: 10px;
   background-color: white;
  
-  
+  border-radius: 50px;
 
 
 
@@ -162,6 +163,8 @@
   min-height: 280px;
   object-fit: cover;
   /* border-radius: 13px; */
+  border-radius: 50px;
+  padding: 10px;
 }
 
 @media (max-width: 900px) {

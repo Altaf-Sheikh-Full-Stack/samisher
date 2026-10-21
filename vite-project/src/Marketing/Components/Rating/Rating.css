@@ -26,6 +26,12 @@
   color: gold !important;
 }
 
+.Rating-Info-Text{
+  display: flex !important;
+  flex-direction: row;
+}
+
+
 @media (max-width: 600px) {
   .Rating {
     padding: 4px;

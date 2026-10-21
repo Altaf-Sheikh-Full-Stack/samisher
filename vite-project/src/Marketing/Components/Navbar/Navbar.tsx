@@ -63,7 +63,7 @@ const Navbar = () => {
             </Box>
 
             <Box className={`Navbar-ButtonsMobile`}  >
-                <Button style={{  }}  variant='Transparent'>Login</Button>
+                <Button style={{  }}  variant='Secondary'>Login</Button>
                 <Button rounded='Round' ><a style={{ textDecoration: 'none' }} href="https://cal.com/samisher/demo" target="_blank" rel="noopener noreferrer">Book Demo</a></Button>
             </Box>
             {/* <button

@@ -31,11 +31,7 @@ const HomeLayout = () => {
                 <Process />
 
             </div>
-            <div className='HomeLayout-Meeting'>
 
-                <Meeting/>
-
-            </div>
 
             <div className='HomeLayout-Company'>
 
@@ -43,16 +39,21 @@ const HomeLayout = () => {
 
             </div>
             <div className='HomeLayout-Testimonials'>
-                <Testimonials/>
+                <Testimonials />
             </div>
             <div className='HomeLayout-FAQ'>
 
                 <FAQ />
             </div>
+            <div className='HomeLayout-Meeting'>
+
+                <Meeting />
+
+            </div>
             <div className='HomeLayout-Footer'>
                 <Footer />
             </div>
-             <div className='HomeLayout-HoverCTA'>
+            <div className='HomeLayout-HoverCTA'>
                 <HoverCTA />
             </div>
         </div>
