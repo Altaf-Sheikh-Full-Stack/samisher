@@ -73,9 +73,9 @@ const Hero = () => {
                 </Text>
             </Container> */}
 
-            <Chatbot/>
+            
 
-            {/* 
+{/*             
             <Container className="Hero-Body">
                 <Text textType="H5" font="Geist" color="Dark" weight="500">
 
@@ -95,6 +95,7 @@ const Hero = () => {
                     </a>
                 </Button>
             </Container>
+            <Chatbot/>
         </Container>
     );
 };

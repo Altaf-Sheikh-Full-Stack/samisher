@@ -3,6 +3,7 @@ import Company from '../../Components/Company/Company.tsx';
 import FAQ from '../../Components/FAQ/FAQ.tsx';
 import Footer from '../../Components/Footer/Footer';
 import Hero from '../../Components/Hero/Hero';
+import HoverCTA from '../../Components/HoverCTA/HoverCTA.tsx';
 import Meeting from '../../Components/Meeting/Meeting';
 import Navbar from '../../Components/Navbar/Navbar';
 import Process from '../../Components/Process/Process.tsx';
@@ -50,6 +51,9 @@ const HomeLayout = () => {
             </div>
             <div className='HomeLayout-Footer'>
                 <Footer />
+            </div>
+             <div className='HomeLayout-HoverCTA'>
+                <HoverCTA />
             </div>
         </div>
     );

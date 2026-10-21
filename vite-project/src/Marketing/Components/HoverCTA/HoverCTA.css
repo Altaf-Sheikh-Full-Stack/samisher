@@ -1,0 +1,7 @@
+.HoverCTA{
+    position: fixed;
+    bottom: 10px;
+    display: flex;
+    justify-self: center;
+    z-index: 9999;
+}
