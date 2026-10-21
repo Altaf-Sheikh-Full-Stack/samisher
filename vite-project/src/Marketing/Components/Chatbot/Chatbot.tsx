@@ -169,13 +169,13 @@ const Chatbot = () => {
 
                 <Container className="ChatBot-actions">
                     <Button
-                        variant="Secondary"
+                        variant="Primary"
                         rounded="Round"
                         size="Large"
                         
                         onClick={() => {}}
                     >
-                        Auto Run
+                        Start Autopilot
                     </Button>
                 </Container>
             </Container>

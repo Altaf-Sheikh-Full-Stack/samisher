@@ -19,7 +19,7 @@ import Rating from "../Rating/Rating";
 import Chatbot from "../Chatbot/Chatbot";
 const Hero = () => {
     return (
-        <Container className="Home">
+        <Container className="Home" color="Secondary">
             {/* <Container className="Hero-Text-Img-box"> */}
                 {/* <img className="" src={img5} alt="" /> */}
             {/* </Container> */}
@@ -30,7 +30,7 @@ const Hero = () => {
                     Enterprise sales?  Done for you. 
                 </Text>
                 <Text textType="H2" font="Geist" weight="600">Human + Agent.</Text>
-                <Container color="Secondary" className="Home-Boll-Img">
+                <Container color="White" className="Home-Boll-Img">
                     <img src={humen1} />
                     <img src={humen2} alt="" />
                     <img src={humen3} alt="" />
@@ -83,7 +83,7 @@ const Hero = () => {
                 </Text>
             </Container> */}
 
-            <Container className="Hero-CTA">
+            <Container className="Hero-CTA" color="Transparent">
                 <Button size="Large" rounded="Round">
                     <a
                         style={{ color: "white", textDecoration: "none" }}

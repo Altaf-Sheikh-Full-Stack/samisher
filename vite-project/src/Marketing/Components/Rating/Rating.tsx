@@ -10,7 +10,7 @@ import img4 from '../../../assets/People/image 128.webp'
 
 const Rating = () => {
     return (
-        <Container className="Rating" color="Transparent">
+        <Container className="Rating" color="White" >
             <Container className="Rating-Imgs" color="Transparent" >
                 <img src={img1} alt="" height={30} width={30} />
                 <img src={img2} alt="" height={30} width={30} />
@@ -25,7 +25,7 @@ const Rating = () => {
                     <Container color="Transparent" className="Rating-star-1" >★</Container>
                     <Container color="Transparent" className="Rating-star-2" >★</Container>
                 </Container>
-                <Container color="Transparent">
+                <Container className="Rating-Info-Text" color="Transparent">
                     <Text weight="500">Loved by 500+ GTM Teams</Text>
                 </Container>
             </Container>

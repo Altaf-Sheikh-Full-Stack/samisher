@@ -1,32 +1,41 @@
 .Rating {
   display: flex;
   gap: 30px;
-  justify-content: center;
+  width: max-content;
+  padding: 10px;
+  align-self: center;
+  border-radius: 200px;
   align-items: center;
 }
 
-.Rating-Imgs img{
+.Rating-Imgs img {
   margin-right: -10px;
   border-radius: 30px;
 }
 
-.Rating-Info{
+.Rating-Info {
   display: flex;
   flex-direction: column;
 }
 
-.Rating-Stars{
+.Rating-Stars {
   display: flex;
 }
 
-.Rating-star-1{
+.Rating-star-1 {
   color: gold !important;
 }
 
-
 @media (max-width: 600px) {
-     .Rating-Imgs img{
-      /* width: 20px; */
-      /* height: 20px; */
-     }
+  .Rating {
+    padding: 4px;
+  }
+  .Rating-Imgs img {
+    width: 25px;
+    height: 25px;
+  }
+
+  .Rating-Info-Text p {
+    font-size: 10px !important;
+  }
 }

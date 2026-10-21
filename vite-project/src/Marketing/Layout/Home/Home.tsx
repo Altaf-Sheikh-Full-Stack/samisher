@@ -1,4 +1,4 @@
-import Banner from '../../Components/Banner/Banner.tsx';
+// import Banner from '../../Components/Banner/Banner.tsx';
 import Company from '../../Components/Company/Company.tsx';
 import FAQ from '../../Components/FAQ/FAQ.tsx';
 import Footer from '../../Components/Footer/Footer';
@@ -16,7 +16,7 @@ const HomeLayout = () => {
     return (
         <div className="HomeLayout">
             <div className='HomeLayout-Banner'>
-                <Banner/>
+                {/* <Banner/> */}
 
             </div>
             <div className='HomeLayout-Navbar'>
