@@ -22,3 +22,11 @@
 .Rating-star-1{
   color: gold !important;
 }
+
+
+@media (max-width: 600px) {
+     .Rating-Imgs img{
+      /* width: 20px; */
+      /* height: 20px; */
+     }
+}
