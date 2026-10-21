@@ -44,7 +44,7 @@ const Hero = () => {
             </Container>
 
 
-            <Container className="Hero-Body">
+            {/* <Container className="Hero-Body">
                 <Text textType="H5" font="Geist" color="Dark" weight="500">
                     An Agent That
                     <span className="Hero-Body-Scout">
@@ -71,7 +71,7 @@ const Hero = () => {
                     </span>  To Collects Payments.{" "}
 
                 </Text>
-            </Container>
+            </Container> */}
 
             <Chatbot/>
 
