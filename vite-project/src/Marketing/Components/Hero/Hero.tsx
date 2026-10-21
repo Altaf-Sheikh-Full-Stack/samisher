@@ -6,7 +6,7 @@ import img1 from "../../../assets/Hero/Component 23.svg";
 import img2 from "../../../assets/Hero/Component 24.svg";
 import img3 from "../../../assets/Hero/Component 25.svg";
 import img4 from "../../../assets/Hero/Component 26.svg";
-import img5 from "../../../assets/Hero/Component 27.svg";
+// import img5 from "../../../assets/Hero/Component 27.svg";
 import "./Hero.css";
 
 
@@ -20,16 +20,16 @@ import Chatbot from "../Chatbot/Chatbot";
 const Hero = () => {
     return (
         <Container className="Home">
-            <Container className="Hero-Text-Img-box">
-                <img className="" src={img5} alt="" />
-            </Container>
+            {/* <Container className="Hero-Text-Img-box"> */}
+                {/* <img className="" src={img5} alt="" /> */}
+            {/* </Container> */}
             
             <Container color="Transparent" className="Hero-Text">
                 <Rating/>
                 <Text textType="H1" font="Onest" weight="700" color="Black">
-                    Enterprise sales? Done for you. <br /> 
+                    Enterprise sales?  Done for you. 
                 </Text>
-                <Text textType="H2" font="Onest" weight="600">Human + Agent.</Text>
+                <Text textType="H2" font="Geist" weight="600">Human + Agent.</Text>
                 <Container color="Secondary" className="Home-Boll-Img">
                     <img src={humen1} />
                     <img src={humen2} alt="" />

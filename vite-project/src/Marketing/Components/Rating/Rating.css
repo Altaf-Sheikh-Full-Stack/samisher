@@ -1,67 +1,24 @@
 .Rating {
   display: flex;
-  gap: 10px;
-  justify-content: center;
-}
-
-.Rating-Trust {
-  display: flex;
-  background-color: rgba(206, 206, 206, 0.589) !important;
-  padding: 4px;
-  gap: 10px;
-  align-items: center;
-  cursor: pointer;
-  border-radius: 3px;
-}
-
-.Rating-Trust-Stars {
-  display: flex;
-  gap: 3px;
-}
-
-.Rating-Trust-1,
-.Rating-Trust-2,
-.Rating-G2-1,
-.Rating-G2-2 {
-  background-color: #00b67a !important;
-  height: 20px;
-  width: 20px;
-  display: flex;
+  gap: 30px;
   justify-content: center;
   align-items: center;
-  border-radius: 2px;
-  color: white;
 }
 
-.Rating-Trust-2 {
-  background-color: #0c4334 !important;
+.Rating-Imgs img{
+  margin-right: -10px;
+  border-radius: 30px;
 }
 
-.Rating-G2-1 {
-  background-color: #ff492c !important;
-}
-.Rating-G2-2 {
-  background-color: #59221c !important;
+.Rating-Info{
+  display: flex;
+  flex-direction: column;
 }
 
-@media (max-width: 520px) {
-  .Rating-Trust-1,
-  .Rating-Trust-2,
-  .Rating-G2-1,
-  .Rating-G2-2 {
-    width: 10px;
-    height: 10px;
-  }
+.Rating-Stars{
+  display: flex;
+}
 
-  .Rating-Trust-Stars {
-    font-size: 10px;
-  }
-
-  .Rating-Trust {
-    padding: 2px 4px;
-  }
-
-  .Rating-Trust p{
-    font-size: 10px !important;
-  }
+.Rating-star-1{
+  color: gold !important;
 }
