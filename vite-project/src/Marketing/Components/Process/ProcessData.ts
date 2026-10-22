@@ -1,12 +1,9 @@
-
 import find from '../../../assets/Process/SCOUT/Component 125.svg'
 import intent from '../../../assets/Process/SCOUT/Component 126.svg'
 import verify from '../../../assets/Process/SCOUT/Component 127.png'
-
 import Outreach from '../../../assets/Process/SCHEDULER/Component 128.svg'
 import FollowUp from '../../../assets/Process/SCHEDULER/Component 129.svg'
 import Meeting from '../../../assets/Process/SCHEDULER/Component 130.svg'
-
 import icon1 from '../../../assets/Hero/Component 23.svg'
 import icon2 from '../../../assets/Hero/Component 24.svg'
 
@@ -41,8 +38,8 @@ const ProcessData: ProcessData[] = [
     {
         name: 'SCHEDULER',
         icon: icon2,
-        color: '#3b82f6',
-        background: 'linear-gradient(180deg, whitesmoke 0%, #afaeff 28%, #6078ff 62%, #ffffff 100%)',
+        color: '#daf63b',
+        background: 'linear-gradient(180deg, whitesmoke 0%, #fff7ae 28%, #d5ff60 62%, #ffffff 100%)',
         title: ['Reach millions with personalized messages.', 'Personalized follow up to increase sales chance.', 'Booked meeting with right Decision-Maker.'],
         button: ['Outreach', 'Follow Up', 'Book meeting'],
         img: [Outreach, FollowUp, Meeting   ],

@@ -51,7 +51,13 @@
 .Testimonials-Card {
   flex: 0 0 100%;
   scroll-snap-align: start;
-  display: flex;
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+  grid-template-rows: auto auto;
+  grid-template-areas:
+    "box4 box4 box4 box2"
+    "box4 box4 box4 box3"
+    "box1 box1 box1 box3";
 }
 
 .Testimonials-Card::scroll-marker {
@@ -66,48 +72,58 @@
   background-color: black;
 }
 
-.Testimonials-Card-Left {
-  width: 70%;
+.Testimonials-Card-1 {
+  /* width: 70%; */
   padding: 50px;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
+  grid-area: box1;
 }
 
-.Testimonials-Card-Left-Card {
+.Testimonials-Card-1-Card {
   display: flex;
   gap: 50px;
-  
 }
 
-.Testimonials-Card-Right {
-  width: 30%;
+.Testimonials-Card-2 {
+  grid-area: box2;
 }
 
+.Testimonials-Card-3 {
+  grid-area: box3;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
 
-@media (max-width: 888px){
-  .Testimonials-Card-Left{
+.Testimonials-Card-3-UserInfo {
+  display: flex;
+}
+
+.Testimonials-Card-4 {
+  grid-area: box4;
+}
+
+@media (max-width: 888px) {
+  .Testimonials-Card-1 {
     padding: 20px;
   }
-
-
 }
 
-
-@media (max-width: 712px){
-
-  .Testimonials-Card-Left h3{
+@media (max-width: 712px) {
+  .Testimonials-Card-1 h3 {
     margin-bottom: 20px;
   }
 
-  .Testimonials-Card{
+  .Testimonials-Card {
     flex-direction: column;
   }
-  .Testimonials-Card-Left{
+  .Testimonials-Card-1 {
     width: 100%;
   }
 
-  .Testimonials-Card-Right{
+  .Testimonials-Card-2 {
     width: calc(100% - 40px);
     margin: 20px;
     box-sizing: border-box;
