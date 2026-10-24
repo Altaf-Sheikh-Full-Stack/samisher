@@ -2,17 +2,17 @@ import Button from "../../../Design/Button/Button";
 import Container from "../../../Design/Container/Container";
 
 import Text from "../../../Design/Texts/Text";
-import img1 from "../../../assets/Hero/Component 23.svg";
-import img2 from "../../../assets/Hero/Component 24.svg";
-import img3 from "../../../assets/Hero/Component 25.svg";
-import img4 from "../../../assets/Hero/Component 26.svg";
-// import img5 from "../../../assets/Hero/Component 27.svg";
+import img1 from "../../../assets/Hero/Bot/Component 23.svg";
+import img2 from "../../../assets/Hero/Bot/Component 24.svg";
+import img3 from "../../../assets/Hero/Bot/Component 25.svg";
+import img4 from "../../../assets/Hero/Bot/Component 26.svg";
 import "./Hero.css";
 
 
-import humen1 from '../../../assets/People/image 125.webp'
-import humen2 from '../../../assets/People/image 126.webp'
-import humen3 from '../../../assets/People/image 127.webp'
+import humen1 from '../../../assets/Hero/Humen/frame_5_1x.webp'
+import humen2 from '../../../assets/Hero/Humen/frame_2_1x.webp'
+import humen3 from '../../../assets/Hero/Humen/frame_4_1x.webp'
+import humen4 from '../../../assets/Hero/Humen/frame_3_1x.webp'
 
 
 import Rating from "../Rating/Rating";
@@ -34,6 +34,7 @@ const Hero = () => {
                     <img src={humen1} />
                     <img src={humen2} alt="" />
                     <img src={humen3} alt="" />
+                    <img src={humen4}/>
                     <img src={img4} alt="" />
                     <img src={img3} alt="" />
                     <img src={img2} alt="" />

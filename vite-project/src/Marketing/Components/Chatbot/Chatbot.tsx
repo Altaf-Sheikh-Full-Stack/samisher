@@ -3,10 +3,10 @@ import Button from '../../../Design/Button/Button'
 import Container from '../../../Design/Container/Container'
 import './Chatgpt.css'
 
-import icon1 from '../../../assets/Hero/Component 23.svg'
-import icon2 from '../../../assets/Hero/Component 24.svg'
-import icon3 from '../../../assets/Hero/Component 25.svg'
-import icon4 from '../../../assets/Hero/Component 26.svg'
+import icon1 from '../../../assets/Hero/Bot/Component 23.svg'
+import icon2 from '../../../assets/Hero/Bot/Component 24.svg'
+import icon3 from '../../../assets/Hero/Bot/Component 25.svg'
+import icon4 from '../../../assets/Hero/Bot/Component 26.svg'
 
 
 type CategoryId = 'agent' | 'tool' | 'sales' | 'ai'

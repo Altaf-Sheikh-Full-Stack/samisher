@@ -4,8 +4,8 @@ import verify from '../../../assets/Process/SCOUT/Component 127.png'
 import Outreach from '../../../assets/Process/SCHEDULER/Component 128.svg'
 import FollowUp from '../../../assets/Process/SCHEDULER/Component 129.svg'
 import Meeting from '../../../assets/Process/SCHEDULER/Component 130.svg'
-import icon1 from '../../../assets/Hero/Component 23.svg'
-import icon2 from '../../../assets/Hero/Component 24.svg'
+import icon1 from '../../../assets/Hero/Bot/Component 23.svg'
+import icon2 from '../../../assets/Hero/Bot/Component 24.svg'
 
 
 
