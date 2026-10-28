@@ -172,6 +172,10 @@
   gap: 10px;
 }
 
+.Navbar-Mobile-Button-Container{
+  display: flex;
+}
+
 .Navbar-ButtonsMobile{
   display: none;
   gap: 10px;
@@ -180,8 +184,8 @@
 /* --- mobile toggle --- */
 .Navbar-MobileToggle {
   display: none;
-  width: 42px;
-  height: 42px;
+  width: 35px;
+  height: 35px;
   border-radius: 50px;
   background: transparent;
   border: 1px rgb(78, 78, 78) solid;

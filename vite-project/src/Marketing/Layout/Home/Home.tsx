@@ -6,6 +6,7 @@ import Hero from '../../Components/Hero/Hero';
 import HoverCTA from '../../Components/HoverCTA/HoverCTA.tsx';
 import Meeting from '../../Components/Meeting/Meeting';
 import Navbar from '../../Components/Navbar/Navbar';
+import Price from '../../Components/Price/Price.tsx';
 import Process from '../../Components/Process/Process.tsx';
 import Testimonials from '../../Components/Testimonials/Testimonials.tsx';
 import './Home.css'
@@ -41,15 +42,19 @@ const HomeLayout = () => {
             <div className='HomeLayout-Testimonials'>
                 <Testimonials />
             </div>
-            <div className='HomeLayout-FAQ'>
-
-                <FAQ />
+            <div className='HomeLayout-Price'>
+                <Price />
             </div>
             <div className='HomeLayout-Meeting'>
 
                 <Meeting />
 
             </div>
+            <div className='HomeLayout-FAQ'>
+
+                <FAQ />
+            </div>
+
             <div className='HomeLayout-Footer'>
                 <Footer />
             </div>

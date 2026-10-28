@@ -1,5 +1,6 @@
 import Navbar from "../../Components/Navbar/Navbar"
-import Pricing from "../../Components/Pricing/Pricing"
+import Price from "../../Components/Price/Price"
+// import Pricing from "../../Components/Pricing/Pricing"
 import './Pricing.css'
 
 
@@ -10,7 +11,7 @@ const PricingLayout = () => {
                 <Navbar />
             </div>
             <div>
-                <Pricing/>
+                <Price/>
             </div>
         </div>
     )

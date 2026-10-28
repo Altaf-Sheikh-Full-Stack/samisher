@@ -19,7 +19,7 @@ const Navbar = () => {
     // const [activeService, setActiveService] = useState<number | null>(null)
 
     return (
-        <Container className="Navbar" color='White' shadow='True' >
+        <Container className="Navbar" color='White'  >
 
             <Box className='Navbar-Logo' >
                 <NavLink to="/" end>
@@ -57,27 +57,28 @@ const Navbar = () => {
 
 
 
-            <Box className='Navbar-Buttons'  >
-                <Button style={{ }} size='Large' variant='Secondary'>Login</Button>
-                <Button rounded='Round' size='Large'><a style={{ textDecoration: 'none' }} href="https://cal.com/samisher/demo" target="_blank" rel="noopener noreferrer">Book Demo</a></Button>
-            </Box>
+            <Container className='Navbar-Mobile-Button-Container'>
+                <Box className='Navbar-Buttons'  >
+                    <Button style={{}} size='Large' variant='Secondary'>Login</Button>
+                    <Button rounded='Round' size='Large'><a style={{ textDecoration: 'none' }} href="https://cal.com/samisher/demo" target="_blank" rel="noopener noreferrer">Book Demo</a></Button>
+                </Box>
 
-            <Box className={`Navbar-ButtonsMobile`}  >
-                <Button style={{  }}  variant='Secondary'>Login</Button>
-                <Button rounded='Round' ><a style={{ textDecoration: 'none' }} href="https://cal.com/samisher/demo" target="_blank" rel="noopener noreferrer">Book Demo</a></Button>
-            </Box>
-            {/* <button
-                type="button"
-                className={`Navbar-MobileToggle ${mobileOpen ? 'is-open' : ''}`}
-                onClick={() => setMobileOpen((prev) => !prev)}
-                aria-label="Toggle navigation menu"
-                aria-expanded={mobileOpen}
-            >
-                <span />
-                <span />
-                <span />
-            </button> */}
-
+                <Box className={`Navbar-ButtonsMobile`}  >
+                    <Button style={{}} variant='Secondary'>Login</Button>
+                    <Button rounded='Round' ><a style={{ textDecoration: 'none' }} href="https://cal.com/samisher/demo" target="_blank" rel="noopener noreferrer">Book Demo</a></Button>
+                </Box>
+                <button
+                    type="button"
+                    className={`Navbar-MobileToggle ${mobileOpen ? 'is-open' : ''}`}
+                    onClick={() => setMobileOpen((prev) => !prev)}
+                    aria-label="Toggle navigation menu"
+                    aria-expanded={mobileOpen}
+                >
+                    <span />
+                    <span />
+                    <span />
+                </button>
+            </Container>
             {mobileOpen && (
                 <Section className='Navbar-MobileMenu' variant='Transparent'>
                     <div className="Navbar-MobileGroup">
@@ -86,7 +87,7 @@ const Navbar = () => {
                             className={`Navbar-MobileServiceHead ${mobileServices ? 'is-open' : ''}`}
                             onClick={() => setMobileServices((prev) => !prev)}
                         >
-                            <Text color='Dark'>Product</Text>
+                            <Text color='Black'>Product</Text>
                             <span className='Navbar-MobileChevron' aria-hidden="true">⌄</span>
                         </button>
 
@@ -97,10 +98,10 @@ const Navbar = () => {
                                         <button
                                             type="button"
                                             className="Navbar-MobileServiceLabel"
-                                            
+
                                         >
-                                            <Text color='Dark' weight='600'>{service.name}</Text>
-                                            
+                                            <Text >{service.name}</Text>
+
                                         </button>
 
                                     </div>
@@ -110,13 +111,13 @@ const Navbar = () => {
                     </div>
 
                     <NavLink to="/about/" onClick={() => setMobileOpen(false)}>
-                        <Text color='Dark'>Customer success</Text>
+                        <Text color='Black'>Customer success</Text>
                     </NavLink>
                     <NavLink to="/blogs/" onClick={() => setMobileOpen(false)}>
-                        <Text color='Dark'>Framework</Text>
+                        <Text color='Black'>Framework</Text>
                     </NavLink>
                     <NavLink to="/pricing/" onClick={() => setMobileOpen(false)}>
-                        <Text color='Dark'>Pricing</Text>
+                        <Text color='Black'>Pricing</Text>
                     </NavLink>
                 </Section>
             )}

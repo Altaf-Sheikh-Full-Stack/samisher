@@ -1,0 +1,11 @@
+.Price{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.Price h6{
+    padding: 20px;
+}

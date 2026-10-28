@@ -16,17 +16,20 @@ const Rating = () => {
                 <img src={img2} alt="" height={30} width={30} />
                 <img src={img3} alt="" height={30} width={30} />
                 <img src={img4} alt="" height={30} width={30} />
+                
             </Container>
             <Container className="Rating-Info" color="Transparent" >
                 <Container className="Rating-Stars" color="Transparent">
-                    <Container color="Transparent" className="Rating-star-1" >★</Container>
-                    <Container color="Transparent" className="Rating-star-1" >★</Container>
-                    <Container color="Transparent" className="Rating-star-1" >★</Container>
-                    <Container color="Transparent" className="Rating-star-1" >★</Container>
-                    <Container color="Transparent" className="Rating-star-2" >★</Container>
+                    <Container color="Transparent" className="Rating-star-1" >⭐</Container>
+                    <Container color="Transparent" className="Rating-star-1" >⭐</Container>
+                    <Container color="Transparent" className="Rating-star-1" >⭐</Container>
+                    <Container color="Transparent" className="Rating-star-1" >⭐</Container>
+                    <Container color="Transparent" className="Rating-star-2" >⭐</Container>
+                    <Text color="Brand">(47+)</Text>
+                
                 </Container>
                 <Container className="Rating-Info-Text" color="Transparent">
-                    <Text weight="500" color="Black">500+ <span style={{fontWeight:'normal'}} >Loved by  GTM Teams</span> </Text>
+                    <Text>Trusted by GTM and Sales Teams </Text>
                 </Container>
             </Container>
 

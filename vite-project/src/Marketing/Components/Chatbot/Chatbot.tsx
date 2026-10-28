@@ -169,7 +169,7 @@ const Chatbot = () => {
 
                 <Container className="ChatBot-actions">
                     <Button
-                        variant="Primary"
+                        variant="Secondary"
                         rounded="Round"
                         size="Large"
                         

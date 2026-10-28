@@ -20,6 +20,8 @@
 
 .Rating-Stars {
   display: flex;
+  justify-content: start;
+  align-items: center;
 }
 
 .Rating-star-1 {
