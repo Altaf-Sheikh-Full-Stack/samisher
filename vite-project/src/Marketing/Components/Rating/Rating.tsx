@@ -10,7 +10,7 @@ import img4 from '../../../assets/People/image 128.webp'
 
 const Rating = () => {
     return (
-        <Container className="Rating" color="White" >
+        <Container className="Rating" color="Transparent" >
             <Container className="Rating-Imgs" color="Transparent" >
                 <img src={img1} alt="" height={30} width={30} />
                 <img src={img2} alt="" height={30} width={30} />
@@ -29,7 +29,7 @@ const Rating = () => {
                 
                 </Container>
                 <Container className="Rating-Info-Text" color="Transparent">
-                    <Text>Trusted by GTM and Sales Teams </Text>
+                    <Text color="Lite">Trusted by GTM and Sales Teams </Text>
                 </Container>
             </Container>
 

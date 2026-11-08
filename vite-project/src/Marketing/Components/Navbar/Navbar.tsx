@@ -13,6 +13,8 @@ import Image from '../../../Design/Img/Img'
 import Container from '../../../Design/Container/Container'
 
 
+import iconsimage from '../../../assets/Hero/Bot/Component 23.svg'
+
 const Navbar = () => {
     const [mobileOpen, setMobileOpen] = useState(false)
     const [mobileServices, setMobileServices] = useState(false)
@@ -26,17 +28,23 @@ const Navbar = () => {
                     <Image highRes={logo} lowRes={logo} alt='Samisher logo' height={50} />
                 </NavLink>
 
-                <Box className='Navbar-Items' >
+                <Box className='Navbar-Items'  >
+                    
                     <div className='Navbar-Services'>
+                      
                         <button
                             type="button"
                             className='Navbar-ServicesTrigger'
                         >
+                              <img height={25} width={25} src={iconsimage} alt="Samisher logo" />
                             <Text color='Black' weight='400'>Product</Text>
                             <span className='Navbar-ServicesChevron' aria-hidden="true">⌄</span>
                         </button>
                         <ServicesMenu />
                     </div>
+                    <NavLink to="/" className={({ isActive }) => isActive ? 'is-active' : ''}>
+                        <Text color='Black' weight='400' >Home</Text>
+                    </NavLink>
                     <NavLink to="/about/" className={({ isActive }) => isActive ? 'is-active' : ''}>
                         <Text color='Black' weight='400' >Customer success</Text>
                     </NavLink>

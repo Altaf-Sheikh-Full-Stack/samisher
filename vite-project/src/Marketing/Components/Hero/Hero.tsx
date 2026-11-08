@@ -17,31 +17,36 @@ import humen4 from '../../../assets/Hero/Humen/frame_3_1x.webp'
 
 import Rating from "../Rating/Rating";
 import Chatbot from "../Chatbot/Chatbot";
+
+
+
 const Hero = () => {
     return (
         <Container className="Home" color="Secondary">
             {/* <Container className="Hero-Text-Img-box"> */}
-                {/* <img className="" src={img5} alt="" /> */}
+            {/* <img className="" src={img5} alt="" /> */}
             {/* </Container> */}
-            
+
             <Container color="Transparent" className="Hero-Text">
-                <Rating/>
-                <Text textType="H1" font="Onest" weight="700" color="Black">
-                    Enterprise sales?  Done for you. 
-                </Text>
-                <Text textType="H2" font="Geist" weight="600">Human + Agent.</Text>
+                <Rating />
+                <Container className="Hero-Text-Main" >
+                    <Text textType="H1" font="Onest" weight="700" color="White">
+                        Enterprise sales?  Done for you.
+                    </Text>
+                    <Text textType="H2" font="Geist" color="Lite" weight="600">Human + Agent.</Text>
+                </Container>
                 <Container color="White" className="Home-Boll-Img">
                     <img src={humen1} />
                     <img src={humen2} alt="" />
                     <img src={humen3} alt="" />
-                    <img src={humen4}/>
+                    <img src={humen4} />
                     <img src={img4} alt="" />
                     <img src={img3} alt="" />
                     <img src={img2} alt="" />
                     <img src={img1} alt="" />
 
                 </Container>
-                
+
             </Container>
 
 
@@ -74,9 +79,9 @@ const Hero = () => {
                 </Text>
             </Container> */}
 
-            
 
-{/*             
+
+            {/*             
             <Container className="Hero-Body">
                 <Text textType="H5" font="Geist" color="Dark" weight="500">
 
@@ -96,7 +101,7 @@ const Hero = () => {
                     </a>
                 </Button>
             </Container>
-            <Chatbot/>
+            <Chatbot />
         </Container>
     );
 };

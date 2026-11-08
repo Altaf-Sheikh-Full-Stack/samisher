@@ -44,75 +44,66 @@
 /* --- links: plain text, thin underline on state --- */
 .Navbar-Items {
   display: flex;
-  gap: 28px;
+  gap: 10px;
   align-items: center;
+  background-color: whitesmoke !important;
+  padding: 5px 10px;
+  border-radius: 100px;
 }
 
 .Navbar-Items a {
   position: relative;
   text-decoration: none;
-  padding: 6px 0;
+  /* padding: 6px 0; */
+  padding: 13px;
+  border-radius: 100px;
 }
 
+
+.Navbar-Items a:hover{
+  background-color: white !important;
+}
 .Navbar-Items a .H1 {
-  /* color: rgba(255, 255, 255, 0.62) !important; */
-  /* font-size: 14px; */
-  /* font-weight: 500; */
   transition: color 160ms ease;
 }
 
-.Navbar-Items a:hover .H1,
-.Navbar-Items a.is-active .H1 {
-  color: #0306af !important;
-}
-
-.Navbar-Items a::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  height: 2px;
-  border-radius: 99px;
-  background: rgba(255, 255, 255, 0.22);
-  transform: scaleX(0);
-  transform-origin: left;
-  transition: transform 180ms ease, background 180ms ease;
-}
-
-.Navbar-Items a:hover::after {
-  transform: scaleX(.5);
-}
 
 
-.Navbar-Items a.is-active::after {
-  transform: scaleX(1);
-  background: #7c3aed;
+
+.Navbar-Items a.is-active{
+  background-color: white !important;
 }
+
 
 /* --- services mega dropdown trigger --- */
 .Navbar-Services {
   position: static;
-  /* Hover bridge: extend the hover hit-area down over the navbar's bottom
-     padding so the dropdown doesn't close while moving the cursor into it. */
   padding-bottom: 22px;
   margin-bottom: -22px;
+  /* background-color: white !important; */
 }
 
 .Navbar-ServicesTrigger {
   display: inline-flex;
   align-items: center;
-  gap: 5px;
+  gap: 10px;
   background: transparent;
   border: none;
   cursor: pointer;
-  padding: 6px 0;
+  padding: 10px;
+  /* background-color: rgb(255, 255, 255) !important; */
+  border-radius: 100px;
+  
+}
+
+.Navbar-ServicesTrigger:hover {
+  background-color: white !important;
 }
 
 .Navbar-ServicesTrigger .H1 {
-  font-size: 14px;
-  font-weight: 500;
-  transition: color 160ms ease;
+  /* font-size: 14px; */
+  /* font-weight: 500; */
+  /* transition: color 160ms ease; */
 }
 
 .Navbar-ServicesTrigger:hover .H1 {

@@ -4,7 +4,7 @@ import HomeLayout from "../../Layout/Home/Home"
 
 
 export function meta() {
-  const title = 'Samisher - More Revenue. Lower Costs.'
+  const title = 'Samisher - B2B Sales & Revenue Platform | powered with AI Agent'
   const description = 'No Sales Team Needed. Agent Sales 25/7. Lower Costs. More Revenue. No Deal. No Bill.'
 
   return [
