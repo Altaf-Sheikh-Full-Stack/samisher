@@ -3,6 +3,7 @@ import img1 from '../../../assets/Testimonials/Logo/Component 2.webp'
 
 
 import user from '../../../assets/Testimonials/User/troy-rudd-profile-web-1.jpg'
+import user1 from '../../../assets/Testimonials/User/images.webp'
 
 import outcome from '../../../assets/Testimonials/Outcome/component_4.webp'
 import outcome1 from '../../../assets/Testimonials/Outcome/component_6.webp'
@@ -30,7 +31,7 @@ const TestimonialsData: TestimonialsProps[] = [
         outcome:['Outreach', 'Headcount'],
         userImg:user,
         userName:'W. Troy Rudd',
-        testimonials:'Generated 250+ bookings in six months and built a $1,000,000 sales pipeline.',
+        testimonials:'Improved our lead conversion by 42% within three months—highly recommend!',
         role:'Founder and CEO - AECOM'
     },
 
@@ -40,10 +41,10 @@ const TestimonialsData: TestimonialsProps[] = [
         thumbnail:outcome,
         highlight:['$100K', '50+'],
         outcome:['Pipline generated', 'Meeting Booked'],
-        userImg:user,
-        userName:'W. Troy Rudd',
+        userImg:user1,
+        userName:'Robert Chvátal',
         testimonials:'Generated 250+ bookings in six months and built a $1,000,000 sales pipeline.',
-        role:'Founder and CEO - AECOM'
+        role:'CEO - allwyn'
         
     }
 ]

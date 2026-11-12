@@ -8,6 +8,7 @@
   scroll-snap-type: mandatory;
   anchor-name: --scroll;
   scroll-marker-group: after;
+  padding: 20px;
 }
 
 .Testimonials::scroll-marker-group {
@@ -22,13 +23,13 @@
 
 .Testimonials::scroll-button(right),
 .Testimonials::scroll-button(left) {
-  content: "↱";
+  content: "→";
   height: 50px;
   width: 50px;
   font-size: 40px;
   border: none;
   border-radius: 50px;
-  background-color: rgb(212, 212, 212);
+  background-color: rgb(255, 255, 255);
   cursor: pointer;
   position: fixed;
   position-anchor: --scroll;
@@ -39,17 +40,17 @@
 
 .Testimonials::scroll-button(right):hover,
 .Testimonials::scroll-button(left):hover {
-  background-color: rgb(192, 192, 192);
+  background-color: rgb(235, 235, 235);
 }
 
 .Testimonials::scroll-button(left) {
-  content: "↰";
+  content: "←";
   position-area: left center;
   translate: 50%;
 }
 
 .Testimonials-Card {
-  flex: 0 0 100%;
+  flex: 0 0 90%;
   scroll-snap-align: start;
   display: grid;
   grid-template-columns: auto auto auto auto;
@@ -59,7 +60,8 @@
     "box4 box4 box4 box3"
     "box1 box1 box1 box3";
 
-  border-radius: 50px;
+  border-radius: 50px !important;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px !important;
 }
 
 .Testimonials-Card::scroll-marker {
@@ -149,6 +151,7 @@
 
 @media (max-width: 500px) {
   .Testimonials-Card {
+     
     grid-template-areas:
       "box4"
       "box1"
