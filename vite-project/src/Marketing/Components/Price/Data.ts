@@ -16,7 +16,7 @@ const PriceData: PriceProp[] = [
             'Contacts (Email + Phone)',
             'Buying Intent and Signals',
             'Pain Points',
-            'Find Decision Makers',
+            'Right Decision Makers',
         ],
     },
     {
