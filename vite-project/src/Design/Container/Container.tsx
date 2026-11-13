@@ -7,10 +7,11 @@ type Rounded = "True" | "Fales";
 
 interface ContainerProps {
     children: React.ReactNode;
-    className?:string;
-    shadow?:Shadow;
-    color?:Color;
-    rounded?:Rounded;
+    className?: string;
+    shadow?: Shadow;
+    color?: Color;
+    rounded?: Rounded;
+    style?: React.CSSProperties;
 }
 
 const colorConf: Record<Color, { backgroundColour: string; }> = {
@@ -20,23 +21,20 @@ const colorConf: Record<Color, { backgroundColour: string; }> = {
     White: { backgroundColour: "white" }
 };
 
-
 const shadowConf: Record<Shadow, { boxShadow: string; }> = {
     True: { boxShadow: "rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;" },
     Fales: { boxShadow: "none" }
 };
 
-const Container = ({color = 'White',shadow = 'Fales', children, className }: ContainerProps) => {
-
-
+const Container = ({ color = 'White', shadow = 'Fales', children, className, style }: ContainerProps) => {
     const backgroundColourStyle = colorConf[color].backgroundColour
     const boxShadowStyle = shadowConf[shadow].boxShadow
 
     const styles: React.CSSProperties = {
         backgroundColor: backgroundColourStyle,
-        boxShadow: boxShadowStyle
+        boxShadow: boxShadowStyle,
+        ...style,
     }
-
 
     return (
         <div className={className} style={styles}>
@@ -44,7 +42,5 @@ const Container = ({color = 'White',shadow = 'Fales', children, className }: Con
         </div>
     )
 }
-
-            
 
 export default Container

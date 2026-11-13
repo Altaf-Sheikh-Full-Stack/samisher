@@ -1,5 +1,4 @@
 import { useMemo, useState } from 'react'
-import Button from "../../../Design/Button/Button"
 import Container from "../../../Design/Container/Container"
 import Text from "../../../Design/Texts/Text"
 import PriceData from './Data'
@@ -19,9 +18,9 @@ const Price = () => {
 
     return (
         <Container className="Price" color="White">
-            <Container className="PriceSelector">
+            <Container className='PriceInput' style={{ gridArea: 'box1' }}>
                 <label className="PriceSelector" aria-label="Select a plan">
-                    <span className="PriceSelectorDot" aria-hidden="true" />
+                    {/* <span className="PriceSelectorDot" aria-hidden="true" /> */}
                     <select
                         value={selectedProduct}
                         onChange={(event) => setSelectedProduct(event.target.value)}
@@ -34,27 +33,27 @@ const Price = () => {
                             </option>
                         ))}
                     </select>
-                    <span className="PriceSelectorChevron" aria-hidden="true">⌄</span>
                 </label>
             </Container>
-            <Container className='PricingNumber' >
-                <Text textType="H1" font="Onest" weight="700" color="Black" className="PriceValue">
-                    <MetallicPaint color='gold' text={`${selectedPlan.price}`}></MetallicPaint>
-
+            <Container style={{ gridArea: 'box2' }} color='Secondary' className='PriceNumber' >
+                <Text textType="H1" font="Onest" weight="700" color="Black" >
+                    {selectedPlan.price}
+                    <Text textType="H6" font="Onest" weight="500" color="Dark" > / {selectedPlan.paid}</Text>
                 </Text>
             </Container>
 
-            <Container className="PriceGrid">
+
+            <Container className="PriceGrid" color='Secondary' >
                 <ul className="PriceList">
                     {leftItems.map((item) => (
-                        <li key={item}><Text textType="H6" font="Geist" weight="500" color="Black">{item}</Text></li>
+                        <Text textType="H6" font="Geist" weight="500" color="Black">{item}</Text>
                     ))}
                 </ul>
             </Container>
-            <Container>
+            <Container color='Secondary' className="PriceGrid1">
                 <ul className="PriceList">
                     {rightItems.map((item) => (
-                        <li key={item}><Text textType="H6" font="Geist" weight="500" color="Black">{item}</Text></li>
+                        <Text textType="H6" font="Geist" weight="500" color="Black">{item}</Text>
                     ))}
                 </ul>
             </Container>

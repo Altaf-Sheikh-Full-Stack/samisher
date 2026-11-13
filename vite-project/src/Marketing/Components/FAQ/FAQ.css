@@ -24,7 +24,7 @@
 }
 
 .FAQ-Intro h2 {
-  font-size: clamp(32px, 3.5vw, 48px) !important;
+  /* font-size: clamp(32px, 3.5vw, 48px) !important; */
   line-height: 1.08 !important;
 }
 
@@ -76,17 +76,14 @@
 
 .FAQ-Question {
   width: 100%;
-  padding: 22px 24px;
+  padding: 22px ;
   border: 0;
   background: transparent;
-  color: #111827;
-  cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 24px;
   text-align: left;
-  font:  16px/1.45 Roboto ;
+  font:  inherit;
   transition: background-color 160ms ease, color 160ms ease;
 }
 
@@ -100,12 +97,19 @@
   width: 30px;
   height: 30px;
   place-items: center;
-  border-radius: 50%;
+
   background: #f3f0ff;
   color: #000000;
   font: 400 22px/1 Inter, sans-serif;
   flex: 0 0 auto;
   transition: transform 180ms ease, background-color 180ms ease;
+  cursor: pointer;
+}
+
+.FAQ-Icon:hover{
+  background: #443f3f00;
+  color: #000000;
+  border: 1px black solid;
 }
 
 .FAQ-Item--open .FAQ-Icon {
@@ -119,7 +123,7 @@
 }
 
 .FAQ-Answer p {
-  color: #4b5563;
+  color: inherit;
   font: 400 15px/1.65 Inter, sans-serif;
   margin: 0;
 }

@@ -1,7 +1,62 @@
 .Price {
   display: grid;
+  grid-template-columns: 50% 50%;
   grid-template-areas:
-    "box4 box4 box4 box2"
-    "box4 box4 box4 box3"
-    "box1 box1 box1 box3";
+    "box1 box2"
+    "box3 box4";
+    padding-top: 50px;
+}
+.PriceGrid {
+  grid-area: box3;
+  display: flex;
+  justify-content: center !important;
+  align-items: center !important;
+  padding: 20px;
+  margin: 20px;
+  margin-right: 0px;
+}
+
+.PriceInput {
+  display: flex;
+  justify-content: start;
+  align-items: end;
+  margin-left: 20px;
+}
+
+.PriceInput select {
+  height: 50px !important;
+  width: 120px !important;
+  font-size: 20px;
+  border: none;
+  padding: 10px;
+  /* border-radius: 100px; */
+}
+
+.PriceNumber {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* height: 100px; */
+  margin: 20px;
+  padding: 30px;
+  margin-bottom: 0px;
+}
+
+.PriceGrid1 {
+  grid-area: box4;
+  display: flex;
+  justify-content: start;
+  align-items: start;
+  padding: 20px;
+  margin: 20px;
+  margin-left: 0px;
+  flex-direction: column;
+}
+
+.PriceList {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 0px;
+  margin: 0px;
 }

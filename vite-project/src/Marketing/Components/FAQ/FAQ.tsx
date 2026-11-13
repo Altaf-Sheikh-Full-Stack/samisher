@@ -2,6 +2,8 @@ import { useState } from 'react'
 import Section from '../../../Design/Container/Section/Section'
 import './FAQ.css'
 import FAQData from './FAQData'
+import Container from '../../../Design/Container/Container'
+import Text from '../../../Design/Texts/Text'
 
 
 
@@ -30,8 +32,9 @@ const FAQ = () => {
           const answerId = `faq-answer-${index}`
 
           return (
-            <div className={`FAQ-Item ${isOpen ? 'FAQ-Item--open' : ''}`} key={faq.question}>
-              <h3 className="FAQ-Heading">
+            <Container className={`FAQ-Item ${isOpen ? 'FAQ-Item--open' : ''}`} key={faq.question}>
+              
+              <Text  font='Geist' weight='500' textType='H6' color='Black'>
                 <button
                   className="FAQ-Question"
                   type="button"
@@ -42,11 +45,13 @@ const FAQ = () => {
                   <span>{faq.question}</span>
                   <span className="FAQ-Icon" aria-hidden="true">{isOpen ? '−' : '+'}</span>
                 </button>
-              </h3>
+              </Text>
               <div id={answerId} className="FAQ-Answer" hidden={!isOpen}>
-                <p>{faq.answer}</p>
+                <Text  font='Roboto' weight='400' textType='Text' color='Dark'>
+                  {faq.answer}
+                </Text>
               </div>
-            </div>
+            </Container>
           )
         })}
     {/* eslint-disable-next-line react/no-danger */}

@@ -2,6 +2,7 @@
 interface PriceProp {
     product: string;
     price: string;
+    paid:string;
     icon:string;
     item: string[];
 }
@@ -10,6 +11,7 @@ const PriceData: PriceProp[] = [
     {
         product: 'Scout',
         price: '$0.01',
+        paid: 'per lead',
         icon: '',
         item: [
             'Leads (Social + Referrals + Internet)',
@@ -22,6 +24,7 @@ const PriceData: PriceProp[] = [
     {
         product: 'Scheduler',
         price: '$0.10',
+        paid: 'per meeting',
         icon: '',
         item: [
             'Reach Prospects',
@@ -34,6 +37,7 @@ const PriceData: PriceProp[] = [
     {
         product: 'Closer',
         price: '$1.00',
+        paid: 'per deal',
         icon: '',
         item: [
             'Run Demos',
@@ -46,6 +50,7 @@ const PriceData: PriceProp[] = [
     {
         product: 'Revenue',
         price: '$0.01',
+        paid: 'per invoice',
         icon: '',
         item: [
             'Send Invoices',
