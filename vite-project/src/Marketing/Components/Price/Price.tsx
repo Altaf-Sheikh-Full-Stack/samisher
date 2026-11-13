@@ -3,7 +3,7 @@ import Container from "../../../Design/Container/Container"
 import Text from "../../../Design/Texts/Text"
 import PriceData from './Data'
 import './Price.css'
-import MetallicPaint from '../../../Design/MetallicPaint/MetallicPaint'
+
 
 const Price = () => {
     const [selectedProduct, setSelectedProduct] = useState(PriceData[0].product)
