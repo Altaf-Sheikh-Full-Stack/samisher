@@ -29,17 +29,7 @@
   letter-spacing: -0.01em;
 }
 
-/* quiet brand accent — a single dot, nothing more */
-.Navbar-Logo > a::after {
-  content: "";
-  width: 5px;
-  height: 5px;
-  border-radius: 50%;
-  background: #7c3aed;
-  margin-left: 3px;
-  align-self: flex-end;
-  margin-bottom: 5px;
-}
+
 
 /* --- links: plain text, thin underline on state --- */
 .Navbar-Items {
